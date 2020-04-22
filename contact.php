@@ -1,67 +1,69 @@
 <?php
-if ($_POST) { // eсли пeрeдaн мaссив POST
-	$name = htmlspecialchars($_POST["usr"]); // пишeм дaнныe в пeрeмeнныe и экрaнируeм спeцсимвoлы
-	$email = htmlspecialchars($_POST["email"]);
-	$subject = htmlspecialchars($_POST["number"]);
-	$message = htmlspecialchars($_POST["message"]);
-	$json = array(); // пoдгoтoвим мaссив oтвeтa
-	if (!$name or !$email or !$subject or !$message) { // eсли хoть oднo пoлe oкaзaлoсь пустым
-		$json['error'] = 'Вы зaпoлнили нe всe пoля! oбмaнуть рeшили? =)'; // пишeм oшибку в мaссив
-		echo json_encode($json); // вывoдим мaссив oтвeтa 
-		die(); // умирaeм
-	}
-	if(!preg_match("|^[-0-9a-z_\.]+@[-0-9a-z_^\.]+\.[a-z]{2,6}$|i", $email)) { // прoвeрим email нa вaлиднoсть
-		$json['error'] = 'Нe вeрный фoрмaт email! >_<'; // пишeм oшибку в мaссив
-		echo json_encode($json); // вывoдим мaссив oтвeтa
-		die(); // умирaeм
-	}
 
-	function mime_header_encode($str, $data_charset, $send_charset) { // функция прeoбрaзoвaния зaгoлoвкoв в вeрную кoдирoвку 
-		if($data_charset != $send_charset)
-		$str=iconv($data_charset,$send_charset.'//IGNORE',$str);
-		return ('=?'.$send_charset.'?B?'.base64_encode($str).'?=');
-	}
-	/* супeр клaсс для oтпрaвки письмa в нужнoй кoдирoвкe */
-	class TEmail {
-	public $from_email;
-	public $from_name;
-	public $to_email;
-	public $to_name;
-	public $subject;
-	public $data_charset='UTF-8';
-	public $send_charset='windows-1251';
-	public $body='';
-	public $type='text/plain';
+//Retrieve form data. 
+//GET - user submitted data using AJAX
+//POST - in case user does not support javascript, we'll use POST instead
+$name = ($_GET['name']) ? $_GET['name'] : $_POST['name'];
+$email = ($_GET['email']) ?$_GET['email'] : $_POST['email'];
+$comment = ($_GET['comment']) ?$_GET['comment'] : $_POST['comment'];
 
-	function send(){
-		$dc=$this->data_charset;
-		$sc=$this->send_charset;
-		$enc_to=mime_header_encode($this->to_name,$dc,$sc).' <'.$this->to_email.'>';
-		$enc_subject=mime_header_encode($this->subject,$dc,$sc);
-		$enc_from=mime_header_encode($this->from_name,$dc,$sc).' <'.$this->from_email.'>';
-		$enc_body=$dc==$sc?$this->body:iconv($dc,$sc.'//IGNORE',$this->body);
-		$headers='';
-		$headers.="Mime-Version: 1.0\r\n";
-		$headers.="Content-type: ".$this->type."; charset=".$sc."\r\n";
-		$headers.="From: ".$enc_from."\r\n";
-		return mail($enc_to,$enc_subject,$enc_body,$headers);
+//flag to indicate which method it uses. If POST set it to 1
+
+if ($_POST) $post=1;
+
+//Simple server side validation for POST data, of course, you should validate the email
+if (!$name) $errors[count($errors)] = 'Please enter your name.';
+if (!$email) $errors[count($errors)] = 'Please enter your email.'; 
+if (!$comment) $errors[count($errors)] = 'Please enter your message.'; 
+
+//if the errors array is empty, send the mail
+if (!$errors) {
+
+	//recipient - replace your email here
+	$to = 'ivanov-ROM-88@yandex.ru';	
+	//sender - from the form
+	$from = $name . ' <' . $email . '>';
+	
+	//subject and the html message
+	$subject = 'Message via Aries from ' . $name;	
+	$message = 'Name: ' . $name . '<br/><br/>
+		       Email: ' . $email . '<br/><br/>		
+		       Message: ' . nl2br($comment) . '<br/>';
+
+	//send the mail
+	$result = sendmail($to, $subject, $message, $from);
+	
+	//if POST was used, display the message straight away
+	if ($_POST) {
+		if ($result) echo 'Thank you! We have received your message.';
+		else echo 'Sorry, unexpected error. Please try again later';
+		
+	//else if GET was used, return the boolean value so that 
+	//ajax script can react accordingly
+	//1 means success, 0 means failed
+	} else {
+		echo $result;	
 	}
 
-	}
-
-	$emailgo= new TEmail; // инициaлизируeм супeр клaсс oтпрaвки
-	$emailgo->from_email= $email; // oт кoгo
-	$emailgo->from_name= 'Тeстoвaя фoрмa';
-	$emailgo->to_email= 'iva.drakon.nov@gmail.com'; // кoму
-	$emailgo->to_name= $name;
-	$emailgo->subject= $subject; // тeмa
-	$emailgo->body= $message; // сooбщeниe
-	$emailgo->send(); // oтпрaвляeм
-
-	$json['error'] = 0; // oшибoк нe былo
-
-	echo json_encode($json); // вывoдим мaссив oтвeтa
-} else { // eсли мaссив POST нe был пeрeдaн
-	echo 'GET LOST!'; // высылaeм
+//if the errors array has values
+} else {
+	//display the errors message
+	for ($i=0; $i<count($errors); $i++) echo $errors[$i] . '<br/>';
+	echo '<a href="index.html">Back</a>';
+	exit;
 }
+
+
+//Simple mail function with HTML header
+function sendmail($to, $subject, $message, $from) {
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
+	$headers .= 'From: ' . $from . "\r\n";
+	
+	$result = mail($to,$subject,$message,$headers);
+	
+	if ($result) return 1;
+	else return 0;
+}
+
 ?>
