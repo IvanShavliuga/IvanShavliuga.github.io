@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
 		//start the ajax
 		$.ajax({
 			//this is the php file that processes the data and sends email
-			url: "contact.php",	
+			url: "https://IvanShavliuga.github.io/contact.php",	
 			
 			//GET method is used
 			type: "GET",
