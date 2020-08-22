@@ -1,5 +1,7 @@
 {
-      "status":"200 OK (IvanShavliuga.github.io)",
+      "status":"200 OK",
+      "url":"https://IvanShavliuga.github.io/crios/api/database.json",
+      "author": "Ivan Ivanov (Shavliuga), Republic of Belarus, iva.drakon.nov@gmail.com",
       "order":false,
       "pricelist": [{
         "id":0,
