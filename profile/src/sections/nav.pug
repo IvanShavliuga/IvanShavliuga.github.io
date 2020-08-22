@@ -1,0 +1,47 @@
+nav
+  ul.menulist
+    li.item 
+      h2 Profile 
+      .desc 
+        h3 {{name}} 
+        p 
+          b {{prof}}
+        p I make site layout to order. 
+        p 
+          a(:href="email") {{email}}
+          span.linkprint iva.drakon.nov@gmail.com 
+        p(title="The user wanted to hide their phone number") {{phone}} 
+    li.item
+      h2 Interests
+      .images
+        .interes
+          p Music
+        .interes
+          p Gaming
+        .interes
+          p Biking    
+    li.item 
+      h2 Skills 
+      .desc 
+        ul.skills 
+          li( v-for="(s,k) in skills" :key="s") {{s}}
+    li.item 
+      h2 Education 
+      .desc
+        ul
+          li.line(v-for="(e,k) in education" :key="k")
+            .lineinfo {{e.years}}
+              a(:href="e.link" target="_blank") {{e.caption}}
+              span.linkprint {{e.caption}} ({{e.link}})
+              span {{e.desc}}
+    li.item
+      h2 Work experience 
+      .desc
+        ul
+          li.line(v-for="(w,k) in work" :key="k")
+            .lineinfo {{w.years}}
+              a(:href="w.link" target="_blank") {{w.caption}}
+              span.linkprint {{w.caption}} ({{w.link}})
+              span {{w.desc}}
+    
+        
