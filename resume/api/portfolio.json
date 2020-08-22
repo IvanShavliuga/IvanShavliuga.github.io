@@ -1,0 +1,31 @@
+{
+  portfolio:[{
+    sitelink:"https://github.com/IvanShavliuga/vue-chat",
+    sitetitle:"github.com/IvanShavliuga",
+    title:"Chat",
+    desc:" Multi-user Chat for exchanging short messages using some html tags",
+    tech:["html5","css3","less","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design","own design"]
+  },{
+    sitelink:"https://github.com/IvanShavliuga/vuejsnews",
+    sitetitle:"github.com/IvanShavliuga",
+    title:"Example vue.js news portal",
+    desc:"News portal using vue technologies .js and css, bootstrap. This project is a simple social news network. The project was created specifically for self- learning. Implemented groups, users, news feed, the ability to edit material and create groups, as well as send messages, put likes, comments and reposts. I will be happy if you find errors in the code.",
+    tech:["html5","css3","scss","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design","own design"]
+  },{
+    sitelink:"https://github.com/IvanShavliuga/vuejstimer",
+    sitetitle:"github.com/IvanShavliuga",
+    title:"Example vue.js tasks list and timer",
+    desc:"task list and timer vue component",
+    tech:["html5","css3","scss","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design","own design"]
+  },{
+    sitelink:"https://github.com/IvanShavliuga/vuejs-mail-app",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Example vue.js mail app",
+    "desc":"Just a project for self-learning vue.js technology. Development of a multi-user mail application (only frontend parts) for your own needs and learning vue.js for further professional growth as a specialist. The project must switch between users and be able to add new ones). It should be possible to send messages to spam, and forward messages between users.",
+    "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design"]
+  }],
+}

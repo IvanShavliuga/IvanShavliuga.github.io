@@ -1,0 +1,13 @@
+{
+  work: [{
+    years:"09/2018 - Now",
+    caption:"Table of Mendeleev",
+    link:"https://mendel-info.usite.pro",
+    desc:"Administrator"
+  },{
+    years:"12/2019- Now",
+    caption:"Maybebaby project",
+    link:"https://www.geekbrains.ru",
+    desc:"junior Vue.js developer"
+  }],
+}
