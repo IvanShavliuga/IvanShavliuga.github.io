@@ -1,0 +1,11 @@
+footer
+  ul.social
+    li(v-for="(s,k) in social" :key="social+k") 
+      a(:href="s.link" target="_blank" :id="s.name+'_'+k") {{s.name}}
+      span.linkprint {{s.link}} 
+  .copyright
+    p &copy; 2020 {{geo}}, {{name}}, {{prof}}
+      span.mobileflag  mobile version 
+      span.tabletflag  tablet version
+      span.desktopflag  desktop version
+      span.printflag  print version. I did it myself using CSS     
