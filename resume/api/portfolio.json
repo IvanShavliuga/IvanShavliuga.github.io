@@ -1,4 +1,4 @@
-{
+
   [{
     "sitelink":"https://github.com/IvanShavliuga/vue-chat",
     "sitetitle":"github.com/IvanShavliuga",
@@ -27,5 +27,4 @@
     "desc":"Just a project for self-learning vue.js technology. Development of a multi-user mail application (only frontend parts) for your own needs and learning vue.js for further professional growth as a specialist. The project must switch between users and be able to add new ones). It should be possible to send messages to spam, and forward messages between users.",
     "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
       "git","adaptive design"]
-  }],
-}
+  }]
