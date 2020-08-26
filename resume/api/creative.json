@@ -1,5 +1,4 @@
-{
-  [{
+[{
     "category": "Literature",
     "linkslist": [{
       "name":"Author Today",
@@ -24,4 +23,3 @@
       "link":"https://www.t.me/vuejscodesru"
     }]
   }]
-}

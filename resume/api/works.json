@@ -1,4 +1,4 @@
-{
+
   [{
     "years":"09/2018 - Now",
     "caption":"Table of Mendeleev",
@@ -9,5 +9,4 @@
     "caption":"Maybebaby project",
     "link":"https://www.geekbrains.ru",
     "desc":"junior Vue.js developer"
-  }],
-}
+  }]

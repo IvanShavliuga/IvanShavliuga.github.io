@@ -1,4 +1,4 @@
-{
+
   [{
     "years": "2006-2011, 3.5 years",
     "caption": "Polotsk state University",
@@ -19,5 +19,4 @@
     "caption": "ITVDN (Free course landing page)",
     "link":"https://itvdn.com",
     "desc":"basic Pug, SCSS"
-  }],
-}
+  }]
