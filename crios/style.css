@@ -75,7 +75,7 @@ section {
 }
 
 .header {
-  background-image: url(/images/header.png);
+  background-image: url(images/header.png);
   height: 1000px;
   text-align: center;
   background-clip: content-box;
@@ -202,16 +202,16 @@ section {
   display: block;
 }
 .menu__item__lection {
-  background-image: url(/images/nav1.jpg);
+  background-image: url(images/nav1.jpg);
 }
 .menu__item__sport {
-  background-image: url(/images/nav2.jpg);
+  background-image: url(images/nav2.jpg);
 }
 .menu__item__family {
-  background-image: url(/images/nav3.jpg);
+  background-image: url(images/nav3.jpg);
 }
 .menu__item__fest {
-  background-image: url(/images/nav4.jpg);
+  background-image: url(images/nav4.jpg);
 }
 .menu__item:hover {
   filter: none;
@@ -329,11 +329,11 @@ section {
   margin-right: 200px;
 }
 .content__box:first-child .content__image {
-  background-image: url(/images/art2.jpg);
+  background-image: url(images/art2.jpg);
   background-size: cover;
 }
 .content__box:nth-child(2) .content__image {
-  background-image: url(/images/art1.jpg);
+  background-image: url(images/art1.jpg);
   background-size: cover;
 }
 .content__box:nth-child(2) .content__text {
@@ -343,13 +343,13 @@ section {
   background-color: #FFFFFF;
 }
 .content__box:nth-child(3) .content__image {
-  background-image: url(/images/arnament.png);
+  background-image: url(images/arnament.png);
   background-position: right top;
   margin: 0;
   width: 50%;
 }
 .content__box:nth-child(3) .content__arnament {
-  background-image: url(/images/art3.jpg);
+  background-image: url(images/art3.jpg);
   right: 80px;
   top: 40px;
   width: 205px;
@@ -366,13 +366,13 @@ section {
   background-color: #FFFFFF;
 }
 .content__box:nth-child(4) .content__image {
-  background-image: url(/images/arnament.png);
+  background-image: url(images/arnament.png);
   background-position: left top;
   margin: 0;
   width: 50%;
 }
 .content__box:nth-child(4) .content__arnament {
-  background-image: url(/images/art4.jpg);
+  background-image: url(images/art4.jpg);
   animation: shadow 0.7s infinite;
   width: 205px;
   height: 338px;
@@ -390,7 +390,7 @@ section {
   background-color: #F7F8FC;
 }
 .content__box:last-child .content__image {
-  background-image: url(/images/human.jpg);
+  background-image: url(images/human.jpg);
   background-size: none;
   background-position: right center;
 }
@@ -780,16 +780,16 @@ section {
   display: flex;
 }
 .modal__form__lection {
-  background-image: url(/images/nav1.jpg);
+  background-image: url(images/nav1.jpg);
 }
 .modal__form__sport {
-  background-image: url(/images/nav2.jpg);
+  background-image: url(images/nav2.jpg);
 }
 .modal__form__family {
-  background-image: url(/images/nav3.jpg);
+  background-image: url(images/nav3.jpg);
 }
 .modal__form__fest {
-  background-image: url(/images/nav4.jpg);
+  background-image: url(images/nav4.jpg);
 }
 
 @media (max-width: 500px) {
@@ -897,9 +897,7 @@ section {
     height: 500px;
     padding: 0;
   }
-  /**********************************************************
-  footer
-  **********************************************************/
+
   .footer {
     height: 550px;
     padding-top: 10px;
