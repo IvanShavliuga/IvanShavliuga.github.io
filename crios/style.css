@@ -23,9 +23,7 @@ section {
   margin: 0;
   background-color: #fafbfd;
 }
-/**********************************************************
-animation
-**********************************************************/
+
 @keyframes logo {
   0% {
     color: #56b;
@@ -75,11 +73,9 @@ animation
     border: 1px solid rgba(230, 100, 190, 0.7);
   }
 }
-/**********************************************************
-header
-**********************************************************/
+
 .header {
-  background-image: url(./images/header.png);
+  background-image: url(/images/header.png);
   height: 1000px;
   text-align: center;
   background-clip: content-box;
@@ -173,9 +169,7 @@ header
     width: 10px;
   }
 }
-/**********************************************************
-navigation
-**********************************************************/
+
 .menu {
   text-align: center;
 }
@@ -208,16 +202,16 @@ navigation
   display: block;
 }
 .menu__item__lection {
-  background-image: url(./images/nav1.jpg);
+  background-image: url(/images/nav1.jpg);
 }
 .menu__item__sport {
-  background-image: url(./images/nav2.jpg);
+  background-image: url(/images/nav2.jpg);
 }
 .menu__item__family {
-  background-image: url(./images/nav3.jpg);
+  background-image: url(/images/nav3.jpg);
 }
 .menu__item__fest {
-  background-image: url(./images/nav4.jpg);
+  background-image: url(/images/nav4.jpg);
 }
 .menu__item:hover {
   filter: none;
@@ -313,9 +307,7 @@ navigation
     width: 10px;
   }
 }
-/**********************************************************
-content
-**********************************************************/
+
 .content {
   padding: 0;
   margin: 0;
@@ -337,11 +329,11 @@ content
   margin-right: 200px;
 }
 .content__box:first-child .content__image {
-  background-image: url(./images/art2.jpg);
+  background-image: url(/images/art2.jpg);
   background-size: cover;
 }
 .content__box:nth-child(2) .content__image {
-  background-image: url(./images/art1.jpg);
+  background-image: url(/images/art1.jpg);
   background-size: cover;
 }
 .content__box:nth-child(2) .content__text {
@@ -351,13 +343,13 @@ content
   background-color: #FFFFFF;
 }
 .content__box:nth-child(3) .content__image {
-  background-image: url(./images/arnament.png);
+  background-image: url(/images/arnament.png);
   background-position: right top;
   margin: 0;
   width: 50%;
 }
 .content__box:nth-child(3) .content__arnament {
-  background-image: url(./images/art3.jpg);
+  background-image: url(/images/art3.jpg);
   right: 80px;
   top: 40px;
   width: 205px;
@@ -374,13 +366,13 @@ content
   background-color: #FFFFFF;
 }
 .content__box:nth-child(4) .content__image {
-  background-image: url(./images/arnament.png);
+  background-image: url(/images/arnament.png);
   background-position: left top;
   margin: 0;
   width: 50%;
 }
 .content__box:nth-child(4) .content__arnament {
-  background-image: url(./images/art4.jpg);
+  background-image: url(/images/art4.jpg);
   animation: shadow 0.7s infinite;
   width: 205px;
   height: 338px;
@@ -398,7 +390,7 @@ content
   background-color: #F7F8FC;
 }
 .content__box:last-child .content__image {
-  background-image: url(./images/human.jpg);
+  background-image: url(/images/human.jpg);
   background-size: none;
   background-position: right center;
 }
@@ -449,12 +441,10 @@ content
 .content__prof {
   color: #ccc;
 }
-/**********************************************************
-footer
-**********************************************************/
+
 .footer {
   background-color: #FFFFFF;
-  background-image: url(./images/footer.jpg);
+  background-image: url(/images/footer.jpg);
   background-size: contain;
   padding-top: 50px;
   height: 950px;
@@ -594,9 +584,7 @@ footer
     width: 10px;
   }
 }
-/**********************************************************
-modal box
-**********************************************************/
+
 .modal {
   height: 100vh;
   width: 100vw;
@@ -792,33 +780,23 @@ modal box
   display: flex;
 }
 .modal__form__lection {
-  background-image: url(./images/nav1.jpg);
+  background-image: url(/images/nav1.jpg);
 }
 .modal__form__sport {
-  background-image: url(./images/nav2.jpg);
+  background-image: url(/images/nav2.jpg);
 }
 .modal__form__family {
-  background-image: url(./images/nav3.jpg);
+  background-image: url(/images/nav3.jpg);
 }
 .modal__form__fest {
-  background-image: url(./images/nav4.jpg);
+  background-image: url(/images/nav4.jpg);
 }
-/**********************************************************
-mixins
-**********************************************************/
+
 @media (max-width: 500px) {
-  /**********************************************************
-  mixins
-  **********************************************************/
-  /**********************************************************
-  globals
-  **********************************************************/
+  
   .container {
     padding: 15px 0;
   }
-  /**********************************************************
-  header
-  **********************************************************/
   .header {
     height: 500px;
     background-size: contain;
@@ -829,18 +807,14 @@ mixins
     font-size: 30px;
     padding: 0 20px;
   }
-  /**********************************************************
-  menu
-  **********************************************************/
+
   .menu__list {
     justify-content: center;
   }
   .menu__item {
     margin: 10px auto;
   }
-  /**********************************************************
-  content
-  **********************************************************/
+  
   .content__box {
     display: flex;
     width: 70%;
@@ -953,9 +927,7 @@ mixins
     margin-right: 20px;
   }
 }
-/**********************************************************
-  modal
-  **********************************************************/
+
 @media screen and (max-width: 594px) {
   .modal__box {
     width: 100vw;
@@ -1031,36 +1003,26 @@ mixins
     transform: scale(0.8);
   }
 }
-/**********************************************************
-mixins
-**********************************************************/
+
 @media (min-width: 501px) and (max-width: 1000px) {
-  /**********************************************************
-  globals
-  **********************************************************/
+
   .container {
     padding: 30px 0;
   }
-  /**********************************************************
-  header
-  **********************************************************/
+  
   .header {
     height: 600px;
     background-size: cover;
     background-position: center 200px;
   }
-  /**********************************************************
-  menu
-  **********************************************************/
+
   .menu__list {
     justify-content: center;
   }
   .menu__item {
     margin: 10px auto;
   }
-  /**********************************************************
-  content
-  **********************************************************/
+  
   .content__box {
     display: flex;
     width: 100%;
@@ -1082,9 +1044,7 @@ mixins
   .content__box:nth-child(2n-1) .content__block {
     margin-right: 10px;
   }
-  /**********************************************************
-  footer
-  **********************************************************/
+  
   .footer {
     height: 550px;
     padding-top: 10px;
@@ -1096,9 +1056,7 @@ mixins
     left: 50px;
   }
 }
-/**********************************************************
-  modal
-  **********************************************************/
+
 @media screen and (max-width: 1300px) {
   .modal {
     height: 100vh;
