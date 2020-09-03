@@ -1,5 +1,12 @@
 
   [{
+    "sitelink":"https://github.com/IvanShavliuga/vue-chat",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Chat",
+    "desc":" Multi-user Chat for exchanging short messages using some html tags",
+    "tech":["html5","css3","less","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design","own design"]
+  },{
     "sitelink":"https://github.com/IvanShavliuga/Crios",
     "sitetitle":"github.com/IvanShavliuga",
     "title":"Landing page",
