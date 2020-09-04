@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 31" width="38" height="31">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ffffff } 
+	</style>
+	<g id="Testimonials">
+		<g id="heading">
+			<path id="Forma 1" class="shp0" d="M9.28 14.17C9.28 9.82 9.28 9.1 12.93 9.1L12.93 1.01C4.43 1.01 1.99 6.69 1.99 16.71L1.99 29.99L17.79 29.99L17.79 16.71L9.28 16.71L9.28 14.17ZM27.51 16.71L27.51 14.17C27.51 9.82 27.51 9.1 31.15 9.1L31.15 1.01C22.65 1.01 20.22 6.69 20.22 16.71L20.22 29.99L36.01 29.99L36.01 16.71L27.51 16.71Z" />
+		</g>
+	</g>
+</svg>
