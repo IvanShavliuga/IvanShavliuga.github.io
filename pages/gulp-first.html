@@ -1,5 +1,12 @@
+<html>
+<head>
+  <title>Мой первый опыт использования gulp</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
 <article class="page">
   <h3>Мой первый опыт использования gulp</h3>
+  <h4>Постановка задачи</h4>
   <p>В рамках опенсорнсого проекта <a href="https://github.com/sdras/vue-sample-svg-icons">sdras/vue-sample-svg-icons</a>
      я стал обрабатывать социальные svg-иконки. Сначала делал вручную.
      Есть готовый svg-файл. Из  него я вручную убираю заголовки, оставляю только полезный контент, т.е. саму графику.
@@ -11,11 +18,30 @@
 var replace = require('gulp-replace')
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
-var files = [
+var files = [ 
   /* список файлов */
 ];
 </pre>
      Подключаем <b>gulp</b>, <b>gulp-replace</b> (замена текстовых фрагментов в svg-файле),
      <b>gulp-concat</b> (объединение промежуточных файлов), <b>gulp-rename</b> (переименоваение файлов).
   </p>
+  <h4>Первичная обработка svg-файла и генерация vue-компонента</h4>
+  <p>Итак, нам надо преобразовать фактически XML во vue-компонент, убрав весь не нужный мусор. Т.е. сразу убираем это
+  <pre>
+&lt;!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --&gt;
+</pre>
+  Надо сказать, что графические редакторы могут писать как в этотм примере абсолютно не нужный с точки зрения здравого смысла.
+  Так же убираем не нужный xml-заголовок:
+  <pre>
+  &lt;?xml version="1.0" encoding="utf-8"?&gt;
+</pre>
+  Так же графический редактор не нужных для vue-компонента строку:
+  <pre>
+  &lt;?!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"?&gt;
+</pre>
+   Согласно проекту <b>vue-sample-svg-icons</b>, основной тег <b>&lt;svg&gt;</b> хранится во vue-компоненте <b>IconBase</b>. 
+И в принцепе так намного эффективнее хранить заголовки svg в отдельном компоненте, а содержимое (т.е. саму графику передавать через слоты).
+  </p>
 </article>
+</body>
+</html>
