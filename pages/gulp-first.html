@@ -35,12 +35,40 @@ var files = [
   <pre>
   &lt;?xml version="1.0" encoding="utf-8"?&gt;
 </pre>
-  Так же графический редактор не нужных для vue-компонента строку:
+  Так же убираем не нужные для vue-компонента строки:
   <pre>
   &lt;?!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"?&gt;
 </pre>
    Согласно проекту <b>vue-sample-svg-icons</b>, основной тег <b>&lt;svg&gt;</b> хранится во vue-компоненте <b>IconBase</b>. 
 И в принцепе так намного эффективнее хранить заголовки svg в отдельном компоненте, а содержимое (т.е. саму графику передавать через слоты).
+   В итоге скрипт по очистки svg-файла выглядит именно так:
+  <pre>
+gulp.src(files)
+    .pipe(replace(/<!--(.*?)-->/, ''))
+    .pipe(replace(/<?xml(.*?)?>/, ''))
+    .pipe(replace(/<!DOCTYPE(.*?)>/, ''))
+    .pipe(replace(/version=(.*?) id=(.*?) xmlns=(.*?) xmlns:xlink=(.*?) x=(.*?) y=(.*?)/, ''))
+    .pipe(replace(/<!DOCTYPE(.*?)>/, ''))
+    .pipe(replace('xml:space="preserve"', ''))
+    .pipe(replace('"0px"', ''))
+    .pipe(replace('enable-background', 'data-background'))
+    .pipe(replace(/viewBox=(.*?)/, function (m) {
+      let arr =  m.split("=");
+      return 'data-'+arr[0]+'='+arr[1];    
+    }))
+    .pipe(replace('svg', 'template'))
+</pre>
+   После того, как файл обработали, мы его переименновываем:
+  <pre>
+  .pipe(rename(function (path) {
+      let arr = path.basename.split('-');
+      path.dirname += "/result/vue";
+      path.basename = "Icon-"+arr[1];
+      path.extname = ".vue";
+    }))
+.pipe(gulp.dest('out/'))
+</pre>
+  И отправляем в католог <b>out/result/vue</b>
   </p>
 </article>
 </body>
