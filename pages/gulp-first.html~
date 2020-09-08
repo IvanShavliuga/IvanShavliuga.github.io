@@ -128,7 +128,7 @@ gulp.src('in/component/componentList.txt')
       console.log(match)
       const arr = match.split('/')
       const fname = arr[2].split('.')
-      const res = '&lt;icon-base class="icons__image" icon-name="' + fname[0] + '" width="64" height="64" icon-color="#5434ad"&gt;&lt;' + fname[0] + '/&gt;&lt;/icon-base&gt;"'
+      const res = '&lt;icon-base class="icons__image" icon-name="' + fname[0] + '" width="64" height="64" icon-color="#5434ad"><' + fname[0] + '/></icon-base&gt;"'
       return res
     }))
     .pipe(rename(function (path) {
