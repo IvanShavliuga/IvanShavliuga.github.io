@@ -1,0 +1,22 @@
+
+  [{
+    "years": "2006-2011, 3.5 года",
+    "caption": "Полоцкий государственный университет",
+    "link":"https://psu.by",
+    "desc":"Программное обеспечение информационных технологий"
+  },{
+    "years": "2018-2019",
+    "caption": "INTUIT",
+    "link":"https://intuit.ru",
+    "desc":"базовый JavaScript, HTML, CSS"
+  },{
+    "years": "2019 - now",
+    "caption": "GeekBrains",
+    "link":"https://geekbrains.ru",
+    "desc":"advanced JavaScript, HTML, CSS"
+  },{
+    "years": "2020",
+    "caption": "ITVDN",
+    "link":"https://itvdn.com",
+    "desc":"базовый Pug, SCSS"
+  }]

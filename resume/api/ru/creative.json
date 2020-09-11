@@ -1,5 +1,5 @@
 [{
-    "category": "Literature",
+    "category": "Литература",
     "linkslist": [{
       "name":"Author Today",
       "link":"https://author.today/u/ischavliuga/works"
@@ -7,19 +7,19 @@
       "name":"SamLib.ru",
       "link":"https://samlib.ru/i/iwan_sergeewich_shawljuga/"
     },{
-      "name":"Personal web-site",
+      "name":"Персональный сайт",
       "link":"https://isschavliuga.ucoz.net"
     }]
   },{
-    "category": "Science",
+    "category": "Наука",
     "linkslist": [{
-      "name":"Table of Mendeleev",
+      "name":"Таблица Менделеева",
       "link":"https://mendel-info.usite.pro"
     },{
-      "name":"Telegram channel of science",
+      "name":"Телеграм канал о науке",
       "link":"https://t.me/mendelinfo"
     },{
-      "name":"Telegram channel of framework vue.js",
+      "name":"Телеграм канал о vue.js",
       "link":"https://www.t.me/vuejscodesru"
     }]
   }]
