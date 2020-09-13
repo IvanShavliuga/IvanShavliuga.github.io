@@ -1,0 +1,8 @@
+/dist/*
+/.vscode/*
+/Infrastructure/*
+/.cache-loader/*
+/.nuxt/*
+/src/plugins/*
+/src/static/*
+drift.*
