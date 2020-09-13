@@ -1,0 +1,15 @@
+[
+  {
+    link: "https://ivanshavliuga.github.io/crios/index.html",
+    title: "Crios",
+    category: "portfolio"
+  }, {
+    link: "https://ivanshavliuga.github.io/daisy/index.html",
+    title: "Daisy",
+    category: "portfolio"
+  }, {
+    link: "https://ivanshavliuga.github.io/vuesvgicons/index.html",
+    title: "Vue svg icons",
+    category: "portfolio"
+  }
+]

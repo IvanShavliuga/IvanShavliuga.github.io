@@ -44,11 +44,10 @@ var files = [
    В итоге скрипт по очистки svg-файла выглядит именно так:
   <pre>
 gulp.src(files)
-    .pipe(replace(/<!--(.*?)-->/, ''))
-    .pipe(replace(/<?xml(.*?)?>/, ''))
-    .pipe(replace(/<!DOCTYPE(.*?)>/, ''))
+    .pipe(replace(/&lt;!--(.*?)--&gt;/, ''))
+    .pipe(replace(/&lt;?xml(.*?)?&gt;/, ''))
+    .pipe(replace(/&lt;!DOCTYPE(.*?)&gt;/, ''))
     .pipe(replace(/version=(.*?) id=(.*?) xmlns=(.*?) xmlns:xlink=(.*?) x=(.*?) y=(.*?)/, ''))
-    .pipe(replace(/<!DOCTYPE(.*?)>/, ''))
     .pipe(replace('xml:space="preserve"', ''))
     .pipe(replace('"0px"', ''))
     .pipe(replace('enable-background', 'data-background'))
