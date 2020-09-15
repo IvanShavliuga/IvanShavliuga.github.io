@@ -1,4 +1,13 @@
 @media (min-width: 836px) and (max-width: 1200px) {
+  header {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction:column-reverse;
+      justify-content:center;
+      padding:0;
+      margin:0;
+  }
     .name {
        width:335px!important;
        margin-left: 10px!important;
