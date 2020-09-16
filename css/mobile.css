@@ -11,9 +11,9 @@
   header {
       height: 100%;
       width: 100%;
-      display: flex;
-      flex-direction:column-reverse;
-      justify-content:center;
+      display: flex!important;
+      flex-direction:column-reverse!important;
+      justify-content:center!important;
       padding:0;
       margin:0;
   }
@@ -27,16 +27,16 @@
   .contacts {
      margin: 10px auto;
      width:90%;
-     display: flex;
-      flex-direction:column-reverse;
-      justify-content:center;
+     display: flex!important;
+      flex-direction:column-reverse!important;
+      justify-content:center!important;
      clear: both;
   }
 
   .userdata {
-     display: flex;
-     flex-direction:column;
-     justify-content:center;
+     display: flex!important;
+     flex-direction:column!important;
+     justify-content:center!important;
      flex-wrap:wrap;
      width:100%;
      margin:0;
