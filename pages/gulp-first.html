@@ -2,6 +2,9 @@
 <head>
   <title>Мой первый опыт использования gulp</title>
   <meta charset="UTF-8"/>
+  <meta name="author" content="iv2 (Ivan Shavliuga, Ivanov), https://github.com/IvanShavliuga"/>
+  <meta name="keywords" content="Resume, junior vue.js developer, portfolio, vuex, vue.js, vue-router, webpack, less, adaptive design" />
+  <meta name="description" content="Иван Шавлюга (Иванов), junior Frontend (vue.js) разработчик, персональный сайт, портфолио, резюме."/>
 </head>
 <body>
 <article class="page">
@@ -18,7 +21,7 @@
 var replace = require('gulp-replace')
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
-var files = [ 
+var files = [
   /* список файлов */
 ];
 </pre>
@@ -39,7 +42,7 @@ var files = [
   <pre>
   &lt;?!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"?&gt;
 </pre>
-   Согласно проекту <b>vue-sample-svg-icons</b>, основной тег <b>&lt;svg&gt;</b> хранится во vue-компоненте <b>IconBase</b>. 
+   Согласно проекту <b>vue-sample-svg-icons</b>, основной тег <b>&lt;svg&gt;</b> хранится во vue-компоненте <b>IconBase</b>.
 И в принцепе так намного эффективнее хранить заголовки svg в отдельном компоненте, а содержимое (т.е. саму графику передавать через слоты).
    В итоге скрипт по очистки svg-файла выглядит именно так:
   <pre>
@@ -56,7 +59,7 @@ gulp.src(files)
     <pre>
     .pipe(replace(/viewBox=(.*?)/, function (m) {
       let arr =  m.split("=");
-      return 'data-'+arr[0]+'='+arr[1];    
+      return 'data-'+arr[0]+'='+arr[1];
     }))
     .pipe(replace('svg', 'template'))
 </pre>
@@ -71,11 +74,11 @@ gulp.src(files)
 .pipe(gulp.dest('out/'))
 </pre>
   И отправляем в католог <b>out/result/vue</b>
-  Таким образом, получаем результирующий файл vue. 
+  Таким образом, получаем результирующий файл vue.
   </p>
   <h4>Вставка vue-компонетов в единный файл.</h4>
   <p>Мне уже лень каждый компонент в ручную добавлять один файл, чтобы продемонстрировать все иконки одним махом.
-     Соответственно создаем генератор разметки. Можно ещё такой скрипт назвать автоматизатором (Можно таким же 
+     Соответственно создаем генератор разметки. Можно ещё такой скрипт назвать автоматизатором (Можно таким же
      способом подлючать не только иконки, но и объединять и компоненты с другим функиональным назначением).
      У нас уже есть сгенерированный файл <b>in/component/componentList.txt'</b> со  списком всех иконок.
      И так первая часть автоматизированного объединения компонентов в один файл:
@@ -92,14 +95,14 @@ gulp.src(files)
       path.extname = ".txt";
     }))
 .pipe(gulp.dest('out/component/'))
-     </pre> 
+     </pre>
      На входе у нас:
      <pre>
-in/SVG-emojis/Icon-grinning.vue     
+in/SVG-emojis/Icon-grinning.vue
      </pre>
-     На выходе 
+     На выходе
      <pre>
-import grinning from 'vue/Icon-grinning.vue'     
+import grinning from 'vue/Icon-grinning.vue'
      </pre>
      Идем дальше, вторая часть объединения:
      <pre>
@@ -115,12 +118,12 @@ gulp.src('in/component/componentList.txt')
       path.basename = "component-list";
       path.extname = ".txt";
     }))
-.pipe(gulp.dest('out/component/'))     
+.pipe(gulp.dest('out/component/'))
      </pre>
      Здесь мы создаем список компонентов через запятую и записываем в файл <b>component-list.txt</b>.
-     Т.е. в первой части мы объявляем импорт всех vue-компонентов. А во второй части подключаем их 
+     Т.е. в первой части мы объявляем импорт всех vue-компонентов. А во второй части подключаем их
      к экземпляру Vue.
-     Ну, а на третьем  этапе объединения создаем готовую html разметку в файле <b>component-template</b>. 
+     Ну, а на третьем  этапе объединения создаем готовую html разметку в файле <b>component-template</b>.
      <pre>
 gulp.src('in/component/componentList.txt')
     .pipe(replace(/(.*?).vue/g, function (match) {
@@ -135,11 +138,11 @@ gulp.src('in/component/componentList.txt')
       path.extname = ".txt";
     }))
     .pipe(gulp.dest('out/component/'))
-})     
+})
      </pre>
   </p>
   <h4>Склеиваем все</h4>
-  <p> Теперь осталось объединить все три файла (<b>component-template</b>, <b>component-import</b>, 
+  <p> Теперь осталось объединить все три файла (<b>component-template</b>, <b>component-import</b>,
     <b>component-list</b>).
     <pre>
     gulp.task("componentconcat", function(){
@@ -156,7 +159,7 @@ gulp.src('in/component/componentList.txt')
     .pipe(concat('IconList.vue'))
     .pipe(gulp.dest('out/result/'));
 })
-    </pre>    
+    </pre>
   </p>
 </article>
 </body>
