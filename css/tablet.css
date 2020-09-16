@@ -47,7 +47,7 @@
     }
 }
 
-@media (min-width: 536px) and (max-width: 835px) {
+@media (min-width: 500px) and (max-width: 835px) {
   body {
       background-color: #fff;
   }

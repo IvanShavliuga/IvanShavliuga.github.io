@@ -1,4 +1,4 @@
-@media (max-width: 535px){
+@media (max-width: 499px){
 	body,html {
      margin: 0;
      padding:0;
@@ -11,9 +11,9 @@
   header {
       height: 100%;
       width: 100%;
-      display: flex!important;
-      flex-direction:column-reverse!important;
-      justify-content:center!important;
+      display: flex;
+      flex-direction:column-reverse;
+      justify-content:center;
       padding:0;
       margin:0;
   }
@@ -27,16 +27,16 @@
   .contacts {
      margin: 10px auto;
      width:90%;
-     display: flex!important;
-      flex-direction:column-reverse!important;
-      justify-content:center!important;
+     display: flex;
+      flex-direction:column-reverse;
+      justify-content:center;
      clear: both;
   }
 
   .userdata {
-     display: flex!important;
-     flex-direction:column!important;
-     justify-content:center!important;
+     display: flex;
+     flex-direction:column;
+     justify-content:center;
      flex-wrap:wrap;
      width:100%;
      margin:0;
