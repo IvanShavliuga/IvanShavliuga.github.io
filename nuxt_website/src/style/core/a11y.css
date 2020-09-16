@@ -1,8 +1,0 @@
-.u-visually-hidden {
-  position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-}
-
-.u-no-scroll {
-  overflow: hidden !important;
-}
