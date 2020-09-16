@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /index.html
+Allow: /pages/*.html
+Disallow: /nuxt_website
+Disallow: /node_modules
+Disallow: /**/node_modules
+Disallow: /profile
+Disallow: /profile/**/*
+Disallow: /js
+Disallow: /css
+Disallow: /resume/api/*.json
+Disallow: /simples/api/*.json
+Disallow: /ru/*.*
+Disallow: /en/*.*
