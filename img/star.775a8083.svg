@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="25" height="25">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #424242 } 
+	</style>
+	<g id="hdr">
+		<g id="cart">
+			<path id="Shape 10" class="shp0" d="M12.5 0C5.6 0 0 5.6 0 12.5C0 19.4 5.6 25 12.5 25C19.4 25 25 19.4 25 12.5C25 5.6 19.4 0 12.5 0ZM17.02 19.45L12.44 17.04L7.87 19.45L8.74 14.35L5.03 10.74L10.15 10L12.44 5.36L14.73 10L19.85 10.74L16.15 14.35L17.02 19.45Z" />
+		</g>
+	</g>
+</svg>
