@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-start;
   width: 350px;
+  background: linear-gradient(#f7f7f7,#b7b7b7);
 }
 .icons__image, .iconbar__image {
   padding: 7px;
