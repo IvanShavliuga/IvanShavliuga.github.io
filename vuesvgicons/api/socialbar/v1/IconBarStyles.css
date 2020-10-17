@@ -3,7 +3,7 @@
   justify-content: flex-start;
   width: 350px;
 }
-.icons__image, .iconbar__image, icon-base{
+.icons__image, .iconbar__image{
   padding: 3px 15px;
   margin: 0;
   border: 1px solid #ccc;
@@ -14,4 +14,6 @@
   margin: 0;
   transform: scale(0.6);
 }
-icon
+icon-base {
+  margin: 0;
+}
