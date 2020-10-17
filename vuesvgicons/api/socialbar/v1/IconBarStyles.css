@@ -2,9 +2,10 @@
   display: flex;
   justify-content: flex-start;
   width: 350px;
+  background: linear-gradient(#f7f7f7,#b7b7b7);
 }
-.icons__image, .iconbar__image{
-  padding: 3px 15px;
+.icons__image, .iconbar__image {
+  padding: 7px;
   margin: 0;
   border: 1px solid #ccc;
   transform: scale(0.6);
@@ -13,7 +14,4 @@
 .icons__image {
   margin: 0;
   transform: scale(0.6);
-}
-icon-base {
-  margin: 0;
 }
