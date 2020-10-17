@@ -1,0 +1,16 @@
+.icons, .iconbar {
+  display: flex;
+  justify-content: flex-start;
+  width: 350px;
+}
+.icons__image, .iconbar__image {
+  padding: 3px;
+  margin: 0;
+  border: 1px solid #ccc;
+  transform: scale(0.6);
+  background: linear-gradient(#f7f7f7,#b7b7b7);
+}
+.icons__image {
+  margin: 0;
+  transform: scale(0.6);
+}
