@@ -1,5 +1,11 @@
 
   [{
+    "sitelink":"https://codepen.io/ivanshavliuga/pen/pobKbpm",
+    "sitetitle":"codepen.io/ivanshavliuga",
+    "title":"Таблица Шульте (усложненный вариант)",
+    "desc":"Собрать числовую последовательность от 1 до 64",
+    "tech":["html5","css3","vue.js (2.x)"]
+  },{
     "sitelink":"https://codepen.io/ivanshavliuga/pen/rNLdBeR",
     "sitetitle":"codepen.io/ivanshavliuga",
     "title":"Vue.js Esay slider ",
