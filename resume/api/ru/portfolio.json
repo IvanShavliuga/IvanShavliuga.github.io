@@ -1,5 +1,12 @@
 
   [{
+    "sitelink":"https://github.com/IvanShavliuga/booksshop",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Vue.js simple booksshop",
+    "desc":" Интернет магазин книг (в разработке)",
+    "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","nuxt"]
+  },{
     "sitelink":"https://github.com/IvanShavliuga/vue-sample-svg-icons",
     "sitetitle":"github.com/IvanShavliuga",
     "title":"Vue.js svg icons",
