@@ -2,7 +2,7 @@
   [{
     "sitelink":"https://codepen.io/ivanshavliuga/pen/rNLdBeR",
     "sitetitle":"codepen.io/ivanshavliuga",
-    "title":"Vue.js simple audio player",
+    "title":"Vue.js Esay slider ",
     "desc":"Простой слайдер из проекта инетернет магазина книг",
     "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
       "git","ajax","axios"]
