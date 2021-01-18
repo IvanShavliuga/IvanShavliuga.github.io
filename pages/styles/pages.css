@@ -1,0 +1,29 @@
+.imgbox {
+  background-color: #dadada;
+  width: 140px;
+  height: 70px;
+  padding: 4px;
+  border: 1px dashed #892189;
+}
+.img {
+  background-color: #4a4a3a;
+  margin: auto;
+}
+.codeline {
+  background-color: #dadada;
+  padding: 0 5px;
+}
+span.vars {
+  color: #a94390;
+  font-weight: bold;
+}
+span.prop {
+  font-weight: bold;
+}
+span.val {
+  color: #c94350;
+}
+span.const {
+  color: #4530c4;
+  font-style: italic;
+}
