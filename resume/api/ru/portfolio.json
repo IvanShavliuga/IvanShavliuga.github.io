@@ -1,5 +1,11 @@
 
   [{
+    "sitelink":"https://codepen.io/ivanshavliuga/pen/rNLdBeR",
+    "sitetitle":"codepen.io/ivanshavliuga",
+    "title":"Vue.js simple slider",
+    "desc":"Слайдер для книжного магазина.",
+    "tech":["html5","css3","vue.js (2.x)"]
+  },{
     "sitelink":"https://github.com/IvanShavliuga/vue-sample-svg-icons",
     "sitetitle":"github.com/IvanShavliuga",
     "title":"Vue.js svg icons",
