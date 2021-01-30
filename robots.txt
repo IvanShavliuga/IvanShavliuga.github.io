@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /index.html
 Allow: /pages/*.html
+Allow: /resume/resume.pdf
 Disallow: /test/**/
 Disallow: /test/
 Disallow: /nuxt_website
