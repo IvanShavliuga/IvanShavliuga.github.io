@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
 
 importScripts(
-  "/nippon-color/precache-manifest.55f3f96e3fc23be3d1687be33e85b86b.js"
+  "/nippon-color/precache-manifest.e1a7d2ceb114697e5faa7d8a4f29a9b4.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "nipponcolor"});
+workbox.core.setCacheNameDetails({prefix: "vuemp3player"});
 
 workbox.skipWaiting();
 workbox.clientsClaim();
