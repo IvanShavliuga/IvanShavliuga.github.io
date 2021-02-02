@@ -1,30 +1,30 @@
 self.__precacheManifest = [
   {
     "revision": "5a33a41e411b0aeb6f3b",
-    "url": "/nippon-color/js/about.9f8037cf.js"
+    "url": "./js/about.9f8037cf.js"
   },
   {
     "revision": "e9cb6b98c5365bbcc783",
-    "url": "/nippon-color/css/app.0b42a60d.css"
+    "url": "./css/app.0b42a60d.css"
   },
   {
     "revision": "e9cb6b98c5365bbcc783",
-    "url": "/nippon-color/js/app.fa1ffe30.js"
+    "url": "./js/app.fa1ffe30.js"
   },
   {
     "revision": "a76557c1134c0ecb309c",
-    "url": "/nippon-color/js/chunk-vendors.408a0b51.js"
+    "url": "./js/chunk-vendors.408a0b51.js"
   },
   {
     "revision": "65ef70b1f06658902047344468dd8cb9",
-    "url": "/nippon-color/index.html"
+    "url": "./index.html"
   },
   {
     "revision": "735ab4f94fbcd57074377afca324c813",
-    "url": "/nippon-color/robots.txt"
+    "url": "./robots.txt"
   },
   {
     "revision": "9be6c95134431cd7aa9319e7b5a274a8",
-    "url": "/nippon-color/iv2.ico"
+    "url": "./iv2.ico"
   }
 ];
