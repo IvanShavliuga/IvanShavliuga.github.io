@@ -1,0 +1,11 @@
+[Debugger]
+Watch symbols=
+[main.c]
+Bookmarks=
+[main.h]
+Bookmarks=
+[Windows]
+File1=pelle.bmp,0,0,768,345,0,0
+File2=main.rc,-5,-33,869,465,1,1
+File3=main.h,64,64,832,409,0,0
+File4=main.c,-5,-33,869,465,1,0

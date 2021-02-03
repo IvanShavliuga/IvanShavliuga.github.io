@@ -1,0 +1,59 @@
+Functions called:
+ delete (35 times)
+ time (1 times)
+ vsnprintf (124 times)
+ SysReallocMem (93 times)
+ SysFreeMem (2227 times)
+ realloc (1 times)
+ memcpy (1 times)
+ SysGetMem (2235 times)
+ delete[] (2 times)
+ free (26 times)
+ new[] (14 times)
+ new (40 times)
+ calloc (5 times)
+ malloc (20 times)
+Resource types used:
+ object array (14 allocs, 13 max)
+ object (40 allocs, 28 max)
+ memory block (2261 allocs, 617 max)
+Modules used:
+ 00230000 02/01/2002 16:00:00 C:\WINNT\System32\vclx60.bpl
+ 00400000 02/02/2007 15:26:50 D:\projects\teleport\teleport.exe
+ 01190000 02/01/2002 16:00:00 C:\PROGRA~1\Borland\CBUILD~1\Bin\BORLNDMM.DLL
+ 0CD00000 02/01/2002 16:00:00 C:\PROGRA~1\Borland\CBUILD~1\Bin\CG32.DLL
+ 10000000 04/03/2001 10:59:14 C:\WINNT\mui\fallback\0419\msctf.dll.mui
+ 32600000 02/01/2002 16:00:00 C:\PROGRA~1\Borland\CBUILD~1\Bin\CC3260MT.DLL
+ 40000000 02/01/2002 16:00:00 C:\WINNT\System32\rtl60.bpl
+ 400B0000 02/01/2002 16:00:00 C:\WINNT\System32\vcl60.bpl
+ 50600000 02/01/2002 17:00:00 C:\PROGRA~1\Borland\CBUILD~1\Bin\bcbsmp60.bpl
+ 51000000 12/12/2002 00:14:32 C:\WINNT\System32\DDRAW.dll
+ 60000000 03/21/2001 12:04:46 C:\WINNT\System32\MSCTF.dll
+ 665E0000 03/23/2000 09:00:00 C:\WINNT\System32\umdmxfrm.dll
+ 68060000 03/23/2000 09:00:00 C:\WINNT\System32\serwvdrv.dll
+ 693F0000 08/08/2000 09:08:08 C:\WINNT\System32\OPENGL32.dll
+ 6FA30000 03/23/2000 09:00:00 C:\WINNT\System32\GLU32.DLL
+ 72830000 03/23/2000 09:00:00 C:\WINNT\System32\DCIMAN32.dll
+ 74FB0000 03/23/2000 09:00:00 C:\WINNT\System32\WS2HELP.DLL
+ 74FC0000 08/08/2000 09:08:08 C:\WINNT\System32\WS2_32.DLL
+ 74FE0000 08/08/2000 09:08:08 C:\WINNT\System32\wsock32.dll
+ 75020000 08/08/2000 09:08:08 C:\WINNT\system32\mpr.dll
+ 75280000 03/23/2000 09:00:00 C:\WINNT\System32\oledlg.dll
+ 75950000 03/23/2000 09:00:00 C:\WINNT\system32\LZ32.DLL
+ 76AE0000 08/08/2000 09:08:08 C:\WINNT\system32\comdlg32.dll
+ 770F0000 08/08/2000 09:08:08 C:\WINNT\system32\RPCRT4.DLL
+ 77520000 03/23/2000 09:00:00 C:\WINNT\System32\winmm.dll
+ 77560000 08/08/2000 09:08:08 C:\WINNT\system32\SHELL32.DLL
+ 777D0000 08/08/2000 09:08:08 C:\WINNT\System32\winspool.drv
+ 777F0000 03/23/2000 09:00:00 C:\WINNT\system32\version.dll
+ 779B0000 08/08/2000 09:08:08 C:\WINNT\system32\oleaut32.dll
+ 77A50000 08/08/2000 09:08:08 C:\WINNT\system32\ole32.dll
+ 77B50000 08/08/2000 09:08:08 C:\WINNT\system32\comctl32.dll
+ 77C70000 08/08/2000 09:08:08 C:\WINNT\system32\SHLWAPI.DLL
+ 77DB0000 08/08/2000 09:08:08 C:\WINNT\system32\advapi32.dll
+ 77E10000 08/08/2000 09:08:08 C:\WINNT\system32\user32.dll
+ 77E80000 08/08/2000 09:08:08 C:\WINNT\system32\kernel32.dll
+ 77F40000 08/08/2000 09:08:08 C:\WINNT\system32\GDI32.DLL
+ 77F80000 08/08/2000 09:08:08 C:\WINNT\System32\ntdll.dll
+ 78000000 08/08/2000 09:08:08 C:\WINNT\system32\MSVCRT.DLL
+==========================================

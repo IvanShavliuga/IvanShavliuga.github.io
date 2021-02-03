@@ -1,0 +1,70 @@
+Functions called:
+ delete (35 times)
+ time (1 times)
+ vsnprintf (160 times)
+ SysReallocMem (107 times)
+ SysFreeMem (2212 times)
+ realloc (1 times)
+ memcpy (1 times)
+ SysGetMem (2220 times)
+ delete[] (2 times)
+ free (26 times)
+ new[] (14 times)
+ new (40 times)
+ calloc (5 times)
+ malloc (20 times)
+Resource types used:
+ object array (14 allocs, 13 max)
+ object (40 allocs, 28 max)
+ memory block (2246 allocs, 380 max)
+Modules used:
+ 00320000 04/25/2007 17:27:14 C:\WINDOWS\system32\oledlg.dll
+ 00350000 05/22/2001 05:00:00 C:\WINDOWS\system32\vclx60.bpl
+ 00400000 02/01/2007 10:30:24
+ D:\ivan\архив\projects\OpenGL\BALLS\glskeleton.exe
+ 01190000 02/01/2002 15:00:00
+ D:\ivan\архив\projects\OpenGL\BALLS\BORLNDMM.DLL
+ 02770000 08/18/2004 14:00:00 C:\WINDOWS\system32\CRYPT32.dll
+ 0CD00000 01/30/2002 16:38:38 C:\PROGRA~1\Borland\CBUILD~1\Bin\CG32.DLL
+ 32600000 02/01/2002 15:00:00
+ D:\ivan\архив\projects\OpenGL\BALLS\CC3260MT.DLL
+ 40000000 01/30/2002 16:39:02 C:\WINDOWS\system32\rtl60.bpl
+ 400B0000 01/30/2002 15:43:22 C:\WINDOWS\system32\vcl60.bpl
+ 50600000 02/01/2002 16:00:00 C:\PROGRA~1\Borland\CBUILD~1\Bin\bcbsmp60.bpl
+ 5D5B0000 04/25/2007 17:26:04 C:\WINDOWS\system32\comctl32.dll
+ 693F0000 08/08/2000 08:08:08
+ D:\ivan\архив\projects\OpenGL\BALLS\OPENGL32.dll
+ 6FA30000 03/23/2000 08:00:00 D:\ivan\архив\projects\OpenGL\BALLS\GLU32.DLL
+ 71A80000 08/18/2004 14:00:00 C:\WINDOWS\system32\WS2HELP.dll
+ 71A90000 08/18/2004 14:00:00 C:\WINDOWS\system32\WS2_32.dll
+ 71AB0000 08/18/2004 14:00:00 C:\WINDOWS\system32\wsock32.dll
+ 71B00000 08/18/2004 14:00:00 C:\WINDOWS\system32\mpr.dll
+ 72CD0000 08/18/2004 14:00:00 C:\WINDOWS\system32\msacm32.drv
+ 72CE0000 04/26/2007 11:48:08 C:\WINDOWS\system32\wdmaud.drv
+ 72FC0000 08/18/2004 14:00:00 C:\WINDOWS\system32\winspool.drv
+ 73720000 08/18/2004 14:00:00 C:\WINDOWS\system32\DDRAW.dll
+ 73B80000 08/18/2004 14:00:00 C:\WINDOWS\system32\DCIMAN32.dll
+ 746E0000 04/25/2007 17:28:44 C:\WINDOWS\system32\MSCTF.dll
+ 76380000 08/18/2004 14:00:00 C:\WINDOWS\system32\comdlg32.dll
+ 76B20000 08/18/2004 14:00:00 C:\WINDOWS\system32\winmm.dll
+ 76C20000 08/18/2004 14:00:00 C:\WINDOWS\system32\WINTRUST.dll
+ 76C80000 08/18/2004 14:00:00 C:\WINDOWS\system32\IMAGEHLP.dll
+ 77110000 08/18/2004 14:00:00 C:\WINDOWS\system32\oleaut32.dll
+ 773C0000 08/25/2006 06:53:12
+ C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.
+2600.2982_x-ww_ac3f9c03\comctl32.dll
+ 774D0000 04/25/2007 17:28:58 C:\WINDOWS\system32\ole32.dll
+ 77B10000 08/18/2004 14:00:00 C:\WINDOWS\system32\MSASN1.dll
+ 77BC0000 08/18/2004 14:00:00 C:\WINDOWS\system32\midimap.dll
+ 77BD0000 08/18/2004 14:00:00 C:\WINDOWS\system32\MSACM32.dll
+ 77BF0000 08/18/2004 14:00:00 C:\WINDOWS\system32\version.dll
+ 77C00000 04/25/2007 17:26:56 C:\WINDOWS\system32\msvcrt.dll
+ 77DC0000 08/18/2004 14:00:00 C:\WINDOWS\system32\advapi32.dll
+ 77E70000 04/25/2007 17:29:02 C:\WINDOWS\system32\RPCRT4.dll
+ 77F10000 04/25/2007 17:26:14 C:\WINDOWS\system32\GDI32.dll
+ 77F60000 09/23/2006 11:13:04 C:\WINDOWS\system32\SHLWAPI.dll
+ 7C800000 04/25/2007 17:26:26 C:\WINDOWS\system32\kernel32.dll
+ 7C900000 06/17/2006 09:20:42 C:\WINDOWS\system32\ntdll.dll
+ 7C9C0000 04/26/2007 11:53:12 C:\WINDOWS\system32\SHELL32.dll
+ 7E360000 04/26/2007 11:53:28 C:\WINDOWS\system32\user32.dll
+==========================================
