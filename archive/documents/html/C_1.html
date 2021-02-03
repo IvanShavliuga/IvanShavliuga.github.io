@@ -1,0 +1,2078 @@
+<HTML>
+<head>
+<title>
+c_1.html</title>
+<meta NAME="author" content="IvEditor">
+</head><body bgcolor="navy" text="white">
+<p align="justify">
+                     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+                            <br>
+                            ЯЗЫК С<br>
+     <br>
+     <br>
+                        Б.В. Керниган,<br>
+                          Д.М. Ричи.<br>
+     <br>
+                             - <font color="fuchsia">1</font> -<br>
+     Аннотация<br>
+     Язык "<font color="yellow">C</font>"(произносится "си") - это универсальный язык<br>
+программирования, для которого характерны экономичность выра-<br>
+жения, современный поток управления и структуры данных, бога-<br>
+тый набор операторов. Язык "<font color="yellow">C</font>" не является ни языком "очень<br>
+высокого уровня", ни "большим" языком, и не предназначается<br>
+для некоторой специальной области применения. но отсутствие<br>
+ограничений и общность языка делают его более удобным и эф-<br>
+фективным для многих задач, чем языки, предположительно более<br>
+мощные.<br>
+      Язык "<font color="yellow">C</font>", первоначально предназначавшийся для написания<br>
+ операционной системы "<font color="yellow">UNIX</font>" на ЭВМ <font color="yellow">DEC</font> <font color="yellow">PDP</font>-<font color="fuchsia">11</font>, был разрабо-<br>
+ тан и реализован на этой системе Деннисом Ричи. Операционная<br>
+ система, компилятор с языка "<font color="yellow">C</font>" и по существу все прикладные<br>
+ программы системы "<font color="yellow">UNIX</font>" (включая все программное обеспече-<br>
+ ние, использованное при подготовке этой книги) написаны на<br>
+ "<font color="yellow">C</font>". Коммерческие компиляторы с языка "<font color="yellow">C</font>" существуют также<br>
+ на некоторых других ЭВМ, включая <font color="yellow">IBM</font> <font color="yellow">SYSTEM</font>/<font color="fuchsia">370</font>, <font color="yellow">HONEYWELL<br>
+</font> <font color="fuchsia">6000</font>, <font color="yellow">INTERDATA</font> <font color="fuchsia">8</font>/<font color="fuchsia">32</font>. Язык "<font color="yellow">C</font>", однако, не связан с каки-<br>
+ ми-либо определенными аппаратными средствами или системами,<br>
+ и на нем легко писать программы, которые можно пропускать<br>
+ без изменений на любой ЭВМ, имеющей "<font color="yellow">C</font>"-компилятор.<br>
+      Эта книга предназначена для того, чтобы помочь читателю<br>
+ научиться программировать на языке "<font color="yellow">C</font>". Она содержит учебное<br>
+ введение, цель которого - позволить новым пользователям на-<br>
+ чать программировать как можно быстрее, отдельные главы по<br>
+ всем основным особенностям языка и справочное руководство.<br>
+ Обучение построено в основном на чтении, написании и разборе<br>
+ примеров, а не голой формулировке правил. Примеры, приводи-<br>
+ мые в книге, по большей части являются законченными реальны-<br>
+ ми программами, а не отдельными фрагментами. Все примеры бы-<br>
+ ли проверены непосредственно с текста книги, где они напеча-<br>
+ таны в виде, пригодном для ввода в машину. Кроме указаний о<br>
+ том, как сделать использование языка более эффективным, мы<br>
+ также пытались, где это возможно, проиллюстрировать полезные<br>
+ алгоритмы и принципы хорошего стиля и разумной разработки.<br>
+      Настоящая книга не является вводным курсом в программи-<br>
+ рование; она предполагает определенное знакомство с основны-<br>
+ ми понятиями программирования такими как переменные, опера-<br>
+ торы присваивания, циклы, функции. Тем не менее и новичок в<br>
+ программировании должен оказаться в состоянии читать подряд<br>
+ и освоиться с языком, хотя при этом была бы полезной помощь<br>
+ более опытного коллеги.<br>
+      По нашему опыту , "<font color="yellow">C</font>" показал себя приятным, вырази-<br>
+ тельным и разносторонним языком на широком множестве разно-<br>
+ образных программ. Его легко выучить , и он не теряет своих<br>
+ качеств с ростом опыта программиста. Мы надеемся , что эта<br>
+ книга поможет вам хорошо его использовать.<br>
+     <br>
+                           - <font color="fuchsia">2</font> -<br>
+     <br>
+      Вдумчивая критика и предложения многих наших друзей и<br>
+ коллег очень много добавили как для самой книги, так и для<br>
+ нашего удовольствия при ее написании. В частности, Майк Би-<br>
+ апси, Джим Блю, Стью Фельдман, Доуг Мак-Илрой, Билл Рум, Боб<br>
+ Розин и Ларри Рослер тщательно прочитали множество вариан-<br>
+ тов. Мы также обязаны Элю Ахо, Стиву Борну, Дэву Двораку,<br>
+ Чаку Хэлею, Дебби Хэлей, Мариону Харрису, Рику Холту, Стиву<br>
+ Джонсону, Джону Машею, Бобу Митцу, Ральфу Мьюа, Питеру Нель-<br>
+ сону, Эллиоту Пинсону, Биллу Плагеру, Джерри Спиваку, Кену<br>
+ Томпсону и Питеру Вейнбергеру за полезные замечания на раз-<br>
+ личных этапах и Майку Лоску и Джо Осанна за неоценимую по-<br>
+ мощь при печатании книги.<br>
+         Брайен В. Керниган<br>
+            Деннис М. Ричи<br>
+      <br>
+     <br>
+                           - <font color="fuchsia">3</font> -<br>
+     <br>
+                      Содержание<br>
+ <br>
+       <font color="yellow">A</font>ннотация ........................................<font color="fuchsia">1<br>
+</font> <font color="fuchsia">0</font>.<font color="fuchsia">1</font>.  Введение   .......................................<font color="fuchsia">7<br>
+</font> <font color="fuchsia">1</font>.    Учебное введение..................................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">1</font>.     <font color="yellow">H</font>ачинаем.......................................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">2</font>.     Переменные и арифметика........................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">3</font>.     Оператор <font color="yellow">FOR</font>...................................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">4</font>.     Символические константы........................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.     Набор полезных программ........................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.<font color="fuchsia">1</font>.     Ввод и вывод символов........................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.<font color="fuchsia">2</font>.     Копирование файла............................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.<font color="fuchsia">3</font>.     Подсчет символов.............................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.<font color="fuchsia">4</font>.     Подсчет строк................................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.<font color="fuchsia">5</font>.     Подсчет слов.................................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">6</font>.     Массивы........................................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">7</font>.     Функции........................................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">8</font>.     Аргументы - вызов по значению..................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">9</font>.     Массивы символов...............................<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">10</font>.    Область действия: внешние переменные...........<br>
+ <font color="fuchsia">1</font>.<font color="fuchsia">11</font>.    Резюме.........................................<br>
+ <font color="fuchsia">2</font>.    Типы, операции и выражения........................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">1</font>.     Имена переменных...............................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">2</font>.     Типы и размеры данных..........................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">3</font>.     Константы......................................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">3</font>.<font color="fuchsia">1</font>.     Символьная константа.........................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">3</font>.<font color="fuchsia">2</font>.     Константное выражение........................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">3</font>.<font color="fuchsia">3</font>.     Строчная константа...........................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">4</font>.     Описания.......................................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">5</font>.     Арифметические операции........................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">6</font>.     Операции отношения и логические операции.......<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">7</font>.     Преобразование типов...........................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">8</font>.     Операции увеличения и уменьшения...............<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">9</font>.     Побитовые логические операции..................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">10</font>.    Операции и выражения присваивания..............<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">11</font>.    Условные выражения.............................<br>
+ <font color="fuchsia">2</font>.<font color="fuchsia">12</font>.    Старшинство и порядок вычисления...............<br>
+ <font color="fuchsia">3</font>.    Поток управления..................................<br>
+ <font color="fuchsia">3</font>.<font color="fuchsia">1</font>.     Операторы и блоки..............................<br>
+ <font color="fuchsia">3</font>.<font color="fuchsia">2</font>.     <font color="yellow">IF</font> - <font color="yellow">ELSE</font>......................................<br>
+ <font color="fuchsia">3</font>.<font color="fuchsia">3</font>.     <font color="yellow">ELSE</font> - <font color="yellow">IF</font>......................................<br>
+ <font color="fuchsia">3</font>.<font color="fuchsia">4</font>.     Переключатель..................................<br>
+ <font color="fuchsia">3</font>.<font color="fuchsia">5</font>.     Циклы - <font color="yellow">WHILE</font> и <font color="yellow">FOR</font>............................<br>
+ <font color="fuchsia">3</font>.<font color="fuchsia">6</font>.     Цикл <font color="yellow">DO</font> - <font color="yellow">WHILE</font>................................<br>
+ <font color="fuchsia">3</font>.<font color="fuchsia">7</font>.     Оператор <font color="yellow">BREAK</font>.................................<br>
+ <font color="fuchsia">3</font>.<font color="fuchsia">8</font>.     Оператор <font color="yellow">CONTINUE</font>..............................<br>
+ <font color="fuchsia">3</font>.<font color="fuchsia">9</font>.     Оператор <font color="yellow">GOTO</font> и метки..........................<br>
+ <font color="fuchsia">4</font>.    Функции и структура программ......................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">1</font>.     Основные сведения..............................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">2</font>.     Функции, возвращающие нецелые значения.........<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">3</font>.     Еще об аргументах функций......................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">4</font>.     Внешние переменные.............................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">5</font>.     Правила, определяющие область действия.........<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">5</font>.<font color="fuchsia">1</font>.     Область действия.............................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">6</font>.     Статические переменные.........................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">7</font>.     Регистровые переменные.........................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">8</font>.     Блочная структура..............................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">9</font>.     Инициализация..................................<br>
+     <br>
+                             - <font color="fuchsia">4</font> -<br>
+     <br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">10</font>.    Рекурсия.......................................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">11</font>.    Препроцессор языка "<font color="yellow">C</font>".........................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">11</font>.<font color="fuchsia">1</font>.    Включение файлов.............................<br>
+ <font color="fuchsia">4</font>.<font color="fuchsia">11</font>.<font color="fuchsia">2</font>.    <font color="yellow">M</font>акроподстановка.............................<br>
+ <font color="fuchsia">5</font>.       Указатели и массивы............................<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">1</font>.     Указатели и адреса.............................<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">2</font>.     Указатели и аргументы функций..................<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">3</font>.     указатели и массивы............................<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">4</font>.     Адресная арифметика............................<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">5</font>.     указатели символов и функции...................<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">6</font>.     Указатели - не целые...........................<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">7</font>.     Многомерные массивы............................<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">8</font>.     Массивы указателей; указатели указателей.......<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">9</font>.     Инициализация массивов указателей..............<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">10</font>.    Указатели и многомерные массивы................<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">11</font>.    Командная строка аргументов....................<br>
+ <font color="fuchsia">5</font>.<font color="fuchsia">12</font>.    Указатели на функции...........................<br>
+ <font color="fuchsia">6</font>.    Структуры.........................................<br>
+ <font color="fuchsia">6</font>.<font color="fuchsia">1</font>.     Основные сведения..............................<br>
+ <font color="fuchsia">6</font>.<font color="fuchsia">2</font>.     Структуры и функции............................<br>
+ <font color="fuchsia">6</font>.<font color="fuchsia">3</font>.     Массивы сруктур................................<br>
+ <font color="fuchsia">6</font>.<font color="fuchsia">4</font>.     Указатели на структуры.........................<br>
+ <font color="fuchsia">6</font>.<font color="fuchsia">5</font>.     Структуры, ссылающиеся на себя.................<br>
+ <font color="fuchsia">6</font>.<font color="fuchsia">6</font>.     Поиск в таблице................................<br>
+ <font color="fuchsia">6</font>.<font color="fuchsia">7</font>.     Поля...........................................<br>
+ <font color="fuchsia">6</font>.<font color="fuchsia">8</font>.     Объединения....................................<br>
+ <font color="fuchsia">6</font>.<font color="fuchsia">9</font>.     Определение типа...............................<br>
+ <font color="fuchsia">7</font>.    Ввод и вывод......................................<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">1</font>.     Обращение к стандартной библиотеке.............<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">2</font>.     Стандартный ввод и вывод - функции  <font color="yellow">GETCHAR<br>
+</font>          и <font color="yellow">PUTCHAR</font>......................................<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">3</font>.     Форматный вывод - функция <font color="yellow">PRINTF</font>...............<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">4</font>.     Форматный ввод - функция <font color="yellow">SCANF</font>.................<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">5</font>.     Форматное преобразование в памяти..............<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">6</font>.     Доступ к файлам................................<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">7</font>.     Обработка ошибок - <font color="yellow">STDERR</font> и <font color="yellow">EXIT</font>...............<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">8</font>.     Ввод и вывод строк.............................<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">9</font>.     Несколько разнообразных функций................<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">9</font>.<font color="fuchsia">1</font>.     Проверка вида символов и преобразования......<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">9</font>.<font color="fuchsia">2</font>.     Функция <font color="yellow">UNGETC</font>...............................<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">9</font>.<font color="fuchsia">3</font>.     Обращение к системе..........................<br>
+ <font color="fuchsia">7</font>.<font color="fuchsia">9</font>.<font color="fuchsia">4</font>.     Управление памятью...........................<br>
+ <font color="fuchsia">8</font>.    Интерфейс системы <font color="yellow">UNIX</font>............................<br>
+ <font color="fuchsia">8</font>.<font color="fuchsia">1</font>.     Дескрипторы файлов.............................<br>
+ <font color="fuchsia">8</font>.<font color="fuchsia">2</font>.     Низкоуровневый ввод/вывод - операторы  <font color="yellow">READ<br>
+</font>          и <font color="yellow">WRITE</font>........................................<br>
+ <font color="fuchsia">8</font>.<font color="fuchsia">3</font>.     Открытие, создание, закрытие и  расцепление<br>
+          (<font color="yellow">UNLINK</font>).......................................<br>
+ <font color="fuchsia">8</font>.<font color="fuchsia">4</font>.     Произвольный доступ - <font color="yellow">SEEK</font> и <font color="yellow">LSEEK</font>.............<br>
+ <font color="fuchsia">8</font>.<font color="fuchsia">5</font>.     Пример - реализация функций <font color="yellow">FOPEN</font> и <font color="yellow">GETC</font>.......<br>
+ <font color="fuchsia">8</font>.<font color="fuchsia">6</font>.     Пример - распечатка справочников...............<br>
+ <font color="fuchsia">8</font>.<font color="fuchsia">7</font>.     Пример - распределитель памяти.................<br>
+     <br>
+                             - <font color="fuchsia">5</font> -<br>
+       Приложение а: справочное руководство по языку '<font color="yellow">C</font>'.<br>
+ <font color="fuchsia">9</font>.<font color="fuchsia">1</font>.     Введение.......................................<br>
+ <font color="fuchsia">10</font>.   Лексические соглашения............................<br>
+ <font color="fuchsia">10</font>.<font color="fuchsia">1</font>.    Комментарии....................................<br>
+ <font color="fuchsia">10</font>.<font color="fuchsia">2</font>.    Идентификаторы (имена).........................<br>
+ <font color="fuchsia">10</font>.<font color="fuchsia">3</font>.    Ключевые слова.................................<br>
+ <font color="fuchsia">10</font>.<font color="fuchsia">4</font>.    Константы......................................<br>
+ <font color="fuchsia">10</font>.<font color="fuchsia">4</font>.<font color="fuchsia">1</font>.    Целые константы..............................<br>
+ <font color="fuchsia">10</font>.<font color="fuchsia">4</font>.<font color="fuchsia">2</font>.    Явные длинные константы......................<br>
+ <font color="fuchsia">10</font>.<font color="fuchsia">4</font>.<font color="fuchsia">3</font>.    Символьные константы.........................<br>
+ <font color="fuchsia">10</font>.<font color="fuchsia">4</font>.<font color="fuchsia">4</font>.    Плавающие константы..........................<br>
+ <font color="fuchsia">10</font>.<font color="fuchsia">5</font>.    Строки.........................................<br>
+ <font color="fuchsia">10</font>.<font color="fuchsia">6</font>.    Характеристики аппаратных средств..............<br>
+ <font color="fuchsia">11</font>.   Синтаксическая нотация............................<br>
+ <font color="fuchsia">12</font>.   Что в имене тебе моем?............................<br>
+ <font color="fuchsia">13</font>.   Объекты и <font color="yellow">L</font>-значения..............................<br>
+ <font color="fuchsia">14</font>.   Преобразования....................................<br>
+ <font color="fuchsia">14</font>.<font color="fuchsia">1</font>.    Символы и целые................................<br>
+ <font color="fuchsia">14</font>.<font color="fuchsia">2</font>.    Типы <font color="yellow">FLOAT</font> и <font color="yellow">DOUBLE</font>............................<br>
+ <font color="fuchsia">14</font>.<font color="fuchsia">3</font>.    Плавающие и целочисленные величины.............<br>
+ <font color="fuchsia">14</font>.<font color="fuchsia">4</font>.    Указатели и целые..............................<br>
+ <font color="fuchsia">14</font>.<font color="fuchsia">5</font>.    Целое без знака................................<br>
+ <font color="fuchsia">14</font>.<font color="fuchsia">6</font>.    Арифметические преобразования..................<br>
+ <font color="fuchsia">15</font>.   Выражения.........................................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">1</font>.    Первичные выражения............................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">2</font>.    Унарные операции...............................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">3</font>.    Мультипликативные операции.....................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">4</font>.    Аддитивные операции............................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">5</font>.    Операции сдвига................................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">6</font>.    Операции отношения.............................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">7</font>.    Операции равенства.............................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">8</font>.    Побитовая операция 'и'.........................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">9</font>.    Побитовая операция исключающего 'или'..........<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">10</font>.   Побитовая операция включающего 'или'...........<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">11</font>.   Логическая операция 'и'........................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">12</font>.   Операция логического 'или'.....................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">13</font>.   Условная операция..............................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">14</font>.   Операция присваивания..........................<br>
+ <font color="fuchsia">15</font>.<font color="fuchsia">15</font>.   Операция запятая...............................<br>
+ <font color="fuchsia">16</font>.   Описания..........................................<br>
+ <font color="fuchsia">16</font>.<font color="fuchsia">1</font>.    Спецификаторы класса памяти....................<br>
+ <font color="fuchsia">16</font>.<font color="fuchsia">2</font>.    Спецификаторы типа.............................<br>
+ <font color="fuchsia">16</font>.<font color="fuchsia">3</font>.    Описатели......................................<br>
+ <font color="fuchsia">16</font>.<font color="fuchsia">4</font>.    Смысл описателей...............................<br>
+ <font color="fuchsia">16</font>.<font color="fuchsia">5</font>.    Описание структур и объединений................<br>
+ <font color="fuchsia">16</font>.<font color="fuchsia">6</font>.    Инициализация..................................<br>
+ <font color="fuchsia">16</font>.<font color="fuchsia">7</font>.    Имена типов....................................<br>
+ <font color="fuchsia">16</font>.<font color="fuchsia">8</font>.    <font color="yellow">TYPEDEF</font>........................................<br>
+ <font color="fuchsia">17</font>.   Операторы.........................................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">1</font>.    Пператорное выражение..........................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">2</font>.    Составной оператор (или блок)..................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">3</font>.    Условные операторы.............................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">4</font>.    Оператор <font color="yellow">WHILE</font>.................................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">5</font>.    Оператор <font color="yellow">DO</font>....................................<br>
+     <br>
+                             - <font color="fuchsia">6</font> -<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">6</font>.    Оператор <font color="yellow">FOR</font>...................................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">7</font>.    Оператор <font color="yellow">SWITCH</font>................................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">8</font>.    Оператор <font color="yellow">BREAK</font>.................................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">9</font>.    Оператор <font color="yellow">CONTINUE</font>..............................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">10</font>.   Оператор возврата..............................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">11</font>.   Оператор <font color="yellow">GOTO</font>..................................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">12</font>.   Оомеченный оператор............................<br>
+ <font color="fuchsia">17</font>.<font color="fuchsia">13</font>.   Оустой оператор................................<br>
+ <font color="fuchsia">18</font>.   Внешние определения...............................<br>
+ <font color="fuchsia">18</font>.<font color="fuchsia">1</font>.    Внешнее определение функции....................<br>
+ <font color="fuchsia">18</font>.<font color="fuchsia">2</font>.    Внешние определения данных.....................<br>
+ <font color="fuchsia">19</font>.   Правила, определяющие область действия............<br>
+ <font color="fuchsia">19</font>.<font color="fuchsia">1</font>.    Лексическая область действия...................<br>
+ <font color="fuchsia">19</font>.<font color="fuchsia">2</font>.    Область действия внешних идентификаторов.......<br>
+ <font color="fuchsia">20</font>.   Строки управления компилятором....................<br>
+ <font color="fuchsia">20</font>.<font color="fuchsia">1</font>.    Замена лексем..................................<br>
+ <font color="fuchsia">20</font>.<font color="fuchsia">2</font>.    Включение файлов...............................<br>
+ <font color="fuchsia">20</font>.<font color="fuchsia">3</font>.    Условная компиляция............................<br>
+ <font color="fuchsia">21</font>.   Неявные описания..................................<br>
+ <font color="fuchsia">22</font>.   Снова о типах.....................................<br>
+ <font color="fuchsia">22</font>.<font color="fuchsia">1</font>.    Структуры и объединения........................<br>
+ <font color="fuchsia">22</font>.<font color="fuchsia">2</font>.    Функции........................................<br>
+ <font color="fuchsia">22</font>.<font color="fuchsia">3</font>.    Массивы, указатели и индексация................<br>
+ <font color="fuchsia">22</font>.<font color="fuchsia">4</font>.    Явные преобразования указателей................<br>
+ <font color="fuchsia">23</font>.   Константные выражения.............................<br>
+ <font color="fuchsia">24</font>.   Соображения о переносимости.......................<br>
+ <font color="fuchsia">25</font>.   Анахронизмы.......................................<br>
+ <font color="fuchsia">26</font>.   Сводка синтаксических правил......................<br>
+ <font color="fuchsia">26</font>.<font color="fuchsia">1</font>.    Выражения......................................<br>
+ <font color="fuchsia">26</font>.<font color="fuchsia">2</font>.    Описания.......................................<br>
+ <font color="fuchsia">26</font>.<font color="fuchsia">3</font>.    Операторы......................................<br>
+ <font color="fuchsia">26</font>.<font color="fuchsia">4</font>.    Внешние определения............................<br>
+ <font color="fuchsia">26</font>.<font color="fuchsia">5</font>.    Препроцессор...................................<br>
+ <font color="fuchsia">27</font>.   Присваивание структуры............................<br>
+ <font color="fuchsia">28</font>.   Тип перечисления..................................<br>
+ <font color="fuchsia">29</font>.   Таблица изображений непечатных символов языка "<font color="yellow">C</font>".<br>
+          <br>
+                             - <font color="fuchsia">7</font> -<br>
+ <font color="fuchsia">0</font>.<font color="fuchsia">1</font>. Введение.<br>
+      Язык "<font color="yellow">C</font>" является универсальным языком программирова-<br>
+ ния. Он тесно связан с операционной системой "<font color="yellow">UNIX</font>" , так<br>
+ как был развит на этой системе и так как "<font color="yellow">UNIX</font>" и ее прог-<br>
+ раммное обеспечение написано на "<font color="yellow">C</font>". Сам язык , однако, не<br>
+ связан с какой-либо одной операционной системой или машиной;<br>
+ и хотя его называют языком системного программирования, так<br>
+ как он удобен для написания операционных систем, он с равным<br>
+ успехом использовался при написании больших вычислительных<br>
+ программ, программ для обработки текстов и баз данных.<br>
+      Язык "<font color="yellow">C</font>" - это язык относительно "низкого уровня". В<br>
+ такой характеристике нет ничего оскорбительного; это просто<br>
+ означает, что "<font color="yellow">C</font>" имеет дело с объектами того же вида, что и<br>
+ большинство ЭВМ, а именно, с символами, числами и адресами.<br>
+ Они могут объединяться и пересылаться посредством обычных<br>
+ арифметических и логических операций, осуществляемых реаль-<br>
+ ными ЭВМ.<br>
+      В языке "<font color="yellow">C</font>" отсутствуют операции, имеющие дело непос-<br>
+ редственно с составными объектами, такими как строки симво-<br>
+ лов, множества, списки или с массивами, рассматриваемыми как<br>
+ целое. Здесь, например, нет никакого аналога операциям <font color="yellow">PL</font>/<font color="fuchsia">1</font>,<br>
+ оперирующим с целыми массивами и строками. Язык не предос-<br>
+ тавляет никаких других возможностей распределения памяти,<br>
+ кроме статического определения и механизма стеков, обеспечи-<br>
+ ваемого локальными переменных функций; здесь нет ни<br>
+ "куч"(<font color="yellow">HEAP</font>), ни "сборки мусора", как это предусматривается в<br>
+ АЛГОЛЕ-<font color="fuchsia">68</font>. Наконец, сам по себе "<font color="yellow">C</font>" не обеспечивает никаких<br>
+ возможностей ввода-вывода: здесь нет операторов <font color="yellow">READ</font> или<br>
+ <font color="yellow">WRITE</font> и никаких встроенных методов доступа к файлам. Все эти<br>
+ механизмы высокого уровня должны обеспечиваться явно вызыва-<br>
+ емыми функциями.<br>
+      Аналогично, язык "<font color="yellow">C</font>" предлагает только простые, после-<br>
+ довательные конструкции потоков управления: проверки, циклы,<br>
+ группирование и подпрограммы, но не мультипрограммирование,<br>
+ параллельные операции, синхронизацию или сопрограммы.<br>
+      Хотя отсутствие некоторых из этих средств может выгля-<br>
+ деть как удручающая неполноценность ("выходит, что я должен<br>
+ обращаться к функции, чтобы сравнить две строки символов<br>
+ ?!"), но удержание языка в скромных размерах дает реальные<br>
+ преимущества. Так как "<font color="yellow">C</font>" относительно мал, он не требует<br>
+ много места для своего описания и может быть быстро выучен.<br>
+ Компилятор с "<font color="yellow">C</font>" может быть простым и компактным. Кроме то-<br>
+ го, компиляторы легко пишутся; при использовании современной<br>
+ технологии можно ожидать написания компилятора для новой ЭВМ<br>
+ за пару месяцев и при этом окажется, что <font color="fuchsia">80</font> процентов прог-<br>
+ раммы нового компилятора будет общей с программой для уже<br>
+ существующих компиляторов. Это обеспечивает высокую степень<br>
+ мобильности языка. Поскольку типы данных и стуктуры управле-<br>
+ ния, имеющиеся в "<font color="yellow">C</font>", непосредственно поддерживаются боль-<br>
+ шинством существующих ЭВМ, библиотека, необходимая во время<br>
+ прогона изолированных программ, оказывается очень маленькой.<br>
+ На <font color="yellow">PDP</font> -<font color="fuchsia">11</font>, например, она содержит только программы для<br>
+ <font color="fuchsia">32</font>-битового умножения и деления и для выполнения программ<br>
+ ввода и вывода последовательностей. Конечно, каждая реализа-<br>
+ ция обеспечивает исчерпывающую, совместимую библиотеку функ-<br>
+ ций для выполнения операций ввода-вывода, обработки строк и<br>
+ распределения памяти, но так как обращение к ним осуществля-<br>
+ ется только явно, можно , если необходимо, избежать их вызо-<br>
+ ва; эти функции могут быть компактно написаны на самом "<font color="yellow">C</font>".<br>
+     <br>
+                             - <font color="fuchsia">8</font> -<br>
+     <br>
+      Опять же из-за того , что язык "<font color="yellow">C</font>" отражает возможности<br>
+ современных компьютеров, программы на "<font color="yellow">C</font>" оказываются доста-<br>
+ точно эффективными, так что не возникает побуждения писать<br>
+ вместо этого программы на языке ассемблера. Наиболее убеди-<br>
+ тельным примером этого является сама операционная система<br>
+ "<font color="yellow">UNIX</font>", которая почти полностью написана на "<font color="yellow">C</font>". Из <font color="fuchsia">13000<br>
+</font> строк программы системы только около <font color="fuchsia">800</font> строк самого низко-<br>
+ го уровня написаны на ассемблере. Кроме того, по существу<br>
+ все прикладное программное обеспечение системы "<font color="yellow">UNIX</font>" напи-<br>
+ сано на "<font color="yellow">C</font>"; подавляющее большинство пользователей системы<br>
+ "<font color="yellow">UNIX</font>"(включая одного из авторов этой книги) даже не знает<br>
+ языка ассемблера <font color="yellow">PDP</font>-<font color="fuchsia">11</font>.<br>
+      Хотя "<font color="yellow">C</font>" соответствует возможностям многих ЭВМ, он не<br>
+ зависит от какой-либо конкретной архитектуры машины и в силу<br>
+ этого без особых усилий позволяет писать "переносимые" прог-<br>
+ раммы, т.е. программы, которые можно пропускать без измене-<br>
+ ний на различных аппаратных средствах. В наших кругах стал<br>
+ уже традицией перенос программного обеспечения, разработан-<br>
+ ного на системе "<font color="yellow">UNIX</font>", на системы ЭВМ: <font color="yellow">HONEYWELL</font>, <font color="yellow">IBM</font> и<br>
+ <font color="yellow">INTERDATA</font>. Фактически компиляторы с "<font color="yellow">C</font>" и программное обес-<br>
+ печение во время прогона программ на этих четырех системах,<br>
+ по-видимому, гораздо более совместимы, чем стандартные вер-<br>
+ сии фортрана американского национального института стандар-<br>
+ тов (<font color="yellow">ANSI</font>). Сама операционная система "<font color="yellow">UNIX</font>" теперь работает<br>
+ как на <font color="yellow">PDP</font>-<font color="fuchsia">11</font>, так и на <font color="yellow">INTERDATA</font> <font color="fuchsia">8</font>/<font color="fuchsia">32</font>. За исключением прог-<br>
+ рамм, которые неизбежно оказываются в некоторой степени ма-<br>
+ шинно-зависимыми, таких как компилятор, ассемблер и отлад-<br>
+ чик. Написанное на языке "<font color="yellow">C</font>" программное обеспечение иден-<br>
+ тично на обеих машинах. Внутри самой операционной системы<br>
+ <font color="fuchsia">7000</font> строк программы, исключая математическое обеспечение<br>
+ языка ассемблера ЭВМ и управления операциями ввода-вывода,<br>
+ совпадают на <font color="fuchsia">95</font> процентов.<br>
+      Программистам, знакомым с другими языками, для сравне-<br>
+ ния и противопоставления может оказаться полезным упоминание<br>
+ нескольких исторических, технических и философских аспектов<br>
+ "<font color="yellow">C</font>".<br>
+      Многие из наиболее важных идей "<font color="yellow">C</font>" происходят от гораз-<br>
+ до более старого, но все еще вполне жизненного языка <font color="yellow">BCPL</font> ,<br>
+ разработанного Мартином Ричардсом. Косвенно язык <font color="yellow">BCPL</font> оказал<br>
+ влияние на "<font color="yellow">C</font>" через язык "<font color="yellow">B</font>", написанный Кеном Томпсоном в<br>
+ <font color="fuchsia">1970</font> году для первой операционной системы "<font color="yellow">UNIX</font>" на ЭВМ<br>
+ <font color="yellow">PDP</font>-<font color="fuchsia">7</font>.<br>
+      Хотя язык "<font color="yellow">C</font>" имеет несколько общих с <font color="yellow">BCPL</font> характерных<br>
+ особенностей, он никоим образом не является диалектом пос-<br>
+ леднего. И <font color="yellow">BCPL</font> и "<font color="yellow">B</font>" - "безтипные" языки; единственным ви-<br>
+ дом данных для них являются машинное слово, а доступ к дру-<br>
+ гим объектам реализуется специальными операторами или обра-<br>
+ щением к функциям. В языке "<font color="yellow">C</font>" объектами основных типов дан-<br>
+ ных являются символы, целые числа нескольких размеров и чис-<br>
+ ла с плавающей точкой. Кроме того, имеется иерархия произ-<br>
+ водных типов данных, создаваемых указателями, массивами,<br>
+ структурами, объединениями и функциями.<br>
+      <br>
+                             - <font color="fuchsia">9</font> -<br>
+     <br>
+      Язык "<font color="yellow">C</font>" включает основные конструкции потока управле-<br>
+ ния, требуемые для хорошо структуированных программ: группи-<br>
+ рование операторов, принятие решений (<font color="yellow">IF</font>), циклы с проверкой<br>
+ завершения в начале (<font color="yellow">WHILE</font>, <font color="yellow">FOR</font>) или в конце (<font color="yellow">DO</font>) и выбор<br>
+ одного из множества возможных вариантов (<font color="yellow">SWITCH</font>). (Все эти<br>
+ возможности обеспечивались и в <font color="yellow">BCPL</font>, хотя и при несколько<br>
+ отличном синтаксисе; этот язык предчувствовал наступившую<br>
+ через несколько лет моду на структурное программирование).<br>
+      В языке "<font color="yellow">C</font>" имеются указатели и возможность адресной<br>
+ арифметики. Аргументы передаются функциям посредством копи-<br>
+ рования значения аргумента , и вызванная функция не может<br>
+ изменить фактический аргумент в вызывающей программе. Если<br>
+ желательно добиться "вызова по ссылке", можно неявно пере-<br>
+ дать указатель, и функция сможет изменить объект, на который<br>
+ этот указатель указывает. Имена массивов передаются указани-<br>
+ ем начала массивов, так что аргументы типа массивов эффек-<br>
+ тивно вызываются по ссылке.<br>
+      К любой функции можно обращаться рекурсивно, и ее ло-<br>
+ кальные переменные обычно "автоматические", т.е. Создаются<br>
+ заново при каждом обращении. Описание одной функции не может<br>
+ содержаться внутри другой, но переменные могут описываться в<br>
+ соответствии с обычной блочной структурой. Функции в "<font color="yellow">C</font>" -<br>
+ программе могут транслироваться отдельно. переменные по от-<br>
+ ношению к функции могут быть внутренними, внешними, но из-<br>
+ вестными только в пределах одного исходного файла, или пол-<br>
+ ностью глобальными. Внутренние переменные могут быть автома-<br>
+ тическими или статическими. Автоматические переменные для<br>
+ большей эффективности можно помещать в регистры, но объявле-<br>
+ ние регистра является только указанием для компилятора и ни-<br>
+ как не связано с конкретными машинными регистрами.<br>
+      Язык "<font color="yellow">C</font>" не является языком со строгими типами в смысле<br>
+ паскаля или алгола <font color="fuchsia">68</font>. Он сравнительно снисходителен к пре-<br>
+ образованию данных, хотя и не будет автоматически преобразо-<br>
+ вывать типы данных с буйной непринужденностью языка <font color="yellow">PL</font>/<font color="fuchsia">1</font>.<br>
+ Существующие компиляторы не предусматривают никакой проверки<br>
+ во время выполнения программы индексов массивов, типов аргу-<br>
+ ментов и т.д.<br>
+      В тех ситуациях, когда желательна строгая проверка ти-<br>
+ пов, используется специальная версия компилятора. Эта прог-<br>
+ рамма называется <font color="yellow">LINT</font> очевидно потому, она выбирает кусочки<br>
+ пуха из вашей программы. Программа <font color="yellow">LINT</font> не генерирует машин-<br>
+ ного кода, а делает очень строгую проверку всех тех сторон<br>
+ программы, которые можно проконтролировать во время компиля-<br>
+ ции и загрузки. Она определяет несоответствие типов, несов-<br>
+ местимость аргументов, неиспользованные или очевидным обра-<br>
+ зом неинициализированные переменные, потенциальные трудности<br>
+ переносимости и т.д. Для программ,которые благополучно про-<br>
+ ходят через <font color="yellow">LINT</font>, гарантируется отсутствие ошибок типа при-<br>
+ мерно с той же полнотой, как и для программ, написанных,<br>
+ например, на АЛГОЛЕ-<font color="fuchsia">68</font>. Другие возможности программы <font color="yellow">LINT<br>
+</font> будут отмечены, когда представится соответствующий случай.<br>
+     <br>
+                            - <font color="fuchsia">10</font> -<br>
+     <br>
+      Наконец, язык "<font color="yellow">C</font>", подобно любому другому языку, имеет<br>
+ свои недостатки. Некоторые операции имеют неудачное старшин-<br>
+ ство; некоторые разделы синтаксиса могли бы быть лучше; су-<br>
+ шествует несколько версий языка, отличающихся небольшими де-<br>
+ талями. Тем не менее язык "<font color="yellow">C</font>" зарекомендовал себя как исклю-<br>
+ чительно эффективный и выразительный язык для широкого раз-<br>
+ нообразия применений программирования.<br>
+      Содержание книги организовано следующим образом. Глава<br>
+ <font color="fuchsia">1</font> является учебным введением в центральную часть языка "<font color="yellow">C</font>".<br>
+ Цель - позволить читателю стартовать так быстро,как только<br>
+ возможно, так как мы твердо убеждены, что единственный спо-<br>
+ соб изучить новый язык - писать на нем программы. При этом ,<br>
+ однако, предполагается рабочее владение основными элементами<br>
+ программирования; здесь не объясняется, что такое ЭВМ или<br>
+ компилятор, не поясняется смысл выражений типа <font color="yellow">N</font>=<font color="yellow">N</font>+<font color="fuchsia">1</font>. Хотя<br>
+ мы и пытались, где это возможно, продемонстрировать полезную<br>
+ технику программирования. Эта книга не предназначается быть<br>
+ справочным руководством по структурам данных и алгоритмам;<br>
+ там, где мы вынуждены были сделать выбор, мы концентрирова-<br>
+ лись на языке.<br>
+      В главах со <font color="fuchsia">2</font>-й по <font color="fuchsia">6</font>-ю различные аспекты "<font color="yellow">C</font>" излагаются<br>
+ более детально и несколько более формально, чем в главе <font color="fuchsia">1</font>,<br>
+ хотя ударение по-прежнему делается на разборе примеров за-<br>
+ конченных, полезных программ, а не на отдельных фрагментах.<br>
+      В главе <font color="fuchsia">2</font> обсуждаются основные типы данных, операторы и<br>
+ выражения. В главе <font color="fuchsia">3</font> рассматриваются управляющие операторы:<br>
+ <font color="yellow">IF</font>-<font color="yellow">ELSE</font> ,<font color="yellow">WHILE</font> ,<font color="yellow">FOR</font> и т.д. Глава <font color="fuchsia">4</font> охватывает функции и<br>
+ структуру программы - внешние переменные, правила определен-<br>
+ ных областей действия описания и т.д. В главе <font color="fuchsia">5</font> обсуждаются<br>
+ указатели и адресная арифметика. Глава <font color="fuchsia">6</font> содержит подробное<br>
+ описание структур и объединений.<br>
+      В главе <font color="fuchsia">7</font> описывается стандартная библиотека ввода-вы-<br>
+ вода языка "<font color="yellow">C</font>", которая обеспечивает стандартный интерфейс с<br>
+ операционной системой. Эта библиотека ввода-вывода поддержи-<br>
+ вается на всех машинах, на которых реализован "<font color="yellow">C</font>", так что<br>
+ программы, использующие ее для ввода, вывода и других сис-<br>
+ темных функций, могут переноситься с одной системы на другую<br>
+ по существу без изменений.<br>
+      В главе <font color="fuchsia">8</font> описывается интерфейс между "<font color="yellow">C</font>" - программами<br>
+ и операционной системой "<font color="yellow">UNIX</font>". Упор делается на ввод-вывод,<br>
+ систему файлов и переносимость. Хотя некоторые части этой<br>
+ главы специфичны для операционной системы "<font color="yellow">UNIX</font>", програм-<br>
+ мисты, не использующие "<font color="yellow">UNIX</font>", все же должны найти здесь по-<br>
+ лезный материал, в том числе некоторое представление о том,<br>
+ как реализована одна версия стандартной библиотеки и предло-<br>
+ жения для достижения переносимости программы.<br>
+      Приложение <font color="yellow">A</font> содержит справочное руководство по языку<br>
+ "<font color="yellow">C</font>". Оно является "официальным" изложением синтаксиса и се-<br>
+ мантики "<font color="yellow">C</font>" и (исключая чей-либо собственный компилятор)<br>
+ окончательным арбитром для всех двусмысленностей и упущений<br>
+ в предыдущих главах.<br>
+     <br>
+                            - <font color="fuchsia">11</font> -<br>
+     <br>
+      Так как "<font color="yellow">C</font>" является развивающимся языком, реализован-<br>
+ ным на множестве систем, часть материла настоящей книги мо-<br>
+ жет не соответствовать текущему состоянию разработки на ка-<br>
+ кой-то конкретной системе. Мы старались избегать таких проб-<br>
+ лем и предостерегать о возможных трудностях. В сомнительных<br>
+ случаях, однако, мы обычно предпочитали описывать ситуацию<br>
+ для системы "<font color="yellow">UNIX</font>" <font color="yellow">PDP</font>-<font color="fuchsia">11</font> , так как она является средой для<br>
+ большинства программирующих на языке "<font color="yellow">C</font>". В приложении а<br>
+ также описаны расхождения в реализациях языка "<font color="yellow">C</font>" на основ-<br>
+ ных системах.<br>
+      <font color="fuchsia">1</font>. Учебное введение.<br>
+      Давайте начнем с быстрого введения в язык "<font color="yellow">C</font>". Наша<br>
+ цель - продемонстрировать существенные элементы языка на ре-<br>
+ альных программах, не увязая при этом в деталях, формальных<br>
+ правилах и исключениях. В этой главе мы не пытаемся изложить<br>
+ язык полностью или хотя бы строго (разумеется, приводимые<br>
+ примеры будут корректными). Мы хотим как можно скорее довес-<br>
+ ти вас до такого уровня, на котором вы были бы в состоянии<br>
+ писать полезные программы, и чтобы добиться этого, мы сосре-<br>
+ дотачиваемся на основном: переменных и константах, арифмети-<br>
+ ке, операторах передачи управления, функциях и элементарных<br>
+ сведениях о вводе и выводе. Мы совершенно намеренно оставля-<br>
+ ем за пределами этой главы многие элементы языка "<font color="yellow">C</font>", кото-<br>
+ рые имеют первостепенное значение при написании больших<br>
+ программ, в том числе указатели, сртуктуры, большую часть из<br>
+ богатого набора операторов языка "<font color="yellow">C</font>", несколько операторов<br>
+ передачи управления и несметное количество деталей.<br>
+      Такой подход имеет, конечно, свои недостатки. Самым су-<br>
+ щественным является то, что полное описание любого конкрет-<br>
+ ного элемента языка не излагается в одном месте, а поясне-<br>
+ ния, в силу краткости, могут привести к неправильному истол-<br>
+ кованию. Кроме того, из-за невозможности использовать всю<br>
+ мощь языка, примеры оказываются не столь краткими и элегант-<br>
+ ными, как они могли бы быть. И хотя мы старались свести эти<br>
+ недостатки к минимуму, все же имейте их ввиду.<br>
+      Другой недостаток состоит в том, что последующие главы<br>
+ будут неизбежно повторять некоторые части этой главы. Мы на-<br>
+ деемся, что такое повторение будет скорее помогать, чем раз-<br>
+ дражать.<br>
+      Во всяком случае, опытные программисты должны оказаться<br>
+ в состоянии проэкстраполировать материал данной главы на<br>
+ свои собственные программистские нужды. Начинающие же должны<br>
+ в дополнение писать аналогичные маленькие самостоятельные<br>
+ программы. И те, и другие могут использовать эту главу как<br>
+ каркас, на который будут навешиваться более подробные описа-<br>
+ ния, начинающиеся с главы <font color="fuchsia">2</font>.<br>
+      <font color="fuchsia">1</font>.<font color="fuchsia">1</font>. <font color="yellow">H</font>ачинаем. Единственный способ освоить новый язык<br>
+ программирования - писать на нем программы. Первая програм-<br>
+ ма, которая должна быть написана, - одна для всех языков:<br>
+ напечатать слова : <font color="yellow">HELLO</font>, <font color="yellow">WORLD</font>.<br>
+      Это - самый существенный барьер; чтобы преодолеть его,<br>
+ вы должны суметь завести где-то текст программы, успешно его<br>
+ скомпилировать, загрузить, прогнать и найти, где оказалась<br>
+ ваша выдача. Если вы научились справляться с этими техничес-<br>
+ кими деталями, все остальное сравнительно просто.<br>
+     <br>
+                            - <font color="fuchsia">12</font> -<br>
+     <br>
+      Программа печати "<font color="yellow">HELLO</font>, <font color="yellow">WORLD</font>" на языке "<font color="yellow">C</font>" имеет вид:<br>
+      <br>
+    <font color="yellow">MAIN</font> ()<br>
+    {<br>
+            <font color="yellow">PRINTF</font>("<font color="yellow">HELLO</font>, <font color="yellow">WORLD</font>\<font color="yellow">N</font>");<br>
+    }<br>
+      Как пропустить эту программу - зависит от используемой<br>
+ вами системы. В частности, на операционной системе "<font color="yellow">UNIX</font>" вы<br>
+ должны завести исходную программу в файле, имя которого<br>
+ оканчивается на ".<font color="yellow">C</font>" , например, <font color="yellow">HELLO</font>.<font color="yellow">C</font> , и затем скомпили-<br>
+ ровать ее по команде<br>
+      <br>
+            <font color="yellow">CC</font> <font color="yellow">HELLO</font>.<font color="yellow">C<br>
+</font>      <br>
+      Если вы не допустили какой-либо небрежности , такой как<br>
+ пропуск символа или неправильное написание, компиляция прой-<br>
+ дет без сообщений и будет создан исполняемый файл с именем<br>
+ а.<font color="yellow">OUT</font> . Прогон его по команде<br>
+      <br>
+               <font color="yellow">A</font>.<font color="yellow">OUT<br>
+</font>      <br>
+ приведет к выводу<br>
+      <br>
+           <font color="yellow">HELLO</font>, <font color="yellow">WORLD<br>
+</font>      <br>
+      На других системах эти правила будут иными; проконсуль-<br>
+ тируйтесь с местным авторитетом.<br>
+      Упражнение <font color="fuchsia">1</font>-<font color="fuchsia">1</font>.<br>
+      ---------------<br>
+      Пропустите эту программу на вашей системе. Попробуйте<br>
+ не включать различные части программы и посмотрите какие со-<br>
+ общения об ошибках вы при этом получите.<br>
+      Теперь некоторые пояснения к самой программе. Любая<br>
+ "<font color="yellow">C</font>"-программа, каков бы ни был ее размер, состоит из одной<br>
+ или более "функций", указывающих фактические операции<br>
+ компьютера, которые должны быть выполнены. Функции в языке<br>
+ "<font color="yellow">C</font>" подобны функциям и подпрограммам фортрана и процедурам<br>
+ <font color="yellow">PL</font>/<font color="fuchsia">1</font>, паскаля и т.д. В нашем примере такой функцией является<br>
+ <font color="yellow">MAIN</font>. Обычно вы можете давать функциям любые имена по вашему<br>
+ усмотрению, но <font color="yellow">MAIN</font> - это особое имя; выполнение вашей прог-<br>
+ раммы начинается сначала с функции <font color="yellow">MAIN</font>. Это означает, что<br>
+ каждая программа должна в каком-то месте содержать функцию с<br>
+ именем <font color="yellow">MAIN</font>. Для выполнения определенных действий функция<br>
+ <font color="yellow">MAIN</font> обычно обращается к другим функциям, часть из которых<br>
+ находится в той же самой программе, а часть - в библиотеках,<br>
+ содержащих ранее написанные функции.<br>
+     <br>
+                            - <font color="fuchsia">13</font> -<br>
+     <br>
+      Одним способом обмена данными между функциями является<br>
+ передача посредством аргументов. Круглые скобки, следующие<br>
+ за именем функции, заключают в себе список аргументов; здесь<br>
+ ма<font color="yellow">IN</font> - функция без аргументов, что указывается как (). Опе-<br>
+ раторы, составляющие функцию, заключаются в фигурные скобки<br>
+ { и }, которые аналогичны <font color="yellow">DO</font>-<font color="yellow">END</font> в <font color="yellow">PL</font>/<font color="fuchsia">1</font> или <font color="yellow">BEGIN</font>-<font color="yellow">END</font> в ал-<br>
+ голе, паскале и т.д. Обращение к функции осуществляется ука-<br>
+ занием ее имени, за которым следует заключенный в круглые<br>
+ скобки список аргументов. здесь нет никаких операторов <font color="yellow">CALL</font>,<br>
+ как в фортране или <font color="yellow">PL</font>/<font color="fuchsia">1</font>. Круглые скобки должны присутство-<br>
+ вать и в том случае, когда функция не имеет аргументов.<br>
+ Строка<br>
+      <br>
+      <font color="yellow">PRINTF</font>("<font color="yellow">HELLO</font>, <font color="yellow">WORLD</font>\<font color="yellow">N</font>");<br>
+      <br>
+ является обращением к функции, которое вызывает функцию<br>
+ с именем <font color="yellow">PRINTF</font> и аргуметом "<font color="yellow">HELLO</font>, <font color="yellow">WORLD</font>\<font color="yellow">N</font>". Функция <font color="yellow">PRINTF<br>
+</font> является библиотечной функцией, которая выдает выходные дан-<br>
+ ные на терминал (если только не указано какое-то другое мес-<br>
+ то назначения). В данном случае печатается строка символов,<br>
+ являющаяся аргументом функции.<br>
+      Последовательность из любого количества символов, зак-<br>
+ люченных в удвоенные кавычки "...", называется 'символьной<br>
+ строкой' или 'строчной константой'. Пока мы будем использо-<br>
+ вать символьные строки только в качестве аргументов для<br>
+ <font color="yellow">PRINTF</font> и других функций.<br>
+      Последовательность \<font color="yellow">N</font> в приведенной строке является<br>
+ обозначением на языке "<font color="yellow">C</font>" для 'символа новой строки', кото-<br>
+ рый служит указанием для перехода на терминале к левому краю<br>
+ следующей строки. Если вы не включите \<font color="yellow">N</font> (полезный экспери-<br>
+ мент), то обнаружите, что ваша выдача не закончится перехо-<br>
+ дом терминала на новую строку. Использование последователь-<br>
+ ности \<font color="yellow">N</font> - единственный способ введения символа новой строки<br>
+ в аргумент функции <font color="yellow">PRINTF</font>; если вы попробуете что-нибудь<br>
+ вроде<br>
+      <br>
+          <font color="yellow">PRINTF</font>("<font color="yellow">HELLO</font>, <font color="yellow">WORLD<br>
+</font>          ");<br>
+      <br>
+ то "<font color="yellow">C</font>"-компилятор  будет печатать злорадные диагностические<br>
+ сообщения о недостающих кавычках.<br>
+      Функция <font color="yellow">PRINTF</font> не обеспечивает автоматического перехода<br>
+ на новую строку, так что многократное обращение к ней можно<br>
+ использовать для поэтапной сборки выходной строки. Наша пер-<br>
+ вая программа, печатающая идентичную выдачу, с точно таким<br>
+ же успехом могла бы быть написана в виде<br>
+      <br>
+     <font color="yellow">MAIN</font>()<br>
+     {<br>
+             <font color="yellow">PRINTF</font>("<font color="yellow">HELLO</font>, ");<br>
+             <font color="yellow">PRINTF</font>("<font color="yellow">WORLD</font>");<br>
+             <font color="yellow">PRINTF</font>("\<font color="yellow">N</font>");<br>
+     }<br>
+     <br>
+     <br>
+                            - <font color="fuchsia">14</font> -<br>
+      <br>
+      Подчеркнем, что \<font color="yellow">N</font> представляет только один символ. Ус-<br>
+ ловные 'последовательности', подобные \<font color="yellow">N</font> , дают общий и до-<br>
+ пускающий расширение механизм для представления трудных для<br>
+ печати или невидимых символов. Среди прочих символов в языке<br>
+ "<font color="yellow">C</font>" предусмотрены следующие: \т - для табуляции, \<font color="yellow">B</font> - для<br>
+ возврата на одну позицию, \" - для двойной кавычки и \\ для<br>
+ самой обратной косой черты.<br>
+      Упражнение <font color="fuchsia">1</font>-<font color="fuchsia">2</font>.<br>
+      ---------------<br>
+      Проведите эксперименты для того, чтобы узнать что прои-<br>
+ зойдет, если в строке, являющейся аргументом функции <font color="yellow">PRINTF<br>
+</font> будет содержаться \<font color="yellow">X</font>, где <font color="yellow">X</font> - некоторый символ, не входящий<br>
+ в вышеприведенный список.<br>
+     <font color="fuchsia">1</font>.<font color="fuchsia">2</font>. Переменные и арифметика.<br>
+      Следующая программа печатает приведенную ниже таблицу<br>
+ температур по Фаренгейту и их эквивалентов по стоградусной<br>
+ шкале Цельсия, используя для перевода формулу<br>
+      <br>
+          <font color="yellow">C</font> = (<font color="fuchsia">5</font>/<font color="fuchsia">9</font>)*(<font color="yellow">F</font>-<font color="fuchsia">32</font>).<br>
+     <font color="fuchsia">0</font>       -<font color="fuchsia">17</font>.<font color="fuchsia">8<br>
+</font>    <font color="fuchsia">20</font>        -<font color="fuchsia">6</font>.<font color="fuchsia">7<br>
+</font>    <font color="fuchsia">40</font>         <font color="fuchsia">4</font>.<font color="fuchsia">4<br>
+</font>    <font color="fuchsia">60</font>        <font color="fuchsia">15</font>.<font color="fuchsia">6<br>
+</font>   ...         ...<br>
+   <font color="fuchsia">260</font>       <font color="fuchsia">126</font>.<font color="fuchsia">7<br>
+</font>   <font color="fuchsia">280</font>       <font color="fuchsia">137</font>.<font color="fuchsia">8<br>
+</font>   <font color="fuchsia">300</font>       <font color="fuchsia">140</font>.<font color="fuchsia">9<br>
+</font>      <br>
+       Теперь сама программа:<br>
+      <br>
+    /* <font color="yellow">PRINT</font> <font color="yellow">FAHRENHEIT</font>-<font color="yellow">CELSIUS</font> <font color="yellow">TABLE<br>
+</font>    <font color="yellow">FOR</font> <font color="yellow">F</font> = <font color="fuchsia">0</font>, <font color="fuchsia">20</font>, ..., <font color="fuchsia">300</font> */<br>
+    <font color="yellow">MAIN</font>()<br>
+    {<br>
+    <font color="yellow">INT</font> <font color="yellow">LOWER</font>, <font color="yellow">UPPER</font>, <font color="yellow">STEP</font>;<br>
+    <font color="yellow">FLOAT</font> <font color="yellow">FAHR</font>, <font color="yellow">CELSIUS</font>;<br>
+    <font color="yellow">LOWER</font> = <font color="fuchsia">0</font>;  /* <font color="yellow">LOWER</font> <font color="yellow">LIMIT</font> <font color="yellow">OF</font> <font color="yellow">TEMPERATURE<br>
+</font>    <font color="yellow">TABLE</font> */<br>
+    <font color="yellow">UPPER</font> =<font color="fuchsia">300</font>; /* <font color="yellow">UPPER</font> <font color="yellow">LIMIT</font> */<br>
+    <font color="yellow">STEP</font>  = <font color="fuchsia">20</font>; /* <font color="yellow">STEP</font> <font color="yellow">SIZE</font> */<br>
+    <font color="yellow">FAHR</font> = <font color="yellow">LOWER</font>;<br>
+    <font color="yellow">WHILE</font> (<font color="yellow">FAHR</font> <= <font color="yellow">UPPER</font>) {<br>
+      <font color="yellow">CELSIUS</font> = (<font color="fuchsia">5</font>.<font color="fuchsia">0</font>/<font color="fuchsia">9</font>.<font color="fuchsia">0</font>) * (<font color="yellow">FAHR</font> -<font color="fuchsia">32</font>.<font color="fuchsia">0</font>);<br>
+      <font color="yellow">PRINTF</font>("%<font color="fuchsia">4</font>.<font color="fuchsia">0</font><font color="yellow">F</font> %<font color="fuchsia">6</font>.<font color="fuchsia">1</font><font color="yellow">F</font>\<font color="yellow">N</font>", <font color="yellow">FAHR</font>, <font color="yellow">CELSIUS</font>);<br>
+      <font color="yellow">FAHR</font> = <font color="yellow">FAHR</font> + <font color="yellow">STEP</font>;<br>
+    }<br>
+    }<br>
+     <br>
+                            - <font color="fuchsia">15</font> -<br>
+ <br>
+ Первые две строки<br>
+      <br>
+      /* <font color="yellow">PRINT</font> <font color="yellow">FAHRENHEIT</font>-<font color="yellow">CELSIUS</font> <font color="yellow">TABLE<br>
+</font>         <font color="yellow">FOR</font>  <font color="yellow">F</font> = <font color="fuchsia">0</font>, <font color="fuchsia">20</font>, ..., <font color="fuchsia">300</font> */<br>
+      <br>
+ являются комментарием, который в данном случае кратко пояс-<br>
+ няет, что делает программа. Любые символы между /* и */ иг-<br>
+ норируются компилятором; можно свободно пользоваться коммен-<br>
+ тариями для облегчения понимания программы. Комментарии мо-<br>
+ гут появляться в любом месте, где возможен пробел или пере-<br>
+ ход на новую строку.<br>
+     В языке "<font color="yellow">C</font>" все переменные должны быть описаны до их ис-<br>
+ пользования, обычно это делается в начале функции до первого<br>
+ выполняемого оператора. Если вы забудете вставить описание,<br>
+ то получите диагностическое сообщение от компилятора. Описа-<br>
+ ние состоит из типа и списка переменных, имеющих этот тип,<br>
+ как в<br>
+     <br>
+     <font color="yellow">INT</font> <font color="yellow">LOWER</font>, <font color="yellow">UPPER</font>, <font color="yellow">STEP</font>;<br>
+     <font color="yellow">FLOAT</font> <font color="yellow">FAHR</font>, <font color="yellow">CELSIUS</font>;<br>
+     <br>
+     Тип <font color="yellow">INT</font> означает, что все переменные списка целые; тип<br>
+ <font color="yellow">FLOAT</font> предназначен для чисел с плавающей точкой, т.е. для<br>
+ чисел, которые могут иметь дробную часть. Точность как <font color="yellow">INT</font> ,<br>
+ <font color="yellow">TAK</font> и <font color="yellow">FLOAT</font> зависит от конкретной машины, на которой вы ра-<br>
+ ботаете. На <font color="yellow">PDP</font>-<font color="fuchsia">11</font>, например, тип <font color="yellow">INT</font> соответствует <font color="fuchsia">16</font>-бито-<br>
+ вому числу со знаком, т.е. числу, лежащему между -<font color="fuchsia">32768</font> и<br>
+ +<font color="fuchsia">32767</font>. Число типа <font color="yellow">FLOAT</font> - это <font color="fuchsia">32</font>-битовое число, имеющее<br>
+ около семи значащих цифр и лежащее в диапазоне от <font color="fuchsia">10</font>е-<font color="fuchsia">38</font> до<br>
+ <font color="fuchsia">10</font>е+<font color="fuchsia">38</font>. В главе <font color="fuchsia">2</font> приводится список размеров для других ма-<br>
+ шин.<br>
+     В языке "<font color="yellow">C</font>" предусмотрено несколько других основных ти-<br>
+ пов данных, кроме <font color="yellow">INT</font> и <font color="yellow">FLOAT</font>:<br>
+ <font color="yellow">CHAR</font>    символ - один байт<br>
+ <font color="yellow">SHORT</font>   короткое целое<br>
+ <font color="yellow">LONG</font>    длинное целое<br>
+ <font color="yellow">DOUBLE</font>  плавающее с двойной точностью<br>
+     Размеры этих объектов тоже машинно-независимы; детали<br>
+ приведены в главе <font color="fuchsia">2</font>. Имеются также массивы, структуры и об-<br>
+ ъединения этих основных типов, указатели на них и функ-<br>
+ ции,которые их возвращают; со всеми ними мы встретимся в<br>
+ свое время.<br>
+     Фактически вычисления в программе перевода температур<br>
+ начинаются с операторов присваивания<br>
+ <font color="yellow">LOWER</font> = <font color="fuchsia">0</font>;<br>
+ <font color="yellow">UPPER</font> =<font color="fuchsia">300</font>;<br>
+ <font color="yellow">STEP</font> = <font color="fuchsia">20</font>;<br>
+ <font color="yellow">FAHR</font> =<font color="yellow">LOWER</font>;<br>
+ которые придают переменным их начальные значения. каждый от-<br>
+ дельный оператор заканчивается точкой с запятой.<br>
+     Каждая строка таблицы вычисляется одинаковым образом,<br>
+ так что мы используем цикл, повторяющийся один раз на стро-<br>
+ ку. В этом назначение оператора <font color="yellow">WHILE</font>:<br>
+     <br>
+ <font color="yellow">WHILE</font> (<font color="yellow">FAHR</font> <= <font color="yellow">UPPER</font>) {<br>
+ ....<br>
+ }         <br>
+                            - <font color="fuchsia">16</font> -<br>
+     <br>
+ проверяется условие в круглых скобках. Если оно истинно<br>
+ (<font color="yellow">FAHR</font> меньше или равно <font color="yellow">UPPER</font>), то выполняется тело цикла<br>
+ (все операторы, заключенные в фигурные скобки { и } ). Затем<br>
+ вновь проверяется это условие и, если оно истинно, опять вы-<br>
+ полняется тело цикла. Если же условие не выполняется ( <font color="yellow">FAHR<br>
+</font> превосходит <font color="yellow">UPPER</font> ), цикл заканчивается и происходит переход<br>
+ к выполнению оператора, следующего за оператором цикла. Так<br>
+ как в настоящей программе нет никаких последующих операто-<br>
+ ров, то выполнение программы завершается.<br>
+     Тело оператора <font color="yellow">WHILE</font> может состоять из одного или более<br>
+ операторов, заключенных в фигурные скобки, как в программе<br>
+ перевода температур, или из одного оператора без скобок,<br>
+ как, например, в<br>
+     <br>
+     <font color="yellow">WHILE</font> (<font color="yellow">I</font> < <font color="yellow">J</font>)<br>
+           <font color="yellow">I</font> = <font color="fuchsia">2</font> * <font color="yellow">I</font>;<br>
+     <br>
+     В обоих случаях операторы, управляемые оператором <font color="yellow">WHILE</font>,<br>
+ сдвинуты на одну табуляцию, чтобы вы могли с первого взгляда<br>
+ видеть, какие операторы находятся внутри цикла. Такой сдвиг<br>
+ подчеркивает логическую структуру программы. Хотя в языке<br>
+ "<font color="yellow">C</font>" допускается совершенно произвольное расположение опера-<br>
+ торов в строке, подходящий сдвиг и использование пробелов<br>
+ значительно облегчают чтение программ. Мы рекомендуем писать<br>
+ только один оператор на строке и (обычно) оставлять пробелы<br>
+ вокруг операторов. Расположение фигурных скобок менее сущес-<br>
+ твенно; мы выбрали один из нескольких популярных стилей. Вы-<br>
+ берите подходящий для вас стиль и затем используйте его пос-<br>
+ ледовательно.<br>
+     Основная часть работы выполняется в теле цикла. Темпера-<br>
+ тура по Цельсию вычисляется и присваивается переменной<br>
+ <font color="yellow">CELAIUS</font> оператором<br>
+     <br>
+      <font color="yellow">CELSIUS</font> = (<font color="fuchsia">5</font>.<font color="fuchsia">0</font>/<font color="fuchsia">9</font>.<font color="fuchsia">0</font>) * (<font color="yellow">FAHR</font>-<font color="fuchsia">32</font>.<font color="fuchsia">0</font>);<br>
+     <br>
+ причина использования выражения <font color="fuchsia">5</font>.<font color="fuchsia">0</font>/<font color="fuchsia">9</font>.<font color="fuchsia">0</font> вместо выглядящего<br>
+ проще <font color="fuchsia">5</font>/<font color="fuchsia">9</font> заключается в том, что в языке "<font color="yellow">C</font>", как и во мно-<br>
+ гих других языках, при делении целых происходит усечение,<br>
+ состоящее в отбрасывании дробной части результата. Таким об-<br>
+ разом, результат операции <font color="fuchsia">5</font>/<font color="fuchsia">9</font> равен нулю, и, конечно, в этом<br>
+ случае все температуры оказались бы равными нулю. Десятичная<br>
+ точка в константе указывает, что она имеет тип с плавающей<br>
+ точкой, так что, как мы и хотели, <font color="fuchsia">5</font>.<font color="fuchsia">0</font>/<font color="fuchsia">9</font>.<font color="fuchsia">0</font> равно <font color="fuchsia">0</font>.<font color="fuchsia">5555</font>... .<br>
+     Мы также писали <font color="fuchsia">32</font>.<font color="fuchsia">0</font> вместо <font color="fuchsia">32</font> , несмотря на то, что так<br>
+ как переменная <font color="yellow">FAHR</font> имеет тип <font color="yellow">FLOAT</font> , целое <font color="fuchsia">32</font> автоматически<br>
+ бы преобразовалось к типу <font color="yellow">FLOAT</font> ( в <font color="fuchsia">32</font>.<font color="fuchsia">0</font>) перед вычитанием.<br>
+ С точки зрения стиля разумно писать плавающие константы с<br>
+ явной десятичной точкой даже тогда, когда они имеют целые<br>
+ значения; это подчеркивает их плавающую природу для просмат-<br>
+ ривающего программу и обеспечивает то, что компилятор будет<br>
+ смотреть на вещи так же, как и Вы.<br>
+     <br>
+                            - <font color="fuchsia">17</font> -<br>
+     <br>
+     Подробные правила о том, в каком случае целые преобразу-<br>
+ ются к типу с плаваюшей точкой, приведены в главе <font color="fuchsia">2</font>. Сейчас<br>
+ же отметим, что присваивание<br>
+     <br>
+            <font color="yellow">FAHR</font> = <font color="yellow">LOWER</font>;<br>
+     <br>
+ проверка<br>
+     <br>
+            <font color="yellow">WHILE</font> (<font color="yellow">FAHR</font> <= <font color="yellow">UPPER</font>)<br>
+     <br>
+ работают, как ожидается, - перед выполнением операций целые<br>
+ преобразуются в плавающую форму.<br>
+     Этот же пример сообщает чуть больше о том, как работает<br>
+ <font color="yellow">PRINTF</font>. Функция <font color="yellow">PRINTF</font> фактически является универсальной<br>
+ функцией форматных преобразований, которая будет полностью<br>
+ описана в главе <font color="fuchsia">7</font>. Ее первым аргументом является строка сим-<br>
+ волов, которая должна быть напечатана, причем каждый знак %<br>
+ указывает, куда должен подставляться каждый из остальных ар-<br>
+ гументов /второй, третий, .../ и в какой форме он должен пе-<br>
+ чататься. Например, в операторе<br>
+     <br>
+   <font color="yellow">PRINTF</font>("%<font color="fuchsia">4</font>.<font color="fuchsia">0</font><font color="yellow">F</font> %<font color="fuchsia">6</font>.<font color="fuchsia">1</font><font color="yellow">F</font>\<font color="yellow">N</font>", <font color="yellow">FAHR</font>, <font color="yellow">CELSIUS</font>);<br>
+     <br>
+ спецификация преобразования %<font color="fuchsia">4</font>.<font color="fuchsia">0</font><font color="yellow">F</font> говорит, что число с пла-<br>
+ вающей точкой должно быть напечатано в поле шириной по край-<br>
+ ней мере в четыре символа без цифр после десятичной точки.<br>
+ спецификация %<font color="fuchsia">6</font>.<font color="fuchsia">1</font><font color="yellow">F</font> описывает другое число, которое должно<br>
+ занимать по крайней мере шесть позиций с одной цифрой после<br>
+ десятичной точки, аналогично спецификациям <font color="yellow">F</font><font color="fuchsia">6</font>.<font color="fuchsia">1</font> в фортране<br>
+ или <font color="yellow">F</font>(<font color="fuchsia">6</font>,<font color="fuchsia">1</font>) в <font color="yellow">PL</font>/<font color="fuchsia">1</font>. Различные части спецификации могут быть<br>
+ опущены: спецификация %<font color="fuchsia">6</font><font color="yellow">F</font> говорит, что число будет шириной<br>
+ по крайней мере в шесть символов; спецификация %<font color="fuchsia">2</font> требует<br>
+ двух позиций после десятичной точки, но ширина при этом не<br>
+ ограничивается; спецификация %<font color="yellow">F</font> говорит только о том, что<br>
+ нужно напечатать число с плавающей точкой. Функция <font color="yellow">PRINTF<br>
+</font> также распознает следующие спецификации: %<font color="yellow">D</font> - для десятично-<br>
+ го целого, %о - для восьмеричного числа, %х - для шестнадца-<br>
+ тиричного, %с - для символа, %<font color="yellow">S</font> - для символьной строки и %%<br>
+ - для самого символа %.<br>
+     Каждая конструкция с символом % в первом аргументе функ-<br>
+ ции <font color="yellow">PRINTF</font> сочетается с соответствующим вторым, третьим, и<br>
+ т.д. Аргументами; они должны согласовываться по числу и ти-<br>
+ пу; в противном случае вы получите бессмысленные результаты.<br>
+     Между прочим, функция <font color="yellow">PRINTF</font> не является частью языка<br>
+ "<font color="yellow">C</font>"; в самом языке "<font color="yellow">C</font>" не определены операции ввода-вывода.<br>
+ Нет ничего таинственного и в функции <font color="yellow">PRINTF</font> ; это - просто<br>
+ полезная функция, являющаяся частью стандартной библиотеки<br>
+ подпрограмм, которая обычно доступна "<font color="yellow">C</font>"-программам. Чтобы<br>
+ сосредоточиться на самом языке, мы не будем подробно оста-<br>
+ навливаться на операциях ввода-вывода до главы <font color="fuchsia">7</font>. В частнос-<br>
+ ти, мы до тех пор отложим форматный ввод. Если вам надо<br>
+ ввести числа - прочитайте описание функции <font color="yellow">SCANF</font> в главе <font color="fuchsia">7</font>,<br>
+ раздел <font color="fuchsia">7</font>.<font color="fuchsia">4</font>. Функция <font color="yellow">SCANF</font> во многом сходна с <font color="yellow">PRINTF</font> , но она<br>
+ считывает входные данные, а не печатает выходные.<br>
+     <br>
+                            - <font color="fuchsia">18</font> -<br>
+     <br>
+      Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">3</font>.<br>
+      ----------------<br>
+     Преобразуйте программу перевода температур таким обра-<br>
+ зом, чтобы она печатала заголовок к таблице.<br>
+      Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">4</font>.<br>
+      ----------------<br>
+     Напишите программы печати соответствующей таблицы пере-<br>
+ хода от градусов цельсия к градусам фаренгейта.<br>
+     <br>
+     <font color="fuchsia">1</font>.<font color="fuchsia">3</font>. Оператор <font color="yellow">FOR</font>.<br>
+     Как и можно было ожидать, имеется множество различных<br>
+ способов написания каждой программы. Давайте рассмотрим та-<br>
+ кой вариант программы перевода температур:<br>
+     <br>
+ <font color="yellow">MAIN</font>()  /* <font color="yellow">FAHRENHEIT</font>-<font color="yellow">CELSIUS</font> <font color="yellow">TABLE</font> */<br>
+ {<br>
+    <font color="yellow">INT</font> <font color="yellow">FAHR</font>;<br>
+    <font color="yellow">FOR</font> (<font color="yellow">FAHR</font> = <font color="fuchsia">0</font>; <font color="yellow">FAHR</font> <= <font color="fuchsia">300</font>; <font color="yellow">FAHR</font> = <font color="yellow">FAHR</font> + <font color="fuchsia">20</font>)<br>
+  <font color="yellow">PRINTF</font>("%<font color="fuchsia">4</font><font color="yellow">D</font> %<font color="fuchsia">6</font>.<font color="fuchsia">1</font><font color="yellow">F</font>\<font color="yellow">N</font>", <font color="yellow">FAHR</font>, (<font color="fuchsia">5</font>.<font color="fuchsia">0</font>/<font color="fuchsia">9</font>.<font color="fuchsia">0</font>)*(<font color="yellow">FAHR</font>-<font color="fuchsia">32</font>.<font color="fuchsia">0</font>));<br>
+ }<br>
+     <br>
+     Эта программа выдает те же самые результаты, но выглядит<br>
+ безусловно по-другому. Главное изменение - исключение боль-<br>
+ шинства переменных; осталась только переменная <font color="yellow">FAHR</font> , причем<br>
+ типа <font color="yellow">INT</font> (это сделано для того, чтобы продемонстрировать<br>
+ преобразование %<font color="yellow">D</font> в функции <font color="yellow">PRINTF</font>). Нижняя и верхняя грани-<br>
+ цы и размер щага появляются только как константы в операторе<br>
+ <font color="yellow">FOR</font> , который сам является новой конструкцией, а выражение,<br>
+ вычисляющее температуру по цельсию, входит теперь в виде<br>
+ третьего аргумента функции <font color="yellow">PRINTF</font> , а не в виде отдельного<br>
+ оператора присваивания.<br>
+     Последнее изменение является примером вполне общего пра-<br>
+ вила языка "<font color="yellow">C</font>" - в любом контексте, в котором допускается<br>
+ использование значения переменной некоторого типа, вы можете<br>
+ использовать выражение этого типа. Так как третий аргумент<br>
+ функции <font color="yellow">PRINTF</font> должен иметь значение с плавающей точкой,<br>
+ чтобы соответствовать спецификации %<font color="fuchsia">6</font>.<font color="fuchsia">1</font><font color="yellow">F</font>, то в этом месте<br>
+ может встретиться любое выражение плавающего типа.<br>
+     Сам оператор <font color="yellow">FOR</font> - это оператор цикла, обобщающий опера-<br>
+ тор <font color="yellow">WHILE</font>. Его функционирование должно стать ясным, если вы<br>
+ сравните его с ранее описанным оператором <font color="yellow">WHILE</font> . Оператор<br>
+ <font color="yellow">FOR</font> содержит три части, разделяемые точкой с запятой. Первая<br>
+ часть<br>
+ <br>
+ <font color="yellow">FAHR</font> = <font color="fuchsia">0<br>
+</font> <br>
+ выполняется один раз перед входом в сам цикл. Вторая часть -<br>
+ проверка, или условие, которое управляет циклом:<br>
+ <br>
+ <font color="yellow">FAHR</font> <= <font color="fuchsia">300<br>
+</font> <br>
+ это условие проверяется и, если оно истинно, то выполняется<br>
+ тело цикла (в данном случае только функция <font color="yellow">PRINTF</font> ). Затем<br>
+ выполняется шаг реинициализации<br>
+     <br>
+                            - <font color="fuchsia">19</font> -<br>
+     <br>
+ <br>
+ <font color="yellow">FAHR</font> =<font color="yellow">FAHR</font> + <font color="fuchsia">20<br>
+</font> <br>
+ и условие проверяется снова. цикл завершается, когда это ус-<br>
+ ловие становится ложным. Так же, как и в случае оператора<br>
+ <font color="yellow">WHILE</font> , тело цикла может состоять из одного оператора или из<br>
+ группы операторов, заключенных в фигурные скобки. Инициали-<br>
+ зирующая и реинициализирующая части могут быть любыми от-<br>
+ дельными выражениями.<br>
+     Выбор между операторами <font color="yellow">WHILE</font> и <font color="yellow">FOR</font> произволен и основы-<br>
+ вается на том , что выглядит яснее. Оператор <font color="yellow">FOR</font> обычно удо-<br>
+ бен для циклов, в которых инициализация и реинициализация<br>
+ логически связаны и каждая задается одним оператором, так<br>
+ как в этом случае запись более компактна, чем при использо-<br>
+ вании оператора <font color="yellow">WHILE</font> , а операторы управления циклом сосре-<br>
+ дотачиваются вместе в одном месте.<br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">5</font>.<br>
+     ---------------<br>
+     Модифицируйте программу перевода температур таким обра-<br>
+ зом, чтобы она печатала таблицу в обратном порядке, т.е. От<br>
+ <font color="fuchsia">300</font> градусов до <font color="fuchsia">0</font>.<br>
+     <font color="fuchsia">1</font>.<font color="fuchsia">4</font>. Символические константы.<br>
+     Последнее замечание, прежде чем мы навсегда оставим<br>
+ программу перевода температур. Прятать "магические числа",<br>
+ такие как <font color="fuchsia">300</font> и <font color="fuchsia">20</font>, внутрь программы - это неудачная практи-<br>
+ ка; они дают мало информации тем, кто, возможно, должен бу-<br>
+ дет разбираться в этой программе позднее, и их трудно изме-<br>
+ нять систематическим образом. К счастью в языке "<font color="yellow">C</font>" предус-<br>
+ мотрен способ, позволяющий избежать таких "магических чи-<br>
+ сел". Используя конструкцию #<font color="yellow">DEFINE</font> , вы можете в начале<br>
+ программы определить символическое имя или символическую<br>
+ константу, которая будет конкретной строкой символов. Впос-<br>
+ ледствии компилятор заменит все не заключенные в кавычки по-<br>
+ явления этого имени на соответствующую строку. Фактически<br>
+ это имя может быть заменено абсолютно произвольным текстом,<br>
+ не обязательно цифрами<br>
+ <br>
+  #<font color="yellow">DEFINE</font>  <font color="yellow">LOWER</font> <font color="fuchsia">0</font>/* <font color="yellow">LOWER</font> <font color="yellow">LIMIT</font> <font color="yellow">OF</font> <font color="yellow">TABLE</font> */<br>
+  #<font color="yellow">DEFINE</font>  <font color="yellow">UPPER</font> <font color="fuchsia">300</font>  /* <font color="yellow">UPPER</font> <font color="yellow">LIMIT</font> */<br>
+  #<font color="yellow">DEFINE</font>  <font color="yellow">STEP</font>  <font color="fuchsia">20</font>  /* <font color="yellow">STEP</font> <font color="yellow">SIZE</font> */<br>
+  <font color="yellow">MAIN</font> () /* <font color="yellow">FAHRENHEIT</font>-<font color="yellow">CELSIUS</font> <font color="yellow">TABLE</font> */<br>
+  {<br>
+  <font color="yellow">INT</font> <font color="yellow">FAHR</font>;<br>
+ <font color="yellow">FOR</font> (<font color="yellow">FAHR</font> =<font color="yellow">LOWER</font>; <font color="yellow">FAHR</font> <= <font color="yellow">UPPER</font>; <font color="yellow">FAHR</font> =<font color="yellow">FAHR</font> + <font color="yellow">STEP</font>)<br>
+   <font color="yellow">PRINTF</font>("%<font color="fuchsia">4</font><font color="yellow">D</font> %<font color="fuchsia">6</font>.<font color="fuchsia">1</font><font color="yellow">F</font>\<font color="yellow">N</font>", <font color="yellow">FAHR</font>, (<font color="fuchsia">5</font>.<font color="fuchsia">0</font>/<font color="fuchsia">9</font>.<font color="fuchsia">0</font>)*(<font color="yellow">FAHR</font>-<font color="fuchsia">32</font>));<br>
+  }<br>
+ <br>
+ <br>
+     величины <font color="yellow">LOWER</font>, <font color="yellow">UPPER</font> и <font color="yellow">STEP</font> являются константами и поэ-<br>
+ тому они не указываются в описаниях. Символические имена<br>
+ обычно пишут прописными буквами, чтобы их было легко отли-<br>
+ чить от написанных строчными буквами имен переменных. отме-<br>
+ тим, что в конце определения не ставится точка с запятой.<br>
+ Так как подставляется вся строка, следующая за определенным<br>
+ именем, то это привело бы к слишком большому числу точек с<br>
+ запятой в операторе <font color="yellow">FOR</font> .<br>
+ <br>
+                            - <font color="fuchsia">20</font> -<br>
+     <br>
+     <font color="fuchsia">1</font>.<font color="fuchsia">5</font>. Набор полезных программ.<br>
+     <br>
+     Теперь мы собираемся рассмотреть семейство родственных<br>
+ программ, предназначенных для выполнения простых операций<br>
+ над символьными данными. В дальнейшем вы обнаружите, что<br>
+ многие программы являются просто расширенными версиями тех<br>
+ прототипов, которые мы здесь обсуждаем.<br>
+     <br>
+     <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.<font color="fuchsia">1</font>. Ввод и вывод символов.<br>
+     <br>
+     Стандартная библиотека включает функции для чтения и за-<br>
+ писи по одному символу за один раз. функция <font color="yellow">GETCHAR</font>() извле-<br>
+ кает следующий вводимый символ каждый раз, как к ней обраща-<br>
+ ются, и возвращает этот символ в качестве своего значения.<br>
+ Это значит, что после<br>
+ <br>
+         <font color="yellow">C</font> = <font color="yellow">GETCHAR</font>()<br>
+ <br>
+ переменная '<font color="yellow">C</font>' содержит следующий символ из входных данных.<br>
+ Символы обычно поступают с терминала, но это не должно нас<br>
+ касаться до главы <font color="fuchsia">7</font>.<br>
+     Функция <font color="yellow">PUTCHAR</font>(<font color="yellow">C</font>) является дополнением к <font color="yellow">GETCHAR</font> : в<br>
+ результате обращения<br>
+ <br>
+         <font color="yellow">PUTCHAR</font> (<font color="yellow">C</font>)<br>
+ <br>
+ содержимое переменной '<font color="yellow">C</font>' выдается на некоторый выходной но-<br>
+ ситель, обычно опять на терминал. Обращение к функциям<br>
+ <font color="yellow">PUTCHAR</font> и <font color="yellow">PRINTF</font> могут перемежаться; выдача будет появляться<br>
+ в том порядке, в котором происходят обращения.<br>
+     Как и функция <font color="yellow">PRINTF</font> , функции <font color="yellow">GETCHAR</font> и <font color="yellow">PUTCHAR</font> не со-<br>
+ держат ничего экстраординарного. Они не входят в состав язы-<br>
+ ка "<font color="yellow">C</font>", но к ним всегда можно обратиться.<br>
+ <br>
+     <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.<font color="fuchsia">2</font>. Копирование файла.<br>
+ <br>
+     Имея в своем распоряжении только функции <font color="yellow">GETCHAR</font> и<br>
+ <font color="yellow">PUTCHAR</font> вы можете, не зная ничего более об операциях вво-<br>
+ да-вывода, написать удивительное количество полезных прог-<br>
+ рамм. Простейшим примером может служить программа посимволь-<br>
+ ного копирования вводного файла в выводной. Общая схема име-<br>
+ ет вид:<br>
+ ввести символ<br>
+ <font color="yellow">WHILE</font> (символ не является признаком конца файла)<br>
+   вывести только что прочитанный символ<br>
+   ввести новый символ<br>
+ <br>
+ программа, написанная на языке "<font color="yellow">C</font>", выглядит следующим обра-<br>
+ зом:<br>
+ <br>
+  <font color="yellow">MAIN</font>()  /* <font color="yellow">COPY</font> <font color="yellow">INPUT</font> <font color="yellow">TO</font> <font color="yellow">OUTPUT</font>; <font color="fuchsia">1</font><font color="yellow">ST</font> <font color="yellow">VERSION</font> */<br>
+  {<br>
+     <font color="yellow">INT</font> <font color="yellow">C</font>;<br>
+ <br>
+     <font color="yellow">C</font> = <font color="yellow">GETCHAR</font>();<br>
+     <font color="yellow">WHILE</font> (<font color="yellow">C</font> != <font color="yellow">EOF</font>) {<br>
+            <font color="yellow">PUTCHAR</font> (<font color="yellow">C</font>);<br>
+            <font color="yellow">C</font> = <font color="yellow">GETCHAR</font>();<br>
+     }<br>
+  }<br>
+ <br>
+                            - <font color="fuchsia">21</font> -<br>
+     <br>
+ оператор отношения != означает "не равно".<br>
+      Основная проблема заключается в том, чтобы зафиксиро-<br>
+ вать конец файла ввода. Обычно, когда функция <font color="yellow">GETCHAR</font> натал-<br>
+ кивается на конец файла ввода, она возвращает значение , не<br>
+ являющееся действительным символом; таким образом, программа<br>
+ может установить, что файл ввода исчерпан. Единственное ос-<br>
+ ложнение, являющееся значительным неудобством, заключается в<br>
+ существовании двух общеупотребительных соглашений о том, ка-<br>
+ кое значение фактически является признаком конца файла. Мы<br>
+ отсрочим решение этого вопроса, использовав символическое<br>
+ имя <font color="yellow">EOF</font> для этого значения, каким бы оно ни было. На практи-<br>
+ ке <font color="yellow">EOF</font> будет либо -<font color="fuchsia">1</font>, либо <font color="fuchsia">0</font>, так что для правильной работы<br>
+ перед программой должно стоять собственно либо<br>
+ <br>
+  #<font color="yellow">DEFINE</font>  <font color="yellow">EOF</font>  -<font color="fuchsia">1<br>
+</font> <br>
+ либо<br>
+ <br>
+  #<font color="yellow">DEFINE</font>  <font color="yellow">EOF</font>   <font color="fuchsia">0<br>
+</font> <br>
+      Использовав символическую константу <font color="yellow">EOF</font> для представле-<br>
+ ния значения, возвращаемого функцией <font color="yellow">GETCHAR</font> при выходе на<br>
+ конец файла, мы обеспечили, что только одна величина в прог-<br>
+ рамме зависит от конкретного численного значения.<br>
+      Мы также описали переменную '<font color="yellow">C</font>' как <font color="yellow">INT</font> , а не <font color="yellow">CHAR</font> , с<br>
+ тем чтобы она могла хранить значение, возвращаемое <font color="yellow">GETCHAR</font> .<br>
+ как мы увидим в главе <font color="fuchsia">2</font>, эта величина действительно <font color="yellow">INT</font>, так<br>
+ как она должна быть в состоянии в дополнение ко всем возмож-<br>
+ ным символам представлять и <font color="yellow">EOF</font>.<br>
+      Программистом, имеющим опыт работы на "<font color="yellow">C</font>", программа<br>
+ копирования была бы написана более сжато. В языке "<font color="yellow">C</font>" любое<br>
+ присваивание, такое как<br>
+ <br>
+  <font color="yellow">C</font> = <font color="yellow">GETCHAR</font>()<br>
+ <br>
+ может быть использовано в выражении; его значение - просто<br>
+ значение, присваиваемое левой части. Если присваивание сим-<br>
+ вола переменной '<font color="yellow">C</font>' поместить внутрь проверочной части опе-<br>
+ ратора <font color="yellow">WHILE</font> , то программа копирования файла запишется в<br>
+ виде:<br>
+ <br>
+ <font color="yellow">MAIN</font>()  /* <font color="yellow">COPY</font> <font color="yellow">INPUT</font> <font color="yellow">TO</font> <font color="yellow">OUTPUT</font>; <font color="fuchsia">2</font><font color="yellow">ND</font> <font color="yellow">VERSION</font> */<br>
+ {<br>
+ <font color="yellow">INT</font> <font color="yellow">C</font>;<br>
+ <br>
+ <font color="yellow">WHILE</font> ((<font color="yellow">C</font> = <font color="yellow">GETCHAR</font>()) != <font color="yellow">EOF</font>)<br>
+ <font color="yellow">PUTCHAR</font>(<font color="yellow">C</font>);<br>
+ }<br>
+ <br>
+      Программа извлекает символ , присваивает его переменной<br>
+ '<font color="yellow">C</font>' и затем проверяет, не является ли этот символ признаком<br>
+ конца файла. Если нет - выполняется тело оператора <font color="yellow">WHILE</font>,<br>
+ выводящее этот символ. Затем цикл <font color="yellow">WHILE</font> повторяется. когда,<br>
+ наконец, будет достигнут конец файла ввода, оператор <font color="yellow">WHILE<br>
+</font> завершается, а вместе с ним заканчивается выполнение и функ-<br>
+ ции <font color="yellow">MAIN</font> .<br>
+     <br>
+                            - <font color="fuchsia">22</font> -<br>
+     <br>
+      В этой версии централизуется ввод - в программе только<br>
+ одно обращение к функции <font color="yellow">GETCHAR</font> - и ужимается программа.<br>
+ Вложение присваивания в проверяемое условие - это одно из<br>
+ тех мест языка "<font color="yellow">C</font>", которое приводит к значительному сокра-<br>
+ щению программ. Однако, на этом пути можно увлечься и начать<br>
+ писать недоступные для понимания программы. Эту тенденцию мы<br>
+ будем пытаться сдерживать.<br>
+      Важно понять , что круглые скобки вокруг присваивания в<br>
+ условном выражении действительно необходимы. Старшинство<br>
+ операции != выше, чем операции присваивания =, а это означа-<br>
+ ет, что в отсутствие круглых скобок проверка условия != бу-<br>
+ дет выполнена до присваивания =. Таким образом, оператор<br>
+ <br>
+ <font color="yellow">C</font> = <font color="yellow">GETCHAR</font>()  != <font color="yellow">EOF<br>
+</font> <br>
+ эквивалентен оператору<br>
+ <br>
+ <font color="yellow">C</font> = (<font color="yellow">GETCHAR</font>() != <font color="yellow">EOF</font>)<br>
+ <br>
+      Это, вопреки нашему желанию, приведет к тому, что '<font color="yellow">C</font>'<br>
+ будет принимать значение <font color="fuchsia">0</font> или <font color="fuchsia">1</font> в зависимости от того, на-<br>
+ толкнется или нет <font color="yellow">GETCHAR</font> на признак конца файла. Подробнее<br>
+ об этом будет сказано в главе <font color="fuchsia">2</font>/.<br>
+ <br>
+     <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.<font color="fuchsia">3</font>. Подсчет символов.<br>
+ <br>
+      Следующая программа подсчитывает число символов; она<br>
+ представляет собой небольшое развитие программы копирования.<br>
+ <br>
+  <font color="yellow">MAIN</font>()  /* <font color="yellow">COUNT</font> <font color="yellow">CHARACTERS</font> <font color="yellow">IN</font> <font color="yellow">INPUT</font> */<br>
+  {<br>
+      <font color="yellow">LONG</font> <font color="yellow">NC</font>;<br>
+ <br>
+      <font color="yellow">NC</font> = <font color="fuchsia">0</font>;<br>
+      <font color="yellow">WHILE</font> (<font color="yellow">GETCHAR</font>() != <font color="yellow">EOF</font> )<br>
+     ++<font color="yellow">NC</font>;<br>
+      <font color="yellow">PRINTF</font>("%<font color="fuchsia">1</font><font color="yellow">D</font>\<font color="yellow">N</font>", <font color="yellow">NC</font>);<br>
+  }<br>
+ <br>
+  Оператор<br>
+ <br>
+     ++<font color="yellow">NC</font>;<br>
+ <br>
+ демонстрирует новую операцию, ++, которая означает увеличе-<br>
+ ние на единицу. Вы могли бы написать <font color="yellow">NC</font> = <font color="yellow">NC</font> + <font color="fuchsia">1</font> , но ++<font color="yellow">NC<br>
+</font> более кратко и зачастую более эффективно. Имеется соответст-<br>
+ вующая операция -- уменьшение на единицу. Операции ++ и --<br>
+ могут быть либо префиксными (++<font color="yellow">NC</font>), либо постфиксными<br>
+ (<font color="yellow">NC</font>++); эти две формы, как будет показано в главе <font color="fuchsia">2</font>, имеют в<br>
+ выражениях различные значения, но как ++<font color="yellow">NC</font>, так и <font color="yellow">NC</font>++ уве-<br>
+ личивают <font color="yellow">NC</font>. Пока мы будем придерживаться префиксных опера-<br>
+ ций.<br>
+     <br>
+                            - <font color="fuchsia">23</font> -<br>
+     <br>
+      Программа подсчета символов накапливает их количество в<br>
+ переменной типа <font color="yellow">LONG</font>, а не <font color="yellow">INT</font> . На <font color="yellow">PDP</font>-<font color="fuchsia">11</font> максимальное зна-<br>
+ чение равно <font color="fuchsia">32767</font>, и если описать счетчик как <font color="yellow">INT</font> , то он<br>
+ будет переполняться даже при сравнительно малом файле ввода;<br>
+ на языке "<font color="yellow">C</font>" для <font color="yellow">HONEYWELL</font> и <font color="yellow">IBM</font> типы <font color="yellow">LONG</font> и <font color="yellow">INT</font> являются<br>
+ синонимами и имеют значительно больший размер. Спецификация<br>
+ преобразования %<font color="fuchsia">1</font><font color="yellow">D</font> указывает <font color="yellow">PRINTF</font> , что соответствующий<br>
+ аргумент является целым типа <font color="yellow">LONG</font> .<br>
+      Чтобы справиться с еще большими числами, вы можете ис-<br>
+ пользовать тип <font color="yellow">DOUBLE</font> / <font color="yellow">FLOAT</font> двойной длины/. мы также ис-<br>
+ пользуем оператор <font color="yellow">FOR</font> вместо <font color="yellow">WHILE</font> с тем, чтобы проиллюстри-<br>
+ ровать другой способ записи цикла.<br>
+ <br>
+  <font color="yellow">MAIN</font>()  /* <font color="yellow">COUNT</font> <font color="yellow">CHARACTERS</font> <font color="yellow">IN</font> <font color="yellow">INPUT</font> */<br>
+  {<br>
+      <font color="yellow">DOUBLE</font>  <font color="yellow">NC</font>;<br>
+ <br>
+      <font color="yellow">FOR</font> (<font color="yellow">NC</font> = <font color="fuchsia">0</font>; <font color="yellow">GETCHAR</font>() != <font color="yellow">EOF</font>; ++<font color="yellow">NC</font>)<br>
+     ;<br>
+      <font color="yellow">PRINTF</font>("%.<font color="fuchsia">0</font><font color="yellow">F</font>\<font color="yellow">N</font>", <font color="yellow">NC</font>);<br>
+  }<br>
+ <br>
+      Функция <font color="yellow">PRINTF</font> использует спецификацию %<font color="yellow">F</font> как для <font color="yellow">FLOAT<br>
+</font> , так и для <font color="yellow">DOUBLE</font> ; спецификация %.<font color="fuchsia">0</font><font color="yellow">F</font> подавляет печать не-<br>
+ существующей дробной части.<br>
+      Тело оператора цикла <font color="yellow">FOR</font> здесь пусто, так как вся рабо-<br>
+ та выполняется в проверочной и реинициализационной частях.<br>
+ Но грамматические правила языка "<font color="yellow">C</font>" требуют, чтобы оператор<br>
+ <font color="yellow">FOR</font> имел тело. Изолированная точка с запятой, соответствую-<br>
+ шая пустому оператору, появляется здесь, чтобы удовлетворить<br>
+ этому требованию. Мы выделили ее на отдельную строку, чтобы<br>
+ сделать ее более заметной.<br>
+      Прежде чем мы распростимся с программой подсчета симво-<br>
+ лов, отметим, что если файл ввода не содержит никаких симво-<br>
+ лов, то условие в <font color="yellow">WHILE</font> или <font color="yellow">FOR</font> не выполнится при самом пер-<br>
+ вом обращении к <font color="yellow">GETCHAR</font> , и, следовательно , программа вы-<br>
+ даст нуль, т.е. Правильный ответ. это важное замечание. од-<br>
+ ним из приятных свойств операторов <font color="yellow">WHILE</font> и <font color="yellow">FOR</font> является то,<br>
+ что они проверяют условие в начале цикла, т.е. До выполнения<br>
+ тела. Если делать ничего не надо, то ничего не будет сдела-<br>
+ но, даже если это означает, что тело цикла никогда не будет<br>
+ выполняться. программы должны действовать разумно, когда они<br>
+ обращаются с файлами типа "никаких символов". Операторы<br>
+ <font color="yellow">WHILE</font> и <font color="yellow">FOR</font> помогают обеспечить правильное поведение прог-<br>
+ рамм при граничных значениях проверяемых условий.<br>
+ <br>
+    <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.<font color="fuchsia">4</font>. Подсчет строк.<br>
+ <br>
+      Следующая программа подсчитывает количество строк в<br>
+ файле ввода. Предполагается, что строки ввода заканчиваются<br>
+ символом новой строки \<font color="yellow">N</font>, скрупулезно добавленным к каждой<br>
+ выписанной строке.<br>
+           <br>
+     <br>
+                            - <font color="fuchsia">24</font> -<br>
+     <br>
+ <font color="yellow">MAIN</font>()  /* <font color="yellow">COUNT</font> <font color="yellow">LINES</font> <font color="yellow">IN</font> <font color="yellow">INPUT</font> */<br>
+ {<br>
+     <font color="yellow">INT</font> <font color="yellow">C</font>,<font color="yellow">NL</font>;<br>
+ <br>
+     <font color="yellow">NL</font> = <font color="fuchsia">0</font>;<br>
+     <font color="yellow">WHILE</font> ((<font color="yellow">C</font> = <font color="yellow">GETCHAR</font>()) != <font color="yellow">EOF</font>)<br>
+    <font color="yellow">IF</font> (<font color="yellow">C</font> =='\<font color="yellow">N</font>')<br>
+        ++<font color="yellow">NL</font>;<br>
+     <font color="yellow">PRINTF</font>("%<font color="yellow">D</font>\<font color="yellow">N</font>", <font color="yellow">NL</font>);<br>
+ }<br>
+ <br>
+      Тело <font color="yellow">WHILE</font> теперь содержит оператор <font color="yellow">IF</font> , который в свою<br>
+ очередь управляет оператором увеличения ++<font color="yellow">NL</font>. Оператор <font color="yellow">IF<br>
+</font> проверяет заключенное в круглые скобки условие и, если оно<br>
+ истинно, выполняет следующий за ним оператор /или группу<br>
+ операторов, заключенных в фигурные скобки/. Мы опять исполь-<br>
+ зовали сдвиг вправо, чтобы показать, что чем управляет.<br>
+      Удвоенный знак равенства == является обозначением в<br>
+ языке "<font color="yellow">C</font>" для "равно" /аналогично .<font color="yellow">EQ</font>. В фортране/. Этот<br>
+ символ введен для того, чтобы отличать проверку на равенство<br>
+ от одиночного =, используемого при присваивании. Поскольку в<br>
+ типичных "<font color="yellow">C</font>" - программах знак присваивания встречается при-<br>
+ мерно в два раза чаще, чем проверка на равенство, то естест-<br>
+ венно, чтобы знак оператора был вполовину короче.<br>
+      Любой отдельный символ может быть записан внутри оди-<br>
+ ночных кавычек, и при этом ему соответствует значение, рав-<br>
+ ное численному значению этого символа в машинном наборе сим-<br>
+ волов; это называется символьной константой. Так, например,<br>
+ '<font color="yellow">A</font>' - символьная константа; ее значение в наборе символов<br>
+ <font color="yellow">ASCII</font> /американский стандартный код для обмена информацией/<br>
+ равно <font color="fuchsia">65</font>, внутреннему представлению символа а. Конечно, '<font color="yellow">A</font>'<br>
+ предпочтительнее, чем <font color="fuchsia">65</font>: его смысл очевиден и он не зависит<br>
+ от конкретного машинного набора символов.<br>
+      Условные последовательности, используемые в символьных<br>
+ строках, также занимают законное место среди символьных кон-<br>
+ стант. Так в проверках и арифметических выражениях '\<font color="yellow">N</font>'<br>
+ представляет значение символа новой строки. Вы должны твердо<br>
+ уяснить, что '\<font color="yellow">N</font>' - отдельный символ, который в выражениях<br>
+ эквивалентен одиночному целому; с другой стороны "\<font color="yellow">N</font>" - это<br>
+ символьная строка, которая содержит только один символ. Воп-<br>
+ рос о сопоставлении строк и символов обсуждается в главе <font color="fuchsia">2</font>.<br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">6</font>.<br>
+     ----------------<br>
+      Напишите программу для подсчета пробелов, табуляций и<br>
+ новых строк.<br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">7</font>.<br>
+     ----------------<br>
+      Напишите программу, которая копирует ввод на вывод, за-<br>
+ меняя при этом каждую последовательность из одного или более<br>
+ пробелов на один пробел.<br>
+ <br>
+      <font color="fuchsia">1</font>.<font color="fuchsia">5</font>.<font color="fuchsia">5</font>. Подсчет слов.<br>
+ <br>
+      Четвертая программа из нашей серии полезных программ<br>
+ подсчитывает количество строк, слов и символов, используя<br>
+ при этом весьма широкое определение, что словом является лю-<br>
+ бая последовательность символов, не содержащая пробелов, та-<br>
+ буляций или новых строк. /Это - упрощенная версия утилиты<br>
+ '<font color="yellow">WC</font>' системы '<font color="yellow">UNIX</font>'/<br>
+     <br>
+                            - <font color="fuchsia">25</font> -<br>
+     <br>
+ #<font color="yellow">DEFINE</font>    <font color="yellow">YES</font>  <font color="fuchsia">1<br>
+</font> #<font color="yellow">DEFINE</font>    <font color="yellow">NO</font>   <font color="fuchsia">0<br>
+</font> <br>
+ <font color="yellow">MAIN</font>()  /* <font color="yellow">COUNT</font> <font color="yellow">LINES</font>, <font color="yellow">WORDS</font>, <font color="yellow">CHARS</font> <font color="yellow">IN</font> <font color="yellow">INPUT</font> */<br>
+ {<br>
+    <font color="yellow">INT</font> <font color="yellow">C</font>, <font color="yellow">NL</font>, <font color="yellow">NW</font>, <font color="yellow">INWORD</font>;<br>
+ <br>
+    <font color="yellow">INWORD</font> = <font color="yellow">NO</font>;<br>
+    <font color="yellow">NL</font> = <font color="yellow">NW</font> = <font color="yellow">NC</font> = <font color="fuchsia">0</font>;<br>
+    <font color="yellow">WHILE</font>((<font color="yellow">C</font> = <font color="yellow">GETCHAR</font>()) != <font color="yellow">EOF</font>)  {<br>
+        ++<font color="yellow">NC</font>;<br>
+        <font color="yellow">IF</font> (<font color="yellow">C</font> == '\<font color="yellow">N</font>')<br>
+             ++<font color="yellow">NL</font>;<br>
+        <font color="yellow">IF</font> (<font color="yellow">C</font>==' ' \!\! <font color="yellow">C</font>=='\<font color="yellow">N</font>' \!\! <font color="yellow">C</font>=='\<font color="yellow">T</font>')<br>
+             <font color="yellow">INWORD</font> = <font color="yellow">NO</font>;<br>
+        <font color="yellow">ELSE</font> <font color="yellow">IF</font> (<font color="yellow">INWORD</font> == <font color="yellow">NO</font>)  {<br>
+             <font color="yellow">INWORD</font> = <font color="yellow">YES</font>;<br>
+             ++<font color="yellow">NW</font>;<br>
+        }<br>
+    }<br>
+    <font color="yellow">PRINTF</font>("%<font color="yellow">D</font> %<font color="yellow">D</font> %<font color="yellow">D</font>\<font color="yellow">N</font>", <font color="yellow">NL</font>, <font color="yellow">NW</font>, <font color="yellow">NC</font>);<br>
+ }<br>
+ <br>
+      Каждый раз, когда программа встречает первый символ<br>
+ слова, она увеличивает счетчик числа слов на единицу. Пере-<br>
+ менная <font color="yellow">INWORD</font> следит за тем, находится ли программа в насто-<br>
+ ящий момент внутри слова или нет; сначала этой переменной<br>
+ присваивается " не в слове", чему соответствует значение <font color="yellow">NO</font>.<br>
+ Мы предпочитаем символические константы <font color="yellow">YES</font> и <font color="yellow">NO</font> литерным<br>
+ значениям <font color="fuchsia">1</font> и <font color="fuchsia">0</font>, потому что они делают программу более удоб-<br>
+ ной для чтения. Конечно, в такой крошечной программе, как<br>
+ эта, это не приводит к заметной разнице, но в больших прог-<br>
+ раммах увеличение ясности вполне стоит тех скромных дополни-<br>
+ тельных усилий, которых требует следование этому принципу с<br>
+ самого начала. Вы также обнаружите, что существенные измене-<br>
+ ния гораздо легче вносить в те программы, где числа фигури-<br>
+ руют только в качестве символьных констант.<br>
+     Строка<br>
+ <br>
+       <font color="yellow">NL</font> = <font color="yellow">NW</font> = <font color="yellow">NC</font> = <font color="fuchsia">0</font>;<br>
+ <br>
+ полагает все три переменные  равными  нулю.  Это  не<br>
+ особый случай, а следствие того обстоятельства, что операто-<br>
+ ру присваивания соответствует некоторое значение и присваи-<br>
+ вания проводятся последовательно справа налево. Таким обра-<br>
+ зом, дело обстоит так, как если бы мы написали<br>
+ <br>
+        <font color="yellow">NC</font> = (<font color="yellow">NL</font> = (<font color="yellow">NW</font> = <font color="fuchsia">0</font>));<br>
+ <br>
+ операция \!\! Означает   <font color="yellow">OR</font>  , так что строка<br>
+ <br>
+        <font color="yellow">IF</font>( <font color="yellow">C</font>==' ' \!\! <font color="yellow">C</font>=='\<font color="yellow">N</font>' \!\! <font color="yellow">C</font>=='\<font color="yellow">T</font>')<br>
+ <br>
+ говорит "если с - пробел, или с - символ новой строки, или с<br>
+ -табуляция ..."./условная последовательность \<font color="yellow">T</font> является<br>
+ изображением символа табуляции/.<br>
+     <br>
+                            - <font color="fuchsia">26</font> -<br>
+     <br>
+    Имеется соответствующая операция && для <font color="yellow">AND</font>. Выражения,<br>
+  связанные операциями && или \!\! , Рассматриваются слева на<br>
+   право, и при этом гарантируется, что оценивание выражений<br>
+   будет прекращено, как только станет ясно, является ли все<br>
+   выражение истинным или ложным. Так, если '<font color="yellow">C</font>' оказывается<br>
+  пробелом, то нет никакой необходимости проверять, является<br>
+ ли '<font color="yellow">C</font>' символом новой строки или табуляции, и такие проверки<br>
+    действительно не делаются. В данном случае это не имеет<br>
+  принципиального значения, но, как мы скоро увидим, в более<br>
+  сложных ситуациях эта особенность языка весьма существенна.<br>
+   Этот пример также демонстрирует оператор <font color="yellow">ELSE</font> языка "<font color="yellow">C</font>",<br>
+  который указывает то действие, которое должно выполняться,<br>
+  если условие, содержащееся в операторе <font color="yellow">IF</font>, окажется ложным.<br>
+                      Общая форма такова:<br>
+ <br>
+  <font color="yellow">IF</font> (выражение)<br>
+  оператор-<font color="fuchsia">1<br>
+</font>  <font color="yellow">ELSE</font> оператор-<font color="fuchsia">2<br>
+</font> <br>
+     Выполняется один и только один из двух операторов, свя-<br>
+ занных с конструкцией <font color="yellow">IF</font>-<font color="yellow">ELSE</font>. Если выражение истинно, вы-<br>
+ полняется оператор-<font color="fuchsia">1</font>; если нет - выполняется оператор-<font color="fuchsia">2</font>.<br>
+ Фактически каждый оператор может быть довольно сложным. В<br>
+ программе подсчета слов оператор, следующий за <font color="yellow">ELSE</font> , явля-<br>
+ ется опертором <font color="yellow">IF</font> , который управляет двумя операторами в<br>
+ фигурных скобках.<br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">9</font>.<br>
+     ----------------<br>
+     Как бы вы стали проверять программу подсчета слов ?<br>
+ <font color="yellow">K</font>акие имеются ограничения ?<br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">10</font>.<br>
+     -----------------<br>
+     Напишите программу, которая будет печатать слова из фай-<br>
+ ла ввода, причем по одному на строку.<br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">11</font>.<br>
+     ----------------<br>
+     Переделайте программу подсчета слов, используя лучшее<br>
+ пределение "слова"; считайте, например словом последователь-<br>
+ ность букв, цифр и апострофов, рачинающуюся с буквы.<br>
+ <br>
+      <font color="fuchsia">1</font>.<font color="fuchsia">6</font>. Массивы.<br>
+ <br>
+     Давайте напишем программу подсчета числа появлений каж-<br>
+ дой цифры, символов пустых промежутков/пробел, табуляции,<br>
+ новая строка/ и всех остальных символов. Конечно, такая за-<br>
+ дача несколько искусственна, но она позволит нам проиллюст-<br>
+ рировать в одной программе сразу несколько аспектов языка<br>
+ "<font color="yellow">C</font>".<br>
+     Мы разбили вводимые символы на двенадцать категорий, и<br>
+ нам удобнее использовать массив для хранения числа появлений<br>
+ каждой цифры, а не десять отдельных переменных. Вот один из<br>
+ вариантов программы:<br>
+           <br>
+     <br>
+                            - <font color="fuchsia">27</font> -<br>
+     <br>
+ <font color="yellow">MAIN</font>()  /* <font color="yellow">COUNT</font> <font color="yellow">DIGITS</font>, <font color="yellow">WHITE</font> <font color="yellow">SPACE</font>, <font color="yellow">OTHERS</font> */<br>
+ {<br>
+     <font color="yellow">INT</font>  <font color="yellow">C</font>, <font color="yellow">I</font>, <font color="yellow">NWHITE</font>, <font color="yellow">NOTHER</font>;<br>
+     <font color="yellow">INT</font>  <font color="yellow">NDIGIT</font>[<font color="fuchsia">10</font>];<br>
+ <br>
+     <font color="yellow">NWHITE</font> = <font color="yellow">NOTHER</font> = <font color="fuchsia">0</font>;<br>
+     <font color="yellow">FOR</font> (<font color="yellow">I</font> = <font color="fuchsia">0</font>; <font color="yellow">I</font> < <font color="fuchsia">10</font>; ++<font color="yellow">I</font>)<br>
+  <font color="yellow">NDIGIT</font>[<font color="yellow">I</font>] = <font color="fuchsia">0</font>;<br>
+ <br>
+     <font color="yellow">WHILE</font> ((<font color="yellow">C</font> = <font color="yellow">GETCHAR</font>()) != <font color="yellow">EOF</font>)<br>
+  <font color="yellow">IF</font> (<font color="yellow">C</font> >= '<font color="fuchsia">0</font>' && <font color="yellow">C</font> <= '<font color="fuchsia">9</font>')<br>
+      ++<font color="yellow">NDIGIT</font>[<font color="yellow">C</font>-'<font color="fuchsia">0</font>'];<br>
+  <font color="yellow">ELSE</font> <font color="yellow">IF</font>(<font color="yellow">C</font>== ' ' \!\! <font color="yellow">C</font>== '\<font color="yellow">N</font>' \!\! <font color="yellow">C</font>== '\<font color="yellow">T</font>')<br>
+      ++<font color="yellow">NWHITE</font>;<br>
+  <font color="yellow">ELSE<br>
+</font>      ++<font color="yellow">NOTHER</font>;<br>
+ <br>
+     <font color="yellow">PRINTF</font>("<font color="yellow">DIGITS</font> =");<br>
+     <font color="yellow">FOR</font> (<font color="yellow">I</font> = <font color="fuchsia">0</font>; <font color="yellow">I</font> < <font color="fuchsia">10</font>; ++<font color="yellow">I</font>)<br>
+     <font color="yellow">PRINTF</font>(" %<font color="yellow">D</font>", <font color="yellow">NDIGIT</font>[<font color="yellow">I</font>]);<br>
+     <font color="yellow">PRINTF</font>("\<font color="yellow">NWHITE</font> <font color="yellow">SPACE</font> = %<font color="yellow">D</font>, <font color="yellow">OTHER</font> = %<font color="yellow">D</font>\<font color="yellow">N</font>",<br>
+      <font color="yellow">NWHITE</font>, <font color="yellow">NOTHER</font>);<br>
+ }<br>
+ <br>
+ Описание<br>
+ <br>
+    <font color="yellow">INT</font>  <font color="yellow">NDIGIT</font>[<font color="fuchsia">10</font>];<br>
+ <br>
+ объявляет, что <font color="yellow">NDIGIT</font> является массивом из десяти целых. в<br>
+ языке "<font color="yellow">C</font>" индексы массива всегда начинаются с нуля /а не с<br>
+ <font color="fuchsia">1</font>, как в фортране или <font color="yellow">PL</font>/<font color="fuchsia">1</font>/, так что элементами массива яв-<br>
+ ляются <font color="yellow">NDIGIT</font>[<font color="fuchsia">0</font>], <font color="yellow">NDIGIT</font>[<font color="fuchsia">1</font>],..., <font color="yellow">NDIGIT</font>[<font color="fuchsia">9</font>]. эта особенность<br>
+ отражена в циклах <font color="yellow">FOR</font> , которые инициализируют и печатают<br>
+ массив.<br>
+      Индекс может быть любым целым выражением, которое, ко-<br>
+ нечно, может включать целые переменные, такие как <font color="yellow">I</font> , и це-<br>
+ лые константы.<br>
+      Эта конкретная программа сильно опирается на свойства<br>
+ символьного представления цифр. Так, например, в программе<br>
+ проверка<br>
+ <br>
+    <font color="yellow">IF</font>( <font color="yellow">C</font> >= '<font color="fuchsia">0</font>' && <font color="yellow">C</font> <= '<font color="fuchsia">9</font>')...<br>
+ <br>
+ определяет, является ли символ в '<font color="yellow">C</font>' цифрой, и если это так,<br>
+ то численное значение этой цифры определяется по формуле / <font color="yellow">C<br>
+</font> - '<font color="fuchsia">0</font>'/. Такой способ работает только в том случае, если зна-<br>
+ чения символьных констант '<font color="fuchsia">0</font>', '<font color="fuchsia">1</font>' и т.д. Положительны, рас-<br>
+ положены в порядке возрастания и нет ничего, кроме цифр,<br>
+ между константами '<font color="fuchsia">0</font>' и '<font color="fuchsia">9</font>'. К счастью, это верно для всех<br>
+ общепринятых наборов символов.<br>
+     <br>
+                            - <font color="fuchsia">28</font> -<br>
+     <br>
+     По определению перед проведением арифметических опера-<br>
+ ций, вовлекающих переменные типа <font color="yellow">CHAR</font> и <font color="yellow">INT</font>, все они преоб-<br>
+ разуются к типу <font color="yellow">INT</font>, <font color="yellow">TAK</font> что в арифметических выражениях пе-<br>
+ ременные типа <font color="yellow">CHAR</font> по существу идентичны переменным типа<br>
+ <font color="yellow">INT</font>. Это вполне естественно и удобно; например, <font color="yellow">C</font> -'<font color="fuchsia">0</font>'- это<br>
+ целое выражение со значением между <font color="fuchsia">0</font> и <font color="fuchsia">9</font> в соответствии с<br>
+ тем, какой символ от '<font color="fuchsia">0</font>' до '<font color="fuchsia">9</font>' хранится в '<font color="yellow">C</font>', и, следова-<br>
+ тельно, оно является подходящим индексом для массива <font color="yellow">NDIGIT</font>.<br>
+     Выяснение вопроса, является ли данный символ цифрой,<br>
+ символом пустого промежутка или чем-либо еще, осуществляется<br>
+ последовательностью операторов<br>
+ <br>
+  <font color="yellow">IF</font> (<font color="yellow">C</font> >= '<font color="fuchsia">0</font>' && <font color="yellow">C</font> <= '<font color="fuchsia">9</font>')<br>
+  ++<font color="yellow">NDIGIT</font>[<font color="yellow">C</font>-'<font color="fuchsia">0</font>'];<br>
+  <font color="yellow">ELSE</font> <font color="yellow">IF</font>(<font color="yellow">C</font> == ' ' \!\! <font color="yellow">C</font> == '\<font color="yellow">N</font>' \!\! <font color="yellow">C</font> == '\<font color="yellow">T</font>')<br>
+  ++<font color="yellow">NWHITE</font>;<br>
+  <font color="yellow">ELSE<br>
+</font>  ++<font color="yellow">NOTHER</font>;<br>
+ <br>
+ Конструкция<br>
+     <font color="yellow">IF</font>  (условие)<br>
+             оператор<br>
+     <font color="yellow">ELSE</font> <font color="yellow">IF</font>  (условие)<br>
+             оператор<br>
+     <font color="yellow">ELSE<br>
+</font>             оператор<br>
+      <br>
+ часто встречаются в программах как средство выражения ситуа-<br>
+ ций, в которых осуществляется выбор одного из нескольких<br>
+ возможных решений.<br>
+     Программа просто движется сверху вниз до тех пор, пока<br>
+ не удовлетворится какое-нибудь условие; тогда выполняется<br>
+ соответствующий 'оператор', и вся конструкция завершается.<br>
+ /Конечно, 'оператор' может состоять из нескольких операто-<br>
+ ров, заключенных в фигурные скобки/. Если ни одно из условий<br>
+ не удовлетворяется, то выполняется 'оператор', стоящий после<br>
+ заключительного <font color="yellow">ELSE</font>, если оно присутствует. Если последне<font color="yellow">E<br>
+</font> <font color="yellow">ELSE</font> и соответствующий 'оператор' опущены (как в программе<br>
+ подсчета слов), то никаких действий не производится. Между<br>
+ начальным <font color="yellow">IF</font> и конечным <font color="yellow">ELSE</font> может помещаться произвольное<br>
+ количество групп<br>
+ <br>
+ <font color="yellow">ELSE</font> <font color="yellow">IF</font> (условие)<br>
+    оператор<br>
+ <br>
+     С точки зрения стиля целесообразно записывать эту конст-<br>
+ рукцию так, как мы показали, с тем чтобы длинные выражения<br>
+ не залезали за правый край страницы.<br>
+     Оператор <font color="yellow">SWITCH</font> (переключатель), который рассматривается<br>
+ в главе <font color="fuchsia">3</font>, представляет другую возможность для записи раз-<br>
+ ветвления на несколько вариантов. этот оператор особенно<br>
+ удобен, когда проверяемое выражение является либо просто не-<br>
+ которым целым, либо символьным выражением, совпадающим с од-<br>
+ ной из некоторого набора констант. Версия этой программы,<br>
+ использующая оператор <font color="yellow">SWITCH</font>, будет для сравнения приведена<br>
+ в главе <font color="fuchsia">3</font>.<br>
+     <br>
+                            - <font color="fuchsia">29</font> -<br>
+ <br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">12</font>.<br>
+     ----------------<br>
+ <br>
+     Напишите программу, печатающую гистограмму длин слов из<br>
+ файла ввода. Самое легкое - начертить гистограмму горизон-<br>
+ тально; вертикальная ориентация требует больших усилий.<br>
+ <br>
+      <font color="fuchsia">1</font>.<font color="fuchsia">7</font>. Функции.<br>
+ <br>
+     В языке "<font color="yellow">C</font>" функции эквивалентны подпрограммам или функ-<br>
+ циям в фортране или процедурам в <font color="yellow">PL</font>/<font color="fuchsia">1</font>, паскале и т.д. Функ-<br>
+ ции дают удобный способ заключения некоторой части вычисле-<br>
+ ний в черный ящик, который в дальнейшем можно использовать,<br>
+ не интересуясь его внутренним содержанием. Использование<br>
+ функций является фактически единственным способом справиться<br>
+ с потенциальной сложностью больших программ. Если функции<br>
+ организованы должным образом, то можно игнорировать то, как<br>
+ делается работа; достаточно знание того, что делается. Язык<br>
+ "<font color="yellow">C</font>" разработан таким образом, чтобы сделать использование<br>
+ функций легким, удобным и эффективным. Вам будут часто вст-<br>
+ речаться функции длиной всего в несколько строчек, вызывае-<br>
+ мые только один раз, и они используются только потому, что<br>
+ это проясняет некоторую часть программы.<br>
+     До сих пор мы использовали только предоставленные нам<br>
+ функции типа <font color="yellow">PRINTF</font>, <font color="yellow">GETCHAR</font> и <font color="yellow">PUTCHAR</font>; теперь пора написать<br>
+ несколько наших собственных. так как в "<font color="yellow">C</font>" нет операции воз-<br>
+ ведения в степень, подобной операции ** в фортране или <font color="yellow">PL</font>/<font color="fuchsia">1</font>,<br>
+ давайте проиллюстрируем механику определения функции на при-<br>
+ мере функции <font color="yellow">POWER</font>(<font color="yellow">M</font>,<font color="yellow">N</font>), возводящей целое м в целую положи-<br>
+ тельную степень <font color="yellow">N</font>. Так значение <font color="yellow">POWER</font>(<font color="fuchsia">2</font>,<font color="fuchsia">5</font>) равно <font color="fuchsia">32</font>. Конеч-<br>
+ но, эта функция не выполняет всей работы операции **, пос-<br>
+ кольку она действует только с положительными степенями не-<br>
+ больших чисел, но лучше не создавать дополнительных затруд-<br>
+ нений, смешивая несколько различных вопросов.<br>
+     Ниже приводится функция <font color="yellow">POWER</font> и использующая ее основная<br>
+ программа, так что вы можете видеть целиком всю структуру.<br>
+ <br>
+  <font color="yellow">MAIN</font>()  /* <font color="yellow">TEST</font> <font color="yellow">POWER</font> <font color="yellow">FUNCTION</font> */<br>
+  {<br>
+     <font color="yellow">INT</font> <font color="yellow">I</font>;<br>
+ <br>
+     <font color="yellow">FOR</font>(<font color="yellow">I</font> = <font color="fuchsia">0</font>; <font color="yellow">I</font> < <font color="fuchsia">10</font>; ++<font color="yellow">I</font>)<br>
+      <font color="yellow">PRINTF</font>("%<font color="yellow">D</font> %<font color="yellow">D</font> %<font color="yellow">D</font>\<font color="yellow">N</font>",<font color="yellow">I</font>,<font color="yellow">POWER</font>(<font color="fuchsia">2</font>,<font color="yellow">I</font>),<font color="yellow">POWER</font>(-<font color="fuchsia">3</font>,<font color="yellow">I</font>));<br>
+  }<br>
+ <br>
+  <font color="yellow">POWER</font>(<font color="yellow">X</font>,<font color="yellow">N</font>)  /* <font color="yellow">RAISE</font>  <font color="yellow">X</font>  <font color="yellow">N</font>-<font color="yellow">TH</font> <font color="yellow">POWER</font>; <font color="yellow">N</font> > <font color="fuchsia">0</font>  */<br>
+  <font color="yellow">INT</font> <font color="yellow">X</font>,<font color="yellow">N</font>;<br>
+  {<br>
+     <font color="yellow">INT</font> <font color="yellow">I</font>, <font color="yellow">P</font>;<br>
+     <font color="yellow">P</font> = <font color="fuchsia">1</font>;<br>
+     <font color="yellow">FOR</font> (<font color="yellow">I</font> =<font color="fuchsia">1</font>; <font color="yellow">I</font> <= <font color="yellow">N</font>; ++<font color="yellow">I</font>)<br>
+     <font color="yellow">P</font> = <font color="yellow">P</font> * <font color="yellow">X</font>;<br>
+     <font color="yellow">RETURN</font> (<font color="yellow">P</font>);<br>
+  }<br>
+     <br>
+     <br>
+                            - <font color="fuchsia">30</font> -<br>
+ <br>
+     Все функции имеют одинаковый вид:<br>
+  имя (список аргументов, если они имеются)<br>
+  описание аргументов, если они имеются<br>
+  {<br>
+  описания<br>
+     операторы<br>
+  }<br>
+ <br>
+ <br>
+     Эти функции могут быть записаны в любом порядке и нахо-<br>
+ диться в одном или двух исходных файлах. Конечно, если ис-<br>
+ ходная программа размещается в двух файлах, вам придется<br>
+ дать больше указаний при компиляции и загрузке, чем если бы<br>
+ она находилась в одном, но это дело операционной системы, а<br>
+ не атрибут языка. В данный момент, для того чтобы все полу-<br>
+ ченные сведения о прогоне "<font color="yellow">C</font>"- программ, не изменились в<br>
+ дальнейшем, мы будем предполагать, что обе функции находятся<br>
+ в одном и том же файле.<br>
+     Функция <font color="yellow">POWER</font> вызывается дважды в строке<br>
+ <br>
+ <font color="yellow">PRINTF</font>("%<font color="yellow">D</font> %<font color="yellow">D</font> %<font color="yellow">D</font>\<font color="yellow">N</font>",<font color="yellow">I</font>,<font color="yellow">POWER</font>(<font color="fuchsia">2</font>,<font color="yellow">I</font>),<font color="yellow">POWER</font>(-<font color="fuchsia">3</font>,<font color="yellow">I</font>));<br>
+ <br>
+ при каждом обращении функция <font color="yellow">POWER</font>, получив два аргумента,<br>
+ вазвращает целое значение, которое печатается в заданном<br>
+ формате. В выражениях <font color="yellow">POWER</font>(<font color="fuchsia">2</font>,<font color="yellow">I</font>) является точно таким же це-<br>
+ лым, как <font color="fuchsia">2</font> и <font color="yellow">I</font>. /Не все функции выдают целое значение; мы<br>
+ займемся этим вопросом в главе <font color="fuchsia">4</font>/.<br>
+     Аргументы функции <font color="yellow">POWER</font> должны быть описаны соответству-<br>
+ ющим образом, так как их типы известны. Это сделано в строке<br>
+ <br>
+ <font color="yellow">INT</font> <font color="yellow">X</font>,<font color="yellow">N</font>;<br>
+ <br>
+ которая следует за именем функции.<br>
+     Описания аргументов помещаются между списком аргументов<br>
+ и открывающейся левой фигурной скобкой; каждое описание за-<br>
+ канчивается точкой с запятой. Имена, использованные для ар-<br>
+ гументов функции <font color="yellow">POWER</font>, являются чисто локальными и недос-<br>
+ тупны никаким другим функциям: другие процедуры могут ис-<br>
+ пользовать те же самые имена без возникновения конфликта.<br>
+ Это верно и для переменных <font color="yellow">I</font> и <font color="yellow">P</font>; <font color="yellow">I</font> в функции <font color="yellow">POWER</font> никак не<br>
+ связано с <font color="yellow">I</font> в функции <font color="yellow">MAIN</font>.<br>
+     Значение, вычисленное функцией <font color="yellow">POWER</font>, передаются в <font color="yellow">MAIN<br>
+</font> с помощью оператора <font color="yellow">RETURN</font>, точно такого же, как в <font color="yellow">PL</font>/<font color="fuchsia">1</font>.<br>
+ внутри круглых скобок можно написать любое выражение. Функ-<br>
+ ция не обязана возвращать какое-либо значение; оператор<br>
+ <font color="yellow">RETURN</font>, не содержащий никакого выражения, приводит к такой<br>
+ же передаче управления, как "сваливание на конец" функции<br>
+ при достижении конечной правой фигурной скобки, но при этом<br>
+ в вызывающую функцию не возвращается никакого полезного зна-<br>
+ чения.<br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">13</font>.<br>
+     ----------------<br>
+     Апишите программу преобразования прописных букв из айла<br>
+ ввода в строчные, используя при этом функцию <font color="yellow">OWER</font>(<font color="yellow">C</font>), кото-<br>
+ рая возвращает значение '<font color="yellow">C</font>', если <font color="yellow">C</font>'- не буква, и значение<br>
+ соответствующей строчной уквы, если '<font color="yellow">C</font>'-буква.<br>
+           <br>
+                            - <font color="fuchsia">31</font> -<br>
+     <br>
+     <font color="fuchsia">1</font>.<font color="fuchsia">8</font>. Аргументы - вызов по значению.<br>
+ <br>
+     Один аспект в "<font color="yellow">C</font>" может оказаться непривычным для прог-<br>
+ раммистов, которые использовали другие языки, в частности,<br>
+ фортран и <font color="yellow">PL</font>/<font color="fuchsia">1</font>. в языке "<font color="yellow">C</font>" все аргументы функций передаются<br>
+ "по значению". это означает, что вызванная функция получает<br>
+ значения своих аргументов с помощью временных переменных<br>
+ /фактически через стек/, а не их адреса. Это приводит к не-<br>
+ которым особенностям, отличным от тех, с которыми мы сталки-<br>
+ вались в языках типа фортрана и <font color="yellow">PL</font>/<font color="fuchsia">1</font>, использующих "вызов по<br>
+ ссылке ", где вызванная процедура работает с адресом аргу-<br>
+ мента, а не с его значением.<br>
+     Главное отличие состоит в том, что в "<font color="yellow">C</font>" вызванная функ-<br>
+ ция не может изменить переменную из вызывающей функции; она<br>
+ может менять только свою собственную временную копию.<br>
+     Вызов по значению, однако, не помеха, а весьма ценное<br>
+ качество. Оно обычно приводит к более компактным программам,<br>
+ содержащим меньше не относящихся к делу переменных, потому<br>
+ что с аргументами можно обращаться как с удобно инициализи-<br>
+ рованными локальными перемнными вызванной процедуры. Вот,<br>
+ например, вариант функции <font color="yellow">POWER</font> использующей это обстоятель-<br>
+ ство<br>
+ <br>
+  <font color="yellow">POWER</font>(<font color="yellow">X</font>,<font color="yellow">N</font>)  /* <font color="yellow">RAISE</font>  <font color="yellow">X</font>  <font color="yellow">N</font>-<font color="yellow">TH</font> <font color="yellow">POWER</font>; <font color="yellow">N</font> > <font color="fuchsia">0</font>;<br>
+            <font color="yellow">VERSION</font> <font color="fuchsia">2</font> */<br>
+  <font color="yellow">INT</font> <font color="yellow">X</font>,<font color="yellow">N</font>;<br>
+  {<br>
+  <font color="yellow">INT</font> <font color="yellow">P</font>;<br>
+ <br>
+  <font color="yellow">FOR</font> (<font color="yellow">P</font> = <font color="fuchsia">1</font>; <font color="yellow">N</font> > <font color="fuchsia">0</font>; --<font color="yellow">N</font>)<br>
+       <font color="yellow">P</font> = <font color="yellow">P</font> * <font color="yellow">X</font>;<br>
+  <font color="yellow">RETURN</font> (<font color="yellow">P</font>);<br>
+  }<br>
+ <br>
+ <br>
+     Аргумент <font color="yellow">N</font> используется как временная переменная; из не-<br>
+ го вычитается единица до тех пор, пока он не станет нулем.<br>
+ Переменная <font color="yellow">I</font> здесь больше не нужна. чтобы ни происходило с <font color="yellow">N<br>
+</font> внутри <font color="yellow">POWER</font> это никак не влияет на аргумент, с которым пер-<br>
+ воначально обратились к функции <font color="yellow">POWER</font>.<br>
+     При необходимости все же можно добиться, чтобы функция<br>
+ изменила переменную из вызывающей программы. Эта программа<br>
+ должна обеспечить установление адреса переменной /техничес-<br>
+ ки, через указатель на переменную/, а в вызываемой функции<br>
+ надо описать соответствующий аргумент как указатель и ссы-<br>
+ латься к фактической переменной косвенно через него. Мы рас-<br>
+ смотрим это подробно в главе <font color="fuchsia">5</font>.<br>
+     Когда в качестве аргумента выступает имя массива, то<br>
+ фактическим значением, передаваемым функции, является адрес<br>
+ начала массива. /Здесь нет никакого копирования элементов<br>
+ массива/. С помощью индексации и адреса начала функция может<br>
+ найти и изменить любой элемент массива. Это - тема следующе-<br>
+ го раздела.<br>
+     <br>
+                            - <font color="fuchsia">32</font> -<br>
+ <br>
+      <font color="fuchsia">1</font>.<font color="fuchsia">9</font>. Массивы символов.<br>
+ <br>
+     По-видимому самым общим типом массива в "<font color="yellow">C</font>" является<br>
+ массив символов. Чтобы проиллюстрировать использование мас-<br>
+ сивов символов и обрабатывающих их функций, давайте напишем<br>
+ программу, которая читает набор строк и печатает самую длин-<br>
+ ную из них. Основная схема программы достаточно проста:<br>
+ <br>
+ <font color="yellow">WHILE</font> (имеется еще строка)<br>
+   <font color="yellow">IF</font> (эта строка длиннее самой длинной из<br>
+   предыдущих)<br>
+      запомнить эту строку и ее длину<br>
+ напечатать самую длинную строку<br>
+     По этой схеме ясно, что программа естественным образом<br>
+ распадается на несколько частей. Одна часть читает новую<br>
+ строку, другая проверяет ее, третья запоминает, а остальные<br>
+ части программы управляют этим процессом.<br>
+     Поскольку все так прекрасно делится, было бы хорошо и<br>
+ написать программу соответсвующим образом. Давайте сначала<br>
+ напишем отдельную функцию <font color="yellow">GETLINE</font>, которая будет извлекать<br>
+ следующую строку из файла ввода; это - обобщение функции<br>
+ <font color="yellow">GETCHAR</font>. мы попытаемся сделать эту функцию по возможности<br>
+ более гибкой, чтобы она была полезной и в других ситуациях.<br>
+ Как минимум <font color="yellow">GETLINE</font> должна передавать сигнал о возможном по-<br>
+ явлении конца файла; более общий полезный вариант мог бы пе-<br>
+ редавать длину строки или нуль, если встретится конец файла.<br>
+ нуль не может быть длиной строки, так как каждая строка со-<br>
+ держит по крайней мере один символ; даже строка, содержащая<br>
+ только символ новой строки, имеет длину <font color="fuchsia">1</font>.<br>
+     Когда мы находим строку, которая длиннее самой длинной<br>
+ из предыдущих, то ее надо где-то запомнить. Это наводит на<br>
+ мысль о другой функции, <font color="yellow">COPY</font> , которая будет копировать но-<br>
+ вую строку в место хранения.<br>
+     Наконец, нам нужна основная программа для управления<br>
+ функциями <font color="yellow">GETLINE</font> и <font color="yellow">COPY</font> . Вот результат :<br>
+ <br>
+ #<font color="yellow">DEFINE</font>  <font color="yellow">MAXLINE</font>  <font color="fuchsia">1000</font> /* <font color="yellow">MAXIMUM</font> <font color="yellow">INPUT<br>
+</font>        <font color="yellow">LINE</font> <font color="yellow">SIZE</font> */<br>
+  <font color="yellow">MAIN</font>()  /* <font color="yellow">FIND</font> <font color="yellow">LONGEST</font> <font color="yellow">LINE</font> */<br>
+  {<br>
+  <font color="yellow">INT</font> <font color="yellow">LEN</font>; /* <font color="yellow">CURRENT</font> <font color="yellow">LINE</font> <font color="yellow">LENGTH</font> */<br>
+  <font color="yellow">INT</font> <font color="yellow">MAX</font>; /* <font color="yellow">MAXIMUM</font> <font color="yellow">LENGTH</font> <font color="yellow">SEEN</font> <font color="yellow">SO</font> <font color="yellow">FAR</font> */<br>
+  <font color="yellow">CHAR</font> <font color="yellow">LINE</font>[<font color="yellow">MAXLINE</font>]; /* <font color="yellow">CURRENT</font> <font color="yellow">INPUT</font> <font color="yellow">LINE</font> */<br>
+  <font color="yellow">CHAR</font> <font color="yellow">SAVE</font>[<font color="yellow">MAXLINE</font>]; /* <font color="yellow">LONGEST</font> <font color="yellow">LINE</font>, <font color="yellow">SAVED</font> */<br>
+ <br>
+  <font color="yellow">MAX</font> = <font color="fuchsia">0</font>;<br>
+  <font color="yellow">WHILE</font> ((<font color="yellow">LEN</font> = <font color="yellow">GETLINE</font>(<font color="yellow">LINE</font>, <font color="yellow">MAXLINE</font>)) > <font color="fuchsia">0</font>)<br>
+      <font color="yellow">IF</font> (<font color="yellow">LEN</font> > <font color="yellow">MAX</font>) {<br>
+     <font color="yellow">MAX</font> = <font color="yellow">LEN</font>;<br>
+     <font color="yellow">COPY</font>(<font color="yellow">LINE</font>, <font color="yellow">SAVE</font>);<br>
+      }<br>
+      <font color="yellow">IF</font> (<font color="yellow">MAX</font> > <font color="fuchsia">0</font>)   /* <font color="yellow">THERE</font> <font color="yellow">WAS</font> <font color="yellow">A</font> <font color="yellow">LINE</font> */<br>
+     <font color="yellow">PRINTF</font>("%<font color="yellow">S</font>", <font color="yellow">SAVE</font>);<br>
+  }<br>
+     <br>
+     <br>
+                            - <font color="fuchsia">33</font> -<br>
+     <br>
+  <font color="yellow">GETLINE</font>(<font color="yellow">S</font>,<font color="yellow">LIM</font>) /* <font color="yellow">GET</font> <font color="yellow">LINE</font> <font color="yellow">INTO</font> <font color="yellow">S</font>,<font color="yellow">RETURN</font> <font color="yellow">LENGTH</font> */<br>
+  <font color="yellow">CHAR</font> <font color="yellow">S</font>[];<br>
+  <font color="yellow">INT</font> <font color="yellow">LIM</font>;<br>
+  {<br>
+     <font color="yellow">INT</font> <font color="yellow">C</font>, <font color="yellow">I</font>;<br>
+ <br>
+     <font color="yellow">FOR</font>(<font color="yellow">I</font>=<font color="fuchsia">0</font>;<font color="yellow">I</font><<font color="yellow">LIM</font>-<font color="fuchsia">1</font> && (<font color="yellow">C</font>=<font color="yellow">GETCHAR</font>())!=<font color="yellow">EOF</font> && <font color="yellow">C</font>!='\<font color="yellow">N</font>';++<font color="yellow">I</font>)<br>
+     <font color="yellow">S</font>[<font color="yellow">I</font>] = <font color="yellow">C</font>;<br>
+     <font color="yellow">IF</font> (<font color="yellow">C</font> == '\<font color="yellow">N</font>')  {<br>
+   <font color="yellow">S</font>[<font color="yellow">I</font>] = <font color="yellow">C</font>;<br>
+   ++<font color="yellow">I</font>;<br>
+     }<br>
+     <font color="yellow">S</font>[<font color="yellow">I</font>] = '\<font color="fuchsia">0</font>';<br>
+     <font color="yellow">RETURN</font>(<font color="yellow">I</font>);<br>
+  }<br>
+ <br>
+  <font color="yellow">COPY</font>(<font color="yellow">S</font><font color="fuchsia">1</font>, <font color="yellow">S</font><font color="fuchsia">2</font>)    /* <font color="yellow">COPY</font> <font color="yellow">S</font><font color="fuchsia">1</font> <font color="yellow">TO</font> <font color="yellow">S</font><font color="fuchsia">2</font>;<br>
+                <font color="yellow">ASSUME</font> <font color="yellow">S</font><font color="fuchsia">2</font> <font color="yellow">BIG</font> <font color="yellow">ENOUGH</font> */<br>
+  <font color="yellow">CHAR</font> <font color="yellow">S</font><font color="fuchsia">1</font>[], <font color="yellow">S</font><font color="fuchsia">2</font>[];<br>
+  {<br>
+  <font color="yellow">INT</font> <font color="yellow">I</font>;<br>
+ <br>
+  <font color="yellow">I</font> = <font color="fuchsia">0</font>;<br>
+  <font color="yellow">WHILE</font> ((<font color="yellow">S</font><font color="fuchsia">2</font>[<font color="yellow">I</font>] = <font color="yellow">S</font><font color="fuchsia">1</font>[<font color="yellow">I</font>] != '\<font color="fuchsia">0</font>')<br>
+     ++<font color="yellow">I</font>;<br>
+  }<br>
+     <br>
+     Функция <font color="yellow">MAIN</font> и <font color="yellow">GETLINE</font> общаются как через пару аргумен-<br>
+ тов, так и через возвращаемое значение. аргументы <font color="yellow">GETLINE<br>
+</font> описаны в строках<br>
+ <br>
+     <font color="yellow">CHAR</font> <font color="yellow">S</font>[];<br>
+     <font color="yellow">INT</font> <font color="yellow">LIM</font>;<br>
+ <br>
+ которые указывают, что первый аргумент является массивом, а<br>
+ второй - целым.<br>
+     Длина массива <font color="yellow">S</font> не указана, так как она определена в<br>
+ <font color="yellow">MAIN</font> . функция <font color="yellow">GETLINE</font> использует оператор <font color="yellow">RETURN</font> для пере-<br>
+ дачи значения назад в вызывающую программу точно так же, как<br>
+ это делала функция <font color="yellow">POWER</font>. Одни функции возвращают некоторое<br>
+ нужное значение; другие, подобно <font color="yellow">COPY</font>, используются из-за их<br>
+ действия и не возвращают никакого значения.<br>
+     Чтобы пометить конец строки символов, функция <font color="yellow">GETLINE<br>
+</font> помещает в конец создаваемого ей массива символ \<font color="fuchsia">0</font> /нулевой<br>
+ символ, значение которого равно нулю/. Это соглашение ис-<br>
+ пользуется также компилятором с языка "<font color="yellow">C</font>": когда в "<font color="yellow">C</font>" -<br>
+ программе встречается строчная константа типа<br>
+ <br>
+    "<font color="yellow">HELLO</font>\<font color="yellow">N</font>"<br>
+           <br>
+                            - <font color="fuchsia">34</font> -<br>
+ <br>
+ то компилятор создает массив символов, содержащий символы<br>
+ этой строки, и заканчивает его символом \<font color="fuchsia">0</font>, с тем чтобы фун-<br>
+ кции, подобные <font color="yellow">PRINTF</font>, могли зафиксировать конец массива:<br>
+ <br>
+ -------------------------------------------<br>
+ !  <font color="yellow">H</font> !  <font color="yellow">E</font>  !  <font color="yellow">L</font>  !  <font color="yellow">L</font>  !  <font color="yellow">O</font>  ! \<font color="yellow">N</font>  ! \<font color="fuchsia">0</font> !<br>
+ -------------------------------------------<br>
+ <br>
+ Спецификация формата %<font color="yellow">S</font> указывает, что <font color="yellow">PRINTF</font> ожидает стро-<br>
+ ку, представленную в такой форме. Проанализировав функцию<br>
+ <font color="yellow">COPY</font>, вы обнаружите, что и она опирается на тот факт, что ее<br>
+ входной аргумент оканчивается символом \<font color="fuchsia">0</font>, и копирует этот<br>
+ символ в выходной аргумент <font color="yellow">S</font><font color="fuchsia">2</font>. /Все это подразумевает, что<br>
+ символ \<font color="fuchsia">0</font> не является частью нормального текста/.<br>
+     Между прочим, стоит отметить, что даже в такой маленькой<br>
+ программе, как эта, возникает несколько неприятных организа-<br>
+ ционных проблем. Например, что должна делать <font color="yellow">MAIN</font>, если она<br>
+ встретит строку, превышающую ее максимально возможный раз-<br>
+ мер? Функция <font color="yellow">GETLINE</font> поступает разумно: при заполнении мас-<br>
+ сива она прекращает дальнейшее извлечение символов, даже ес-<br>
+ ли не встречает символа новой строки. Проверив полученную<br>
+ длину и последний символ, функция <font color="yellow">MAIN</font> может установить, не<br>
+ была ли эта строка слишком длинной, и поступить затем, как<br>
+ она сочтет нужным. Ради краткости мы опустили эту проблему.<br>
+     Пользователь функции <font color="yellow">GETLINE</font> никак не может заранее уз-<br>
+ нать, насколько длинной окажется вводимая строка. Поэтому в<br>
+ <font color="yellow">GETLINE</font> включен контроль переполнения. в то же время пользо-<br>
+ ватель функции <font color="yellow">COPY</font> уже знает /или может узнать/, каков раз-<br>
+ мер строк, так что мы предпочли не включать в эту функцию<br>
+ дополнительный контроль.<br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">14</font>.<br>
+     -----------------<br>
+     Переделайте ведущую часть программы поиска самой длинной<br>
+ строки таким образом, чтобы она правильно печатала длины<br>
+ сколь угодно длинных вводимых строк и возможно больший<br>
+ текст.<br>
+     Упржнение   <font color="fuchsia">1</font>-<font color="fuchsia">15</font>.<br>
+     -----------------<br>
+     Напишите программу печати всех строк длиннее <font color="fuchsia">80</font> симво-<br>
+ лов.<br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">16</font>.<br>
+     -----------------<br>
+     Напишите программу, которая будет удалять из каждой<br>
+ строки стоящие в конце пробелы и табуляции, а также строки,<br>
+ целиком состоящие из пробелов.<br>
+     Упражнение  <font color="fuchsia">1</font>-<font color="fuchsia">17</font>.<br>
+     -----------------<br>
+     Напишите функцию <font color="yellow">REVERSE</font>(<font color="yellow">S</font>), которая распологает сим-<br>
+ вольную строку <font color="yellow">S</font> в обратном порядке. С ее помощью напишите<br>
+ программу, которая обратит каждую строку из файла ввода.<br>
+           <br>
+                            - <font color="fuchsia">35</font> -<br>
+     <br>
+      <font color="fuchsia">1</font>.<font color="fuchsia">10</font>. Область действия: внешние переменные.<br>
+ <br>
+     Переменные в <font color="yellow">MAIN</font>(<font color="yellow">LINE</font>, <font color="yellow">SAVE</font> и т.д.) являются внутренни-<br>
+ ми или локальными по отношению к функции <font color="yellow">MAIN</font>, потому что<br>
+ они описаны внутри <font color="yellow">MAIN</font> и никакая другая функция не имеет к<br>
+ ним прямого доступа. Это же верно и относительно переменных<br>
+ в других функциях; например, переменная <font color="yellow">I</font> в функции <font color="yellow">GETLINE<br>
+</font> никак не связана с <font color="yellow">I</font> в <font color="yellow">COPY</font>. Каждая локальная переменная су-<br>
+ ществует только тогда, когда произошло обращение к соответс-<br>
+ твующей функции, и исчезает, как только закончится выполне-<br>
+ ние этой функции. По этой причине такие переменные, следуя<br>
+ терминологии других языков, обычно называют автоматическими.<br>
+ Мы впредь будем использовать термин автоматические при ссыл-<br>
+ ке на эти динамические локальные переменные. /в главе <font color="fuchsia">4</font> об-<br>
+ суждается класс статической памяти, когда локальные перемен-<br>
+ ные все же оказываются в состоянии сохранить свои значения<br>
+ между обращениями к функциям/.<br>
+     Поскольку автоматические переменные появляются и исчеза-<br>
+ ют вместе с обращением к функции, они не сохраняют своих<br>
+ значений в промежутке от одного вызова до другого, в силу<br>
+ чего им при каждом входе нужно явно присваивать значения.<br>
+ Если этого не сделать, то они будут содержать мусор.<br>
+     В качестве альтернативы к автоматическим переменным мож-<br>
+ но определить переменные, которые будут внешними для всех<br>
+ функций, т.е. Глобальными переменными, к которым может обра-<br>
+ титься по имени любая функция, которая пожелает это сделать.<br>
+ (этот механизм весьма сходен с "<font color="yellow">COMMON</font>" в фортране и<br>
+ "<font color="yellow">EXTERNAL</font>" в <font color="yellow">PL</font>/<font color="fuchsia">1</font>). Так как внешние переменные доступны всю-<br>
+ ду, их можно использовать вместо списка аргументов для пере-<br>
+ дачи данных между функциями. Кроме того, поскольку внешние<br>
+ переменные существуют постоянно, а не появляются и исчезают<br>
+ вместе с вызываемыми функциями, они сохраняют свои значения<br>
+ и после того, как функции, присвоившие им эти значения, за-<br>
+ вершат свою работу.<br>
+     Внешняя переменная должна быть определена вне всех функ-<br>
+ ций; при этом ей выделяется фактическое место в памяти. Та-<br>
+ кая переменная должна быть также описана в каждой функции,<br>
+ которая собирается ее использовать; это можно сделать либо<br>
+ явным описанием <font color="yellow">EXTERN</font>, либо неявным по контексту. Чтобы<br>
+ сделать обсуждение более конкретным, давайте перепишем прог-<br>
+ рамму поиска самой длинной строки, сделав <font color="yellow">LINE</font>, <font color="yellow">SAVE</font> и <font color="yellow">MAX<br>
+</font> внешними переменными. Это потребует изменения описаний и тел<br>
+ всех трех функций, а также обращений к ним.<br>
+ <br>
+ #<font color="yellow">DEFINE</font> <font color="yellow">MAXLINE</font> <font color="fuchsia">1000</font>   /* <font color="yellow">MAX</font>. <font color="yellow">INPUT</font> <font color="yellow">LINE</font> <font color="yellow">SIZE</font>*/<br>
+ <br>
+ <font color="yellow">CHAR</font>   <font color="yellow">LINE</font>[<font color="yellow">MAXLINE</font>];  /* <font color="yellow">INPUT</font> <font color="yellow">LINE</font> */<br>
+ <font color="yellow">CHAR</font>   <font color="yellow">SAVE</font>[<font color="yellow">MAXLINE</font>];/* <font color="yellow">LONGEST</font> <font color="yellow">LINE</font> <font color="yellow">SAVED</font> <font color="yellow">HERE</font>*/<br>
+ <font color="yellow">INT</font>   <font color="yellow">MAX</font>;/*<font color="yellow">LENGTH</font> <font color="yellow">OF</font> <font color="yellow">LONGEST</font> <font color="yellow">LINE</font> <font color="yellow">SEEN</font> <font color="yellow">SO</font> <font color="yellow">FAR</font>*/<br>
+           <br>
+     <br>
+                            - <font color="fuchsia">36</font> -<br>
+     <br>
+ <font color="yellow">MAIN</font>()  /*<font color="yellow">FIND</font> <font color="yellow">LONGEST</font> <font color="yellow">LINE</font>; <font color="yellow">SPECIALIZED</font> <font color="yellow">VERSION</font>*/<br>
+ {<br>
+    <font color="yellow">INT</font>     <font color="yellow">LEN</font>;<br>
+    <font color="yellow">EXTERN</font>  <font color="yellow">INT</font>   <font color="yellow">MAX</font>;<br>
+    <font color="yellow">EXTERN</font>  <font color="yellow">CHAR</font>   <font color="yellow">SAVE</font>[];<br>
+    <font color="yellow">MAX</font> = <font color="fuchsia">0</font>;<br>
+ <br>
+ <font color="yellow">WHILE</font> ( (<font color="yellow">LEN</font> = <font color="yellow">GETLINE</font>()) > <font color="fuchsia">0</font> )<br>
+    <font color="yellow">IF</font> ( <font color="yellow">LEN</font> > <font color="yellow">MAX</font> )  {<br>
+            <font color="yellow">MAX</font> = <font color="yellow">LEN</font>;<br>
+            <font color="yellow">COPY</font>();<br>
+    }<br>
+ <font color="yellow">IF</font> ( <font color="yellow">MAX</font> > <font color="fuchsia">0</font> )  /* <font color="yellow">THERE</font> <font color="yellow">WAS</font> <font color="yellow">A</font> <font color="yellow">LINE</font> */<br>
+    <font color="yellow">PRINTF</font>( "%<font color="yellow">S</font>", <font color="yellow">SAVE</font> );<br>
+ }<br>
+ <br>
+ <font color="yellow">GETLINE</font>()       /* <font color="yellow">SPECIALIZED</font> <font color="yellow">VERSION</font> */<br>
+ {<br>
+    <font color="yellow">INT</font> <font color="yellow">C</font>, <font color="yellow">I</font>;<br>
+    <font color="yellow">EXTERN</font> <font color="yellow">CHAR</font> <font color="yellow">LINE</font>[];<br>
+ <br>
+    <font color="yellow">FOR</font> (<font color="yellow">I</font> = <font color="fuchsia">0</font>; <font color="yellow">I</font> < <font color="yellow">MAXLINE</font>-<font color="fuchsia">1<br>
+</font> <br>
+     <br>
+        && (<font color="yellow">C</font>=<font color="yellow">GETCHAR</font>()) !=<font color="yellow">EOF</font> && <font color="yellow">C</font>!='\<font color="yellow">N</font>'; ++<font color="yellow">I</font>)<br>
+             <font color="yellow">LINE</font>[<font color="yellow">I</font>] = <font color="yellow">C</font>;<br>
+             ++<font color="yellow">I</font>;<br>
+     }<br>
+     <font color="yellow">LINE</font>[<font color="yellow">I</font>] = '\<font color="fuchsia">0</font>'<br>
+     <font color="yellow">RETURN</font>(<font color="yellow">I</font>)<br>
+  }<br>
+  <font color="yellow">COPY</font>()  /* <font color="yellow">SPECIALIZED</font> <font color="yellow">VERSION</font> */<br>
+  {<br>
+     <font color="yellow">INT</font> <font color="yellow">I</font>;<br>
+     <font color="yellow">EXTERN</font> <font color="yellow">CHAR</font> <font color="yellow">LINE</font>[], <font color="yellow">SAVE</font>[];<br>
+ <br>
+     <font color="yellow">I</font> = <font color="fuchsia">0</font>;<br>
+     <font color="yellow">WHILE</font> ((<font color="yellow">SAVE</font>[<font color="yellow">I</font>] = <font color="yellow">LINE</font>[<font color="yellow">I</font>]) !='\<font color="fuchsia">0</font>')<br>
+             ++<font color="yellow">I</font>;<br>
+  }<br>
+     <br>
+     Внешние переменные для функций <font color="yellow">MAIN</font>, <font color="yellow">GETLINE</font> и <font color="yellow">COPY</font> оп-<br>
+ ределены в первых строчках приведенного выше примера, кото-<br>
+ рыми указывается их тип и вызывается отведение для них памя-<br>
+ ти. синтаксически внешние описания точно такие же, как опи-<br>
+ сания, которые мы использовали ранее, но так как они распо-<br>
+ ложены вне функций, соответствующие переменные являются<br>
+ внешними. Чтобы функция могла использовать внешнюю переме-<br>
+ ную, ей надо сообщить ее имя. Один способ сделать это -<br>
+ включить в функцию описание <font color="yellow">EXTERN</font>; это описание отличается<br>
+ от предыдущих только добавлением ключевого слова <font color="yellow">EXTERN</font>.<br>
+     <br>
+                            - <font color="fuchsia">37</font> -<br>
+     <br>
+     В определенных ситуациях описание <font color="yellow">EXTERN</font> может быть опу-<br>
+ щено: если внешнее определение переменной находится в том же<br>
+ исходном файле, раньше ее использования в некоторой конкрет-<br>
+ ной функции, то не обязательно включать описание <font color="yellow">EXTERN</font> для<br>
+ этой переменной в саму функцию. Описания <font color="yellow">EXTERN</font> в функциях<br>
+ <font color="yellow">MAIN</font>, <font color="yellow">GETLINE</font> и <font color="yellow">COPY</font> являются, таким образом, излишними.<br>
+ Фактически, обычная практика заключается в помещении опреде-<br>
+ лений всех внешних переменных в начале исходного файла и<br>
+ последующем опускании всех описаний <font color="yellow">EXTERN</font>.<br>
+     Если программа находится в нескольких исходных файлах, и<br>
+ некоторая переменная определена, скажем в файле <font color="fuchsia">1</font>, а исполь-<br>
+ зуется в файле <font color="fuchsia">2</font>, то чтобы связать эти два вхождения пере-<br>
+ менной, необходимо в файле <font color="fuchsia">2</font> использовать описание <font color="yellow">EXTERN</font>.<br>
+ Этот вопрос подробно обсуждается в главе <font color="fuchsia">4</font>.<br>
+     Вы должно быть заметили, что мы в этом разделе при ссыл-<br>
+ ке на внешние переменные очень аккуратно используем слова<br>
+ описание и определение. "Определение" относится к тому мес-<br>
+ ту, где переменная фактически заводится и ей выделяется па-<br>
+ мять; "описание" относится к тем местам, где указывается<br>
+ природа переменной, но никакой памяти не отводится.<br>
+     Между прочим, существует тенденция объявлять все, что ни<br>
+ попадется, внешними переменными, поскольку кажется, что это<br>
+ упрощает связи, - списки аргументов становятся короче и пе-<br>
+ ременные всегда присутствуют, когда бы вам они ни понадоби-<br>
+ лись. Но внешние переменные присутствуют и тогда, когда вы в<br>
+ них не нуждаетесь. Такой стиль программирования чреват опас-<br>
+ ностью, так как он приводит к программам, связи данных внут-<br>
+ ри которых не вполне очевидны. Переменные при этом могут из-<br>
+ меняться неожиданным и даже неумышленным образом, а програм-<br>
+ мы становится трудно модифицировать, когда возникает такая<br>
+ необходимость. Вторая версия программы поиска самой длинной<br>
+ строки уступает первой отчасти по этим причинам, а отчасти<br>
+ потому, что она лишила универсальности две весьма полезные<br>
+ функции, введя в них имена переменных, с которыми они будут<br>
+ манипулировать.<br>
+     Упражнение <font color="fuchsia">1</font>-<font color="fuchsia">18</font>.<br>
+     ---------------<br>
+     Проверка в операторе <font color="yellow">FOR</font> функции <font color="yellow">GETLINE</font> довольно неук-<br>
+ люжа. Перепишите программу таким образом, чтобы сделать эту<br>
+ проверку более ясной, но сохраните при этом то же самое по-<br>
+ ведение в конце файла и при переполнении буфера. Является ли<br>
+ это поведение самым разумным?<br>
+ <br>
+     <font color="fuchsia">1</font>.<font color="fuchsia">11</font>. Резюме<br>
+ <br>
+     На данном этапе мы обсудили то, что можно бы назвать<br>
+ традиционным ядром языка "<font color="yellow">C</font>". Имея эту горсть строительных<br>
+ блоков, можно писать полезные программы весьма значительного<br>
+ размера, и было бы вероятно неплохой идеей, если бы вы за-<br>
+ держались здесь на какое-то время и поступили таким образом:<br>
+ следующие ниже упражнения предлагают вам ряд программ нес-<br>
+ колько большей сложности, чем те, которые были приведены в<br>
+ этой главе.<br>
+     <br>
+                            - <font color="fuchsia">38</font> -<br>
+     <br>
+     После того как вы овладеете этой частью "<font color="yellow">C</font>", приступайте<br>
+ к чтению следующих нескольких глав. Усилия, которые вы при<br>
+ этом затратите, полностью окупятся, потому что в этих главах<br>
+ обсуждаются именно те стороны "<font color="yellow">C</font>", где мощь и выразитель-<br>
+ ность языка начинает становиться очевидной.<br>
+    Упражнение <font color="fuchsia">1</font>-<font color="fuchsia">19</font>.<br>
+    ---------------<br>
+     Напишите программу <font color="yellow">DETAB</font>, которая заменяет табуляции во<br>
+ вводе на нужное число пробелов так, чтобы промежуток дости-<br>
+ гал следующей табуляционной остановки. Предположите фиксиро-<br>
+ ванный набор табуляционных остановок, например, через каждые<br>
+ <font color="yellow">N</font> позиций.<br>
+     Упражнение <font color="fuchsia">1</font>-<font color="fuchsia">20</font>.<br>
+     ----------------<br>
+     Напишите программу <font color="yellow">ENTAB</font>, которая заменяет строки пробе-<br>
+ лов минимальным числом табуляций и пробелов, достигая при<br>
+ этом тех же самых промежутков. Используйте те же табуляцион-<br>
+ ные остановки, как и в <font color="yellow">DETAB</font>.<br>
+     Упражнение <font color="fuchsia">1</font>-<font color="fuchsia">21</font>.<br>
+     ----------------<br>
+     Напишите программу для "сгибания" длинных вводимых строк<br>
+ после последнего отличного от пробела символа, стоящего до<br>
+ столбца <font color="yellow">N</font> ввода, где <font color="yellow">N</font> - параметр. убедитесь, что ваша прог-<br>
+ рамма делает что-то разумное с очень длинными строками и в<br>
+ случае, когда перед указанным столбцом нет ни табуляций, ни<br>
+</P>
+</body>
+</html>
