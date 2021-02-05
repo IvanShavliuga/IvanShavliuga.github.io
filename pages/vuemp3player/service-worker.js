@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
 
 importScripts(
-  "https://ivanshavliuga.github.io/pages/vuemp3player/precache-manifest.e1a7d2ceb114697e5faa7d8a4f29a9b4.js"
+  "precache-manifest.a148f896149c83791eae4bc344a4483c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vuemp3player"});
