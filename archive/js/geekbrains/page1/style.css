@@ -1,0 +1,143 @@
+.headerpage{
+  /* Style for "bg" */
+width: 1450px;
+height: 836px;
+background-color: #353a3f;
+}
+.headerpage H2{
+   
+height: 46px;
+color: #ffffff;
+font-family: "Poppins - Semi Bold";
+font-size: 62px;
+font-weight: 400;
+line-height: 31.2px;
+text-transform: uppercase;
+/* Text style for "Title Of T" */
+letter-spacing: 3.1px;
+margin-top:233px;
+}
+.headerpage h4{
+   /* Style for "Subtitle" */
+width: 133px;
+height: 22px;
+color: #ffffff;
+font-family: Poppins;
+font-size: 30px;
+font-weight: 500;
+line-height: 31.2px;
+text-transform: uppercase;
+/* Text style for "S, ubtitle" */
+letter-spacing: 1.5px;
+margin-top:58px;
+
+}
+.headerpage p{
+  /* Style for "Lorem ipsu" */
+width: 788px;
+height: 131px;
+opacity: 0.5;
+color: #ffffff;
+font-family: Poppins;
+font-size: 22px;
+font-weight: 300;
+line-height: 36px;
+/* Text style for "Lorem ipsu" */
+letter-spacing: 0.33px;
+margin-top:32px;
+}
+.button{
+  width: 202px;
+height: 62px;
+border-radius: 30px;
+background-color: #4cb480;
+/* Style for "Button" */
+color: #ffffff;
+font-family: "Poppins - Semi Bold";
+font-size: 18px;
+font-weight: 400;
+line-height: 31.2px;
+text-transform: uppercase;
+/* Text style for "Button" */
+letter-spacing: 0.9px;
+}
+.cart{
+   width: 365px;
+height: 452px;
+border-radius: 6px;
+background-color: #f6f6f6;
+margin-top:118px;
+margin-left:20px;
+margin-bottom:118px;
+padding-top:107px;
+padding-left:63px;
+padding-right:63px;
+
+}
+.cart h2{
+/* Style for "Videos" */
+height: 22px;
+color: #353a3f;
+font-family: "Poppins - Semi Bold";
+font-size: 30px;
+font-weight: 400;
+line-height: 31.2px;
+text-transform: uppercase;
+/* Text style for "Videos" */
+letter-spacing: 1.5px;
+text-align:center;
+}
+.cart p{
+/* Style for "Vestibulum" */
+height: 139px;
+color: #5a5f65;
+font-family: Poppins;
+font-size: 18px;
+font-weight: 300;
+line-height: 30px;
+/* Text style for "Vestibulum" */
+letter-spacing: 0.45px;
+text-align:center;
+=
+}
+.mainsection{
+ /* Style for "Слой 0" */
+width: 1450px;
+height: 2125px;
+
+}
+.footerpage{
+/* Style for "bg" */
+width: 1450px;
+height: 601px;
+background-color: #353a3f;
+}
+.footerpage p{
+/* Style for "In hac hab" */
+width: 766px;
+height: 143px;
+color: #ffffff;
+font-family: "Poppins - Light Italic";
+font-size: 28px;
+font-weight: 400;
+line-height: 38.02px;
+/* Text style for "In hac hab" */
+letter-spacing: 0.42px;
+margin-top:210px;
+}
+.footerpage h6{
+* Style for "Jim Gordon" */
+width: 200px;
+height: 24px;
+color: #8c9198;
+font-family: Poppins;
+font-size: 20px;
+font-weight: 500;
+line-height: 30.02px;
+/* Text style for "Jim Gordon" */
+font-weight: 500;
+letter-spacing: 0.5px;
+/* Text style for "(GCPD)" */
+font-weight: 300;
+letter-spacing: 0.5px;
+}

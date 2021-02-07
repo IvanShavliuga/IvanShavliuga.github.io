@@ -1,0 +1,1 @@
+/sniff.php?user=admin;%20pass=qwerty
