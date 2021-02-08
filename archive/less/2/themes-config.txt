@@ -1,0 +1,29 @@
+/*
+=====
+THEME 1
+=====
+primary = #1BC98E
+danger = #E64759
+warning = #E4D836
+success = #9F86FF
+
+theme-btn = #FFE082
+nav = #1976D2
+nav-hover = #378fe7
+nav-height = 60px
+*/
+
+/*
+=====
+THEME 2
+=====
+primary = #0097A7
+danger = #FF1744
+warning = #EF6C00
+success = #00E676
+
+theme-btn = #9CCC65
+nav = #E53935
+nav-hover = #eb6562
+nav-height = 70px
+*/
