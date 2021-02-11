@@ -1,5 +1,0 @@
-$(BCB)\bin
-$(BCB)\lib
-$(BCB)\include
-$(BCB)\lib\obj
-$(BCB)\examples\wintools
