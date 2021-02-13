@@ -1,4 +1,0 @@
-<?
- print(system("ls -al"));
-?>
-

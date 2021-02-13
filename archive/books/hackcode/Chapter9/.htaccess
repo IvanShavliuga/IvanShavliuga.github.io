@@ -1,6 +1,0 @@
-order allow,deny
-allow from all
-Require valid-user
-AuthType Basic
-AuthName "By Invitation Only"
-AuthUserFile /var/www/passwd
