@@ -2,6 +2,7 @@ User-agent: *
 Allow: /index.html
 Allow: /pages/*.html
 Allow: /resume/resume.pdf
+Disallow /**/*.mp3
 Disallow: /archive/**/
 Disallow: /test/**/
 Disallow: /test/
