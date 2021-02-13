@@ -1,4 +1,0 @@
-[Debugger]
-Watch symbols=buf,buffer,f,pos,slovar,slovo,strings
-[Windows]
-File1=main.c,-4,-28,735,370,1,1
