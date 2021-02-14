@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 13" width="14" height="13">
+	<defs>
+		<image width="14" height="13" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAMAAACuAq9NAAAAAXNSR0IB2cksfwAAAKhQTFRF////////tLS0LS0tBwcHDg4OWFhY6urq////////////pqamBwcHgoKCzc3NvLy8REREJycn7+/v////////9vb2FBQUkZGR/v7+KSkpeXl5////Dw8P8vLymJiYKioqwMDAGxsb/f39rq6uIiIivb29GRkZ9PT0+vr6NTU1BAQEKCgoHBwcBQUFjY2NFRUVAAAAc3NzGhoad3d39PT0GhoaAAAAd3d3gkdBrQAAADh0Uk5T3+3t7e3t7e2U9f///////////6Lw////////n////////////////////////////////+3t7e11jKxfAAAAdUlEQVR4nIXH3RZCQBhG4W+K4iUVUVOhJKIi+rv/O2smrOXMPtoPEWNsNFbUyVSMRjpgmDNrvljagEMruN4awIZvgZ2gtfcFEYQND8dI8hQ3PCfpRWTEkaSb5VfOeXi7F5Jp+Wir/qw7Pgep9+kQvd6fti/TfhRkFO9AYetoAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="prooduct panel">
+		<g id="add to cart">
+			<use id="Layer 215" style="opacity: 0.502" href="#img1" x="0" y="0" />
+		</g>
+	</g>
+</svg>

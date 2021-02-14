@@ -1,0 +1,25 @@
+[{
+    "category": "Литература",
+    "linkslist": [{
+      "name":"Author Today",
+      "link":"https://author.today/u/ischavliuga/works"
+    },{
+      "name":"SamLib.ru",
+      "link":"https://samlib.ru/i/iwan_sergeewich_shawljuga/"
+    },{
+      "name":"Персональный сайт",
+      "link":"https://isschavliuga.ucoz.net"
+    }]
+  },{
+    "category": "Наука",
+    "linkslist": [{
+      "name":"Таблица Менделеева",
+      "link":"https://mendel-info.usite.pro"
+    },{
+      "name":"Телеграм канал о науке",
+      "link":"https://t.me/mendelinfo"
+    },{
+      "name":"Телеграм канал о vue.js",
+      "link":"https://www.t.me/vuejscodesru"
+    }]
+  }]

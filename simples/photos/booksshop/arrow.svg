@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38" width="38" height="38">
+	<defs>
+		<image width="16" height="24" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAYCAMAAADEfo0+AAAAAXNSR0IB2cksfwAAAFpQTFRFAAAADQ0NEhISFBQUAgICAQEBERERDw8PAAAAERERFBQUBQUFEBAQDw8PDg4ODg4ODQ0NEhISDAwMEhISBAQECwsLExMTBAQECgoKFBQUFBQUBgYGCAgIFBQU207jhgAAAB50Uk5TAMRqF/7/fKr/iAb6lKO0wcxu1lz930P75wwu9+4SCEjBdAAAAGxJREFUeJx10UkOgCAMBVBUwILiPA/3v6bGBpQ2/h0vKbRFCJGkIkomlY4gB1Dmc7YF3Clf0PDEBXAIUDGpgxiF0gRpJUpnvfQDyhhkmlGW1cu2oxznD9ASeil9ljZGW2fDsfHZgtgK+ZLJN1zvsQdtDUp+lgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { opacity: 0.459;fill: #000000 } 
+	</style>
+	<g id="Banner">
+		<path id="Shape 14 copy" class="shp0" d="M19 0C8.51 0 0 8.51 0 19C0 29.49 8.51 38 19 38C29.49 38 38 29.49 38 19C38 8.51 29.49 0 19 0Z" />
+		<use id="Layer 211 copy" href="#img1" x="13" y="7" />
+	</g>
+</svg>

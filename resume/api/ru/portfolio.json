@@ -1,0 +1,91 @@
+
+  [{
+    "sitelink":"https://codesandbox.io/s/vue-mp3-player-rtht7?fontsize=14&hidenavigation=1&theme=dark",
+    "sitetitle":"codesandbox.io",
+    "title":"Vue.js simple audio player",
+    "desc":"Простой audio player, сделанный при помощи vue.js компонента. Обработка системного тега audio.",
+    "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","ajax","axios"]
+  },{
+    "sitelink":"https://codepen.io/ivanshavliuga/pen/GzXVvY",
+    "sitetitle":"codepen.io/ivanshavliuga",
+    "title":"Анимированная форма регистрации",
+    "desc":"Верстка аниминованной формы регистрации",
+    "tech":["html5","css3","animation"]
+  },{
+    "sitelink":"https://codepen.io/ivanshavliuga/pen/pobKbpm",
+    "sitetitle":"codepen.io/ivanshavliuga",
+    "title":"Таблица Шульте (усложненный вариант)",
+    "desc":"Собрать числовую последовательность от 1 до 64",
+    "tech":["html5","css3","vue.js (2.x)"]
+  },{
+    "sitelink":"https://codepen.io/ivanshavliuga/pen/rNLdBeR",
+    "sitetitle":"codepen.io/ivanshavliuga",
+    "title":"Vue.js Esay slider ",
+    "desc":"Простой слайдер из проекта инетернет магазина книг",
+    "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","ajax","axios"]
+  },{
+    "sitelink":"https://codepen.io/ivanshavliuga/pen/xxOjjjz",
+    "sitetitle":"codepen.io/ivanshavliuga",
+    "title":"Vue.js simple audio player",
+    "desc":"Простой audio player, сделанный при помощи vue.js компонента. Обработка системного тега audio.",
+    "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","ajax","axios"]
+  },{
+    "sitelink":"https://github.com/IvanShavliuga/booksshop",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Vue.js simple booksshop",
+    "desc":" Интернет магазин книг (в разработке)",
+    "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","nuxt"]
+  },{
+    "sitelink":"https://github.com/IvanShavliuga/vue-sample-svg-icons",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Vue.js svg icons",
+    "desc":" Svg иконки для vue.js  в отдельных компонентах",
+    "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","svg"]
+  },{
+    "sitelink":"https://github.com/IvanShavliuga/Crios",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Landing page",
+    "desc":" Шаблон сайта местного туроператора",
+    "tech":["html5","css3","less","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design","own design"]
+  },{
+    "sitelink":"https://github.com/IvanShavliuga/Daisy",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Landing page",
+    "desc":" Шаблон digital-агентства или веб-студии",
+    "tech":["html5","css3","less","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design","own design"]
+  },{
+    "sitelink":"https://github.com/IvanShavliuga/vue-chat",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Chat",
+    "desc":" Чат для обмена сообщениями с применением html-тегов",
+    "tech":["html5","css3","less","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design","own design"]
+  },{
+    "sitelink":"https://github.com/IvanShavliuga/vuejsnews",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Новостной портал",
+    "desc":"Шаблон новостного сайта с применением vue.js. Есть разделы: пользователи, сообщения, посты, лайки, репосты.",
+    "tech":["html5","css3","scss","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design","own design"]
+  },{
+    "sitelink":"https://github.com/IvanShavliuga/vuejstimer",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Список задач с таймером",
+    "desc":"Список задач с таймером.",
+    "tech":["html5","css3","scss","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design","own design"]
+  },{
+    "sitelink":"https://github.com/IvanShavliuga/vuejs-mail-app",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"Почтовое приложение",
+    "desc":"Почтовое приложение. SPA с примением vue.js",
+    "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","adaptive design"]
+  }]

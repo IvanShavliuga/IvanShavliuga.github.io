@@ -1,0 +1,166 @@
+<html>
+<head>
+  <title>Мой первый опыт использования gulp</title>
+  <meta charset="UTF-8"/>
+  <meta name="author" content="iv2 (Ivan Shavliuga, Ivanov), https://github.com/IvanShavliuga"/>
+  <meta name="keywords" content="Resume, junior vue.js developer, portfolio, vuex, vue.js, vue-router, webpack, less, adaptive design" />
+  <meta name="description" content="Иван Шавлюга (Иванов), junior Frontend (vue.js) разработчик, персональный сайт, портфолио, резюме."/>
+  <link rel="stylesheet" href="./styles/pages.css" />
+</head>
+<body>
+<article class="page">
+  <h3>Мой первый опыт использования gulp</h3>
+  <h4>Постановка задачи</h4>
+  <p>В рамках опенсорнсого проекта <a href="https://github.com/sdras/vue-sample-svg-icons">sdras/vue-sample-svg-icons</a>
+     я стал обрабатывать социальные svg-иконки. Сначала делал вручную.
+     Есть готовый svg-файл. Из  него я вручную убираю заголовки, оставляю только полезный контент, т.е. саму графику.
+     Социальных иконок слишком много, и все нужные. Xml-заголовки у всех практически одинаковые. Ещё одна проблема
+     заключается в том, что этих социальных иконок чуть ли не под 60 штук.
+     И зачем вручную эти иконки чистить и преобразовывать во vue-файл.
+     Соответственно создаем gulp-модуль.
+     <pre><span class="prop">var</span> <span class="vars">gulp</span> = <span class="prop">require</span>(<span class="const">'gulp'</span>)
+<span class="prop">var</span> <span class="vars"><span class="vars">replace</span></span> = <span class="prop">require</span>(<span class="const">'gulp-<span class="vars">replace</span>'</span>)
+<span class="prop">var</span> <span class="vars">concat</span> = <span class="prop">require</span>(<span class="const">'gulp-concat'</span>);
+<span class="prop">var</span> <span class="vars">rename</span> = <span class="prop">require</span>(<span class="const">"gulp-rename"</span>);
+<span class="prop">var</span> <span class="vars">files</span> = [
+  /* список файлов */
+];
+</pre>
+     Подключаем <b>gulp</b>, <b>gulp-<span class="vars">replace</span></b> (замена текстовых фрагментов в svg-файле),
+     <b>gulp-concat</b> (объединение промежуточных файлов), <b>gulp-rename</b> (переименоваение файлов).
+  </p>
+  <h4>Первичная обработка svg-файла и генерация vue-компонента</h4>
+  <p>Итак, нам надо преобразовать фактически XML во vue-компонент, убрав весь не нужный мусор. Т.е. сразу убираем это
+  <pre>
+&lt;!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --&gt;
+</pre>
+  Надо сказать, что графические редакторы могут писать как в этотм примере абсолютно не нужный с точки зрения здравого смысла.
+  Так же убираем не нужный xml-заголовок:
+  <pre>
+  &lt;?xml version="1.0" encoding="utf-8"?&gt;
+</pre>
+  Так же убираем не нужные для vue-компонента строки:
+  <pre>
+  &lt;?!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"?&gt;
+</pre>
+   Согласно проекту <b>vue-sample-svg-icons</b>, основной тег <b>&lt;svg&gt;</b> хранится во vue-компоненте <b>IconBase</b>.
+И в принцепе так намного эффективнее хранить заголовки svg в отдельном компоненте, а содержимое (т.е. саму графику передавать через слоты).
+   В итоге скрипт по очистки svg-файла выглядит именно так:
+  <pre>
+<span class="vars">gulp</span>.<span class="vars">src</span>(files)
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">/&lt;!--(.*?)--&gt;/</span>, <span class="const">''</span>))
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">/&lt;?xml(.*?)?&gt;/</span>, <span class="const">''</span>))
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">/&lt;!DOCTYPE(.*?)&gt;/</span>, <span class="const">''</span>))
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">/version=(.*?) id=(.*?) xmlns=(.*?) xmlns:xlink=(.*?) x=(.*?) y=(.*?)/</span>, <span class="const">''</span>))
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">'xml:space="preserve"'</span>, <span class="const">''</span>))
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">'"0px"'</span>, <span class="const">''</span>))
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">'enable-background', 'data-background'</span>))
+    </pre>
+    Параметры viewBox нужно оставить в форме data-атрибута
+    <pre>
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">/viewBox=(.*?)/</span>, <span class="prop">function</span> (m) {
+      <span class="prop">let</span> arr =  m.split("=");
+      <span class="prop">return</span> 'data-'+arr[0]+'='+arr[1];
+    }))
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">'svg', 'template'</span>))
+</pre>
+   После того, как файл обработали, мы его переименновываем:
+  <pre>
+  .<span class="vars">pipe</span>(rename(<span class="prop">function</span> (path) {
+      <span class="prop">let</span> arr = <span class="vars">path</span>.<span class="vars">basename.split(<span class="const">'-'</span>);
+      <span class="vars">path</span>.<span class="vars">dirname </span> += <span class="const">"/result/vue";</span>
+      <span class="vars">path</span>.<span class="vars">basename = <span class="const">"Icon-"</span>+arr[1];
+      <span class="vars">path</span>.<span class="vars">extname = <span class="const">".vue";</span>
+    }))
+.<span class="vars">pipe</span>(<span class="vars">gulp</span>.<span class="vars">dest</span> (<span class="const"><span class="const">'out/'</span>))
+</pre>
+  И отправляем в католог <b>out/result/vue</b>
+  Таким образом, получаем результирующий файл vue.
+  </p>
+  <h4>Вставка vue-компонетов в единный файл.</h4>
+  <p>Мне уже лень каждый компонент в ручную добавлять один файл, чтобы продемонстрировать все иконки одним махом.
+     Соответственно создаем генератор разметки. Можно ещё такой скрипт назвать автоматизатором (Можно таким же
+     способом подлючать не только иконки, но и объединять и компоненты с другим функиональным назначением).
+     У нас уже есть сгенерированный файл <b>in/component/componentList.txt'</span></b> со  списком всех иконок.
+     И так первая часть автоматизированного объединения компонентов в один файл:
+     <pre>
+     <span class="vars">gulp</span>.<span class="vars">src</span>(<span class="const"><span class="const">'in/component/componentList.txt'</span></span>)
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">/(.*?).vue/g</span>, <span class="prop">function</span> (match) {
+      <span class="prop">const</span> arr = match.split(<span class="const">'/'</span>)
+      <span class="prop">const</span> fname = arr[2].split(<span class="const">'.'</span>)
+      <span class="prop">const</span> res <span class="const">= 'import ' + fname[0] + " from 'vue/"</span>+ arr[2] + <span class="const">"'"</span>
+      <span class="prop">return</span> res
+    }))
+    .<span class="vars">pipe</span>(rename(<span class="prop">function</span> (path) {
+      <span class="vars">path</span>.<span class="vars">basename = <span class="const">"component-import";</span>
+      <span class="vars">path</span>.<span class="vars">extname = <span class="const">".txt";</span>
+    }))
+.<span class="vars">pipe</span>(<span class="vars">gulp</span>.<span class="vars">dest</span> (<span class="const"><span class="const">'out/component/'</span>))
+     </pre>
+     На входе у нас:
+     <pre>
+in/SVG-emojis/Icon-grinning.vue
+     </pre>
+     На выходе
+     <pre>
+import grinning from 'vue/Icon-grinning.vue'
+     </pre>
+     Идем дальше, вторая часть объединения:
+     <pre>
+<span class="vars">gulp</span>.<span class="vars">src</span>(<span class="const"><span class="const">'in/component/componentList.txt'</span></span>)
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">/(.*?).vue/g</span>, <span class="prop">function</span> (match) {
+      console.log(match)
+      <span class="prop">const</span> arr = match.split(<span class="const">'/'</span>)
+      <span class="prop">const</span> fname = arr[2].split(<span class="const">'.'</span>)
+      <span class="prop">const</span> res =  fname[0] + <span class="const">','</span>
+      <span class="prop">return</span> res
+    }))
+    .<span class="vars">pipe</span>(rename(<span class="prop">function</span> (path) {
+      <span class="vars">path</span>.<span class="vars">basename = <span class="const">"component-list";</span>
+      <span class="vars">path</span>.<span class="vars">extname = <span class="const">".txt";</span>
+    }))
+.<span class="vars">pipe</span>(<span class="vars">gulp</span>.<span class="vars">dest</span> (<span class="const"><span class="const">'out/component/'</span>))
+     </pre>
+     Здесь мы создаем список компонентов через запятую и записываем в файл <b>component-list.txt</b>.
+     Т.е. в первой части мы объявляем импорт всех vue-компонентов. А во второй части подключаем их
+     к экземпляру Vue.
+     Ну, а на третьем  этапе объединения создаем готовую html разметку в файле <b>component-template</b>.
+     <pre>
+<span class="vars">gulp</span>.<span class="vars">src</span>(<span class="const"><span class="const">'in/component/componentList.txt'</span></span>)
+    .<span class="vars">pipe</span>(<span class="vars">replace</span>(<span class="const">/(.*?).vue/g</span>, <span class="prop">function</span> (match) {
+      console.log(match)
+      <span class="prop">const</span> arr = match.split(<span class="const">'/'</span>)
+      <span class="prop">const</span> fname = arr[2].split(<span class="const">'.'</span>)
+      <span class="prop">const</span> res <span class="const">= '&lt;icon-base class="icons__image" icon-name="'</span> + fname[0] + <span class="const">'" width="64" height="64" icon-color="#5434ad"&gt;&lt;'</span> + fname[0] + <span class="const">'/&gt;&lt;/icon-base&gt;"'</span>      <span class="prop">return</span> res
+    }))
+    .<span class="vars">pipe</span>(rename(<span class="prop">function</span> (path) {
+      <span class="vars">path</span>.<span class="vars">basename = <span class="const">"component-template";</span>
+      <span class="vars">path</span>.<span class="vars">extname = <span class="const">".txt";</span>
+    }))
+    .<span class="vars">pipe</span>(<span class="vars">gulp</span>.<span class="vars">dest</span> (<span class="const"><span class="const">'out/component/'</span>))
+})
+     </pre>
+  </p>
+  <h4>Склеиваем все</h4>
+  <p> Теперь осталось объединить все три файла (<b>component-template</b>, <b>component-import</b>,
+    <b>component-list</b>).
+    <pre>
+    <span class="vars">gulp</span>.task("componentconcat", <span class="prop">function</span>(){
+  <span class="vars">gulp</span>.<span class="vars">src</span>([<span class="const">'in/component/starthtml.txt'</span>,
+            <span class="const">'out/component/component-template.txt'</span>,
+            <span class="const">'in/component/endhtml.txt'</span>,
+            <span class="const">'in/component/startjs.txt'</span>,
+            <span class="const">'out/component/component-import.txt'</span>,
+            <span class="const">'in/component/compstart.txt'</span>,
+            <span class="const">'out/component/component-list.txt'</span>,
+            <span class="const">'in/component/compend.txt'</span>,
+            <span class="const">'in/component/endjs.txt'</span>
+          ])
+    .<span class="vars">pipe</span>(concat(<span class="const">'IconList.vue'</span>))
+    .<span class="vars">pipe</span>(<span class="vars">gulp</span>.<span class="vars">dest</span> (<span class="const"><span class="const">'out/result/'</span>));
+})
+    </pre>
+  </p>
+</article>
+</body>
+</html>
