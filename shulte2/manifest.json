@@ -1,20 +1,20 @@
 {
-  "name": "iv2shulte",
+  "name": "iv2shulte"
   "short_name": "iv2shulte",
   "icons": [
     {
-      "src": "./img/icons/iv2-128x128.png",
+      "src": "https://ivanshavliuga.github.io/shulte2/img/icons/iv2-128x128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "./img/icons/iv2-512x512.png",
+      "src": "https://ivanshavliuga.github.io/shulte2/img/icons/iv2-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "https://ivanshavliuga.github.io/shulte2/index.html",
   "display": "fullscreen",
-  "background_color": "#323232",
-  "theme_color": "#323232"
+  "background_color": "#232323",
+  "theme_color": "#333333"
 }
