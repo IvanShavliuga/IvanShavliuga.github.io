@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "https://ivanshavliuga.github.io/shulte2/js/about.ccbf5d00.js"
   },
   {
-    "revision": "5a56f4430ae7308dc064",
-    "url": "https://ivanshavliuga.github.io/shulte2/css/app.6d8511bc.css"
+    "revision": "1c3ffe1fc35901bc4f7c",
+    "url": "https://ivanshavliuga.github.io/shulte2/css/app.3ffe611c.css"
   },
   {
-    "revision": "5a56f4430ae7308dc064",
-    "url": "https://ivanshavliuga.github.io/shulte2/js/app.eca3b5da.js"
+    "revision": "1c3ffe1fc35901bc4f7c",
+    "url": "https://ivanshavliuga.github.io/shulte2/js/app.0ce19116.js"
   },
   {
     "revision": "37594ca231326478a865",
     "url": "https://ivanshavliuga.github.io/shulte2/js/chunk-vendors.7f103b48.js"
   },
   {
-    "revision": "47f71dc88d809ea00f0c7e448b1f5b48",
+    "revision": "7aad608b2e8ef4bc17265b2a38f58799",
     "url": "https://ivanshavliuga.github.io/shulte2/index.html"
   },
   {
