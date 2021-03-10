@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.2d51a5adb4542829e9ceadff0efe7971.js"
+  "https://ivanshavliuga.github.io/shulte2/precache-manifest.2d51a5adb4542829e9ceadff0efe7971.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "iv2shulte"});
