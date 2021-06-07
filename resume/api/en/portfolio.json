@@ -1,5 +1,12 @@
 
   [{
+    "sitelink":"https://codesandbox.io/s/laughing-sound-sbupl",
+    "sitetitle":"codesandbox.io",
+    "title":"Table of Mendeleev",
+    "desc":"Simple search by elements of the periodic table",
+    "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
+      "git","ajax","axios"]
+  },{
     "sitelink":"https://codesandbox.io/s/vue-mp3-player-rtht7?fontsize=14&hidenavigation=1&theme=dark",
     "sitetitle":"codesandbox.io",
     "title":"Vue.js simple audio player",
