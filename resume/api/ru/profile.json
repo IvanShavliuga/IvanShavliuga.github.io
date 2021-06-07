@@ -1,12 +1,14 @@
-{
+﻿{
   "name":"Иван Шавлюга",
+
   "geo":"Республика Беларусь, Новополоцк",
+
   "prof":"junior Frontend разработчик",
   "email":"iva.drakon.nov@gmail.com",
   "github":"https://github.com/IvanShavliuga/",
   "phone":"https://t.me/ivanshavliuga",
   "skills": [
-    "html5","css3","scss","less","pug","Angular (beginners)","vue.js (2.x)","Vue-Router","Vuex","npm","Webpack",
-    "Bootstrap (4.x)","EcmaScript (2015)","git","adaptive design"
+    "html5","css3","scss","less","pug","vue.js (2.x)","Vue-Router","Vuex","npm","Webpack",
+    "Bootstrap (4.x)","EcmaScript (2015)","git","adaptive design", "Nuxt", "vue-cli", "gulp"
   ]
 }
