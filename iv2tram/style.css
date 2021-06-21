@@ -1,0 +1,11 @@
+@font-face {
+ font-family: digital; /* Гарнитура шрифта */
+ src: url('./dgital.ttf'); /* Для IE5-8 */
+ src: local(digital), url(digital.ttf); /* Для остальных браузеров */
+}
+.digital {
+ font-family: digital, 'Comic Sans MS', cursive;
+}
+svg g text {
+  font-family: digital, 'Comic Sans MS', cursive;
+}
