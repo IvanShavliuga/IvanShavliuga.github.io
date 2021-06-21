@@ -3,17 +3,17 @@
   "short_name": "iv2tram",
   "icons": [
     {
-      "src": "d:/works/iv2tram/dist/img/icons/iv2tram-128x128.png",
+      "src": "https://ivanshavliuga.github.io/iv2tram/img/icons/iv2tram-128x128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "d:/works/iv2tram/dist/img/icons/iv2tram-512x512.png",
+      "src": "https://ivanshavliuga.github.io/iv2tram/img/icons/iv2tram-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "https://ivanshavliuga.github.io/iv2tram/index.html",
   "display": "fullscreen",
   "background_color": "#7e22a1",
   "theme_color": "#7e22a1"

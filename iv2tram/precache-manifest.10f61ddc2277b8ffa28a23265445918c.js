@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "https://ivanshavliuga.github.io/iv2tram/js/about.9f8037cf.js"
   },
   {
-    "revision": "339e935cddebe168e1d1",
+    "revision": "22aca05dca4d87c0aebb",
     "url": "https://ivanshavliuga.github.io/iv2tram/css/app.3462139b.css"
   },
   {
-    "revision": "339e935cddebe168e1d1",
-    "url": "https://ivanshavliuga.github.io/iv2tram/js/app.289d3d50.js"
+    "revision": "22aca05dca4d87c0aebb",
+    "url": "https://ivanshavliuga.github.io/iv2tram/js/app.27a02b8b.js"
   },
   {
-    "revision": "77f7378a489e7b4db5bc",
-    "url": "https://ivanshavliuga.github.io/iv2tram/js/chunk-vendors.d35cb52e.js"
+    "revision": "5389ebd694be00d0755d",
+    "url": "https://ivanshavliuga.github.io/iv2tram/js/chunk-vendors.803dae94.js"
   },
   {
-    "revision": "81d5b6acb87eff6d80d0e0f626358416",
+    "revision": "8a86e4f1a9f41affdd557a575a552c2f",
     "url": "https://ivanshavliuga.github.io/iv2tram/index.html"
   },
   {
@@ -33,11 +33,11 @@ self.__precacheManifest = [
   },
   {
     "revision": "df3214617fe291cc7e68dd54d091f399",
-    "url": "https://ivanshavliuga.github.io/iv2tram/iv2tram.ico"
+    "url": "iv2tram.ico"
   },
   {
     "revision": "735ab4f94fbcd57074377afca324c813",
-    "url": "https://ivanshavliuga.github.io/iv2tram/robots.txt"
+    "url": "robots.txt"
   },
   {
     "revision": "6c470f5a05c48ed6bd7680629df6ad3d",
