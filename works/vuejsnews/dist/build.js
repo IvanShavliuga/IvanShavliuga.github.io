@@ -543,7 +543,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 const router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
   mode: 'history',
-  routes: __WEBPACK_IMPORTED_MODULE_4__routes__["a" /* routes */]
+  routes: __WEBPACK_IMPORTED_MODULE_4__routes__["a" /* routes */],
+  base: 'https://ivanshavliuga.github.io/works/vuejsnews/'
 });
 
 const eventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
@@ -751,7 +752,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vuex
          login: "iv2",
          gender: "men",
          age: 31,
-         avatar: 'src/assets/images/iv2.jpg',
+         avatar: 'https://ivanshavliuga.github.io/works/vuejsnews/images/iv2.jpg',
          password: "12345",
          friends: [0, 1, 2],
          name: "Ivan Shavliuga (Ivanov)",
@@ -774,7 +775,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vuex
          login: "max",
          rang: "Moderator",
          gender: "men",
-         avatar: 'src/assets/images/team1.jpg',
+         avatar: 'https://ivanshavliuga.github.io/works/vuejsnews/images/team1.jpg',
          age: 29,
          password: "12345",
          friends: [0, 1, 2],
@@ -801,7 +802,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vuex
          age: 27,
          friends: [0, 1, 2],
          gender: "men",
-         avatar: 'src/assets/images/team2.jpg',
+         avatar: 'https://ivanshavliuga.github.io/works/vuejsnews/images/team2.jpg',
          name: "Alex Frolov",
          spec: "Junior Backend Developer",
          skills: ["node.js", "php", "mongoDB", "MySQL", "Python", "Ruby", "Ruby on rails"],
@@ -825,7 +826,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vuex
          age: 24,
          friends: [3, 4, 5, 6],
          password: "12345",
-         avatar: 'src/assets/images/team4.jpg',
+         avatar: 'https://ivanshavliuga.github.io/works/vuejsnews/images/team4.jpg',
          name: "Vald Frolov",
          spec: "Junior Data science Developer",
          skills: ["python", "Data ", "mongoDB", "MySQL", "Python", "Ruby", "Ruby on rails"],
@@ -849,7 +850,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vuex
          friends: [3, 4, 5, 6],
          rang: "User",
          age: 30,
-         avatar: 'src/assets/images/1.jpg',
+         avatar: 'https://ivanshavliuga.github.io/works/vuejsnews/images/1.jpg',
          name: "Oleg Frolov",
          spec: "Junior Data science Developer",
          skills: ["python", "Data science", "Machine learning", "MySQL", "Python", "Ruby", "Ruby on rails"],
@@ -874,7 +875,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vuex
          friends: [3, 4, 5, 6],
          password: "12345",
          name: "Ann Lenina",
-         avatar: 'src/assets/images/team3.jpg',
+         avatar: 'https://ivanshavliuga.github.io/works/vuejsnews/images/team3.jpg',
          spec: "Junior Systems Developer",
          skills: ["C", "C++", "C#", "Linux"],
          city: "Rostov, Russia",
@@ -898,7 +899,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vuex
          gender: "women",
          password: "12345",
          name: "Angel Lenina",
-         avatar: 'src/assets/images/me.jpg',
+         avatar: 'https://ivanshavliuga.github.io/works/vuejsnews/images/me.jpg',
          spec: "Junior Systems Developer",
          skills: ["C", "C++", "C#", "Linux"],
          city: "Rostov, Russia",
