@@ -544,7 +544,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 const router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
   mode: 'history',
   routes: __WEBPACK_IMPORTED_MODULE_4__routes__["a" /* routes */],
-  base: 'https://ivanshavliuga.github.io/works/vuejsnews/'
+  base: '/works/vuejsnews/'
 });
 
 const eventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
