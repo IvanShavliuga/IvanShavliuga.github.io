@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.52f1b26a3932e68c19b3d00d895bee5c.js"
+  "precache-manifest.910300df02df2d13307095bf8d48b022.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "iv2tram"});
