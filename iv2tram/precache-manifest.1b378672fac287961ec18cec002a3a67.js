@@ -1,18 +1,18 @@
 self.__precacheManifest = [
   {
-    "revision": "4a9ff708d0fd3d6160df",
-    "url": "css/app.f42f79c7.css"
+    "revision": "0062d373e80f4d15fd57",
+    "url": "css/app.24f77d62.css"
   },
   {
-    "revision": "4a9ff708d0fd3d6160df",
-    "url": "js/app.d248ceeb.js"
+    "revision": "0062d373e80f4d15fd57",
+    "url": "js/app.c6330a34.js"
   },
   {
     "revision": "b4c5a1efacec295a3ecd",
     "url": "js/chunk-vendors.02f48d1a.js"
   },
   {
-    "revision": "351f1782088b60d468762261fcaafbfd",
+    "revision": "a6df78f1458d89dfab91aee9b8322fc3",
     "url": "index.html"
   },
   {
@@ -22,10 +22,6 @@ self.__precacheManifest = [
   {
     "revision": "f821186041b6460780efeb76341eefe6",
     "url": "img/tram.svg"
-  },
-  {
-    "revision": "9be6c95134431cd7aa9319e7b5a274a8",
-    "url": "iv2.ico"
   },
   {
     "revision": "df3214617fe291cc7e68dd54d091f399",
