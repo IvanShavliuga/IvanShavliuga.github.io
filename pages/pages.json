@@ -1,7 +1,12 @@
-[
+﻿[
   {
     "link": "https://ivanshavliuga.github.io/pages/gulp-first.html",
     "title": "Мой первый опыт использования gulp",
     "category": "gulp"
+  },
+  {
+    "link": "https://ivanshavliuga.github.io/pages/colors.html",
+    "title": "Список стандратных цветов",
+    "category": "colors"
   }
 ]
