@@ -16,5 +16,6 @@
   "start_url": "https://ivanshavliuga.github.io/shulte2/index.html",
   "display": "fullscreen",
   "background_color": "#232323",
+  "orientation": "landscape",
   "theme_color": "#333333"
 }
