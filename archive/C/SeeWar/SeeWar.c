@@ -1,4 +1,3 @@
-
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <windowsx.h>
@@ -11,194 +10,151 @@
 #include <gl\glaux.h>
 #include "SeeWar.h"
 #include <win\mmsystem.h>
-//Подключение библиотеки
+
 #pragma comment(lib, "user32.lib")
 #pragma comment(lib, "gdi32.lib")
 #pragma comment(lib, "opengl32.lib")
 #pragma comment(lib, "glaux.lib")
 #pragma comment(lib, "glu32.lib")
-//Стандартные переменные для работы с OpenGL
-HDC hDC = NULL;                 // Частный Контекст Устройства GDI
-HGLRC hRC = NULL;               // Постоянное Предоставление Контекста
-HWND hwnd = NULL;               // Держит Нашу Ручку Окна
-HINSTANCE hInstance;            // Держит Пример Приложения
 
-BOOL g_fKeys[256];              // Массив Использованный Для Клавишной Программы
-BOOL g_fActive = TRUE;          // Активный Флаг Окна Установленные В ИСТИНУ ПО УМОЛЧАНИЮ
+HDC hDC = NULL;               
+HGLRC hRC = NULL;               
+HWND hwnd = NULL;             
+HINSTANCE hInstance;           
 
-GLfloat z = -10.0f;             // Depth Into The Screen
+BOOL g_fKeys[256];              
+BOOL g_fActive = TRUE;        
+
+GLfloat z = -10.0f;         
 
 GLfloat LightAmbient[] = { 0.5f, 0.5f, 0.5f, 1.0f };
 GLfloat LightDiffuse[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 GLfloat LightPosition[] = { 0.0f, 0.0f, 2.0f, 1.0f };
 
-GLuint filter;                  // Какой Фильтр, чтобы Использовать
-GLuint texture[3];              // Хранение Для 3 Текстур
-GLuint object = 1;              // Какой Объект Против Делать
-LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);   // Обработка команд Windows
-//переменные для "Морского боя"
-int Player1[10][10],Player2[10][10];//Расположения кораблей и их состояния
-/*0 -пустота (в нее не стреляли
-  1 -корабль (часть корабля) неповрежденный
-  10 - прострелянная пустота
-  11 - поврежденный корабль
-*/
-int X,Y; //координаты выстрела (В смысле куда стреляем?)
-int player; //Какой игрок сейчас играет
-char password1[10],password2[10]; //пароли игроков
-char buffer[10];	//что ввели
-int DeathP1,DeathP2; //Кол-во убитых у первого и второго игрока
-int HodP1,HodP2;//Фиксируем кто походил, а кто нет
+GLuint filter;                  
+GLuint texture[3];              
+GLuint object = 1;              
+LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);   
 
-//ФУНКЦИИ НЕПОСРЕДСТВЕННО ДЛЯ МОРСКОГО БОЯ
-void ClearBoards(); //Очистка полей игроков
-void Feur();        //Выстрел
-void CreateBoards();//Автоматическое создание полей игроков
+int Player1[10][10],Player2[10][10];
+
+int X,Y; 
+int player; 
+char password1[10],password2[10]; 
+char buffer[10];	
+int DeathP1,DeathP2; 
+int HodP1,HodP2;
+void ClearBoards(); 
+void Feur();       
+void CreateBoards();
 
 static AUX_RGBImageRec *LoadBMP(char *Filename)
 {
-    if (Filename)  //Если имя файла передано
+    if (Filename)  
     {
         FILE *fp = fopen(Filename, "r");
-        if (fp) //Если файл существует
+        if (fp) 
         {
-            fclose(fp); //Загружаем изображение
+            fclose(fp); 
             return auxDIBImageLoad(Filename);
         }
     }
-
     return NULL;
 }
-
-
 static BOOL LoadGLTextures(void)
 {
     BOOL fStatus = FALSE;
-    
     AUX_RGBImageRec *TextureImage[1];
-
-
     memset(TextureImage, 0, sizeof(void *)*1);
-
-    // Загрузите Побитовое отображение, 
-	// Проверяйте На наличие Ошибок, 
-	//Если Побитовое отображение Не Обнаружившее Выход
-    if ((TextureImage[0] = LoadBMP("background.bmp")))
+   if ((TextureImage[0] = LoadBMP("background.bmp")))
     {
         fStatus = TRUE;
-
-        // Создание текстур
         glGenTextures(3, &texture[0]);
-		//Подключение фильтров
-        //Создайте Ближайшую Отфильтрованную Текстуру 
         glBindTexture(GL_TEXTURE_2D, texture[0]);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
         glTexImage2D(GL_TEXTURE_2D, 0, 3, TextureImage[0]->sizeX, TextureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, TextureImage[0]->data);
-
-        // Создайте Линейную Отфильтрованную Текстуру
         glBindTexture(GL_TEXTURE_2D, texture[1]);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexImage2D(GL_TEXTURE_2D, 0, 3, TextureImage[0]->sizeX, TextureImage[0]->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, TextureImage[0]->data);
-
-        
         glBindTexture(GL_TEXTURE_2D, texture[2]);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
         gluBuild2DMipmaps(GL_TEXTURE_2D, 3, TextureImage[0]->sizeX, TextureImage[0]->sizeY, GL_RGB, GL_UNSIGNED_BYTE, TextureImage[0]->data);
     }
-
     if (TextureImage[0])
     {
         if (TextureImage[0]->data)
             free(TextureImage[0]->data);
-
         free(TextureImage[0]);
     }
-
     return fStatus;
 }
-
-//Изменеие размера окна
 static GLvoid ReSizeGLScene(GLsizei width, GLsizei height)
 {
     if (height == 0) height = 1;
-	//Установка окна
     glViewport(0, 0, width, height);
-
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-
-    // Вычислите Отношение Свободной длины к высоте Окна
     gluPerspective(45.0f, (GLfloat)width/(GLfloat)height, 0.1f, 100.0f);
-
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
-//Инициализация окна
 static int InitGL(GLvoid)
 {
-    if (!LoadGLTextures())  //Текстур нет -- выход
+    if (!LoadGLTextures()) 
         return FALSE;
-
-    glEnable(GL_TEXTURE_2D); //Разрешить двумерные текстуры
+    glEnable(GL_TEXTURE_2D); 
     glClearColor(0.0f, 0.0f, 0.0f, 0.5f);   
     glClearDepth(1.0f);                                     // Depth Buffer Setup
     glEnable(GL_DEPTH_TEST);                                // Enables Depth Testing
     glDepthFunc(GL_LEQUAL);                                 // The Type Of Depth Testing To Do
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);      // Really Nice Perspective Calculations
-
     glLightfv(GL_LIGHT1, GL_AMBIENT, LightAmbient);         // Setup The Ambient Light
     glLightfv(GL_LIGHT1, GL_DIFFUSE, LightDiffuse);         // Setup The Diffuse Light
     glLightfv(GL_LIGHT1, GL_POSITION,LightPosition);        // Position The Light
     glEnable(GL_LIGHT1);                                    // Enable Light One
-
-    
     glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP);    // Set The Texture Generation Mode For S To Sphere Mapping (NEW)
     glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP);    // Set The Texture Generation Mode For T To Sphere Mapping (NEW)
 
     return TRUE;
 }
-
-//Функция вырисовки игрового поля
 static GLvoid glDrawBoard(void)
 {  
-	int x,y;
-	glPushMatrix();
+    int x,y;
+    glPushMatrix();
     glBegin(GL_QUADS);
-    glNormal3f(0.0f,0.0f,1.0f);   	 
-	//Вырисовка поля первого игрока 			
+    glNormal3f(0.0f,0.0f,1.0f); 			
 	for(y=0; y<10; y++)
 	{
 		for(x=0; x<10; x++)
 		{
 			switch(Player1[x][y])
 			{
-				case 0://Пусто
+				case 0:
 					glColor3f(0.1f,0.1f,0.7f);
 					break;
-				case 1://Целый корабль
+				case 1:
 					if(player==1) glColor3f(0.8f,0.9f,0.7f);
 					else          glColor3f(0.1f,0.1f,0.7f);
 					break;
-				case 10://Мимо
+				case 10:
 					glColor3f(0.5f,0.50f,1.0f);
 					break;
-				case 11://Попали
+				case 11:
 					glColor3f(1.0f,0.0f,0.0f);
 					break;
 			}
 			glVertex3f(-0.25f-(9-x+1)*0.5,  0.25f+(y-2)*0.5,  0.0f);
-    	    glVertex3f(-0.25f-(9-x+1)*0.5, -0.25f+(y-2)*0.5,  0.0f);
-  		    glVertex3f( 0.25f-(9-x+1)*0.5, -0.25f+(y-2)*0.5,  0.0f);
+    	                glVertex3f(-0.25f-(9-x+1)*0.5, -0.25f+(y-2)*0.5,  0.0f);
+  		        glVertex3f( 0.25f-(9-x+1)*0.5, -0.25f+(y-2)*0.5,  0.0f);
   		  	glVertex3f( 0.25f-(9-x+1)*0.5,  0.25f+(y-2)*0.5,  0.0f);
     		
     
 		}
     }
 	glEnd();
-	//Вырисовка поля второго игрока
 	glBegin(GL_QUADS);
     glNormal3f(0.0f,0.0f,1.0f);   	  			
 	for(y=0; y<10; y++)
@@ -231,7 +187,7 @@ static GLvoid glDrawBoard(void)
     }
 	glEnd();
 	glPopMatrix();
-	//Прицелы
+	//ГЏГ°ГЁГ¶ГҐГ«Г»
 	if(player==2)
 	{
 		glColor3f(0.0f,1.0f,0.0f);
@@ -258,7 +214,6 @@ static GLvoid glDrawBoard(void)
 	}
 }
 
-//Вырисовка в OpenGL
 static int DrawGLScene(GLvoid)
 {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
@@ -285,7 +240,7 @@ static int DrawGLScene(GLvoid)
     glPopMatrix();
 	return TRUE;  
 }
-//Уничтожение OpenGl окна
+//Г“Г­ГЁГ·ГІГ®Г¦ГҐГ­ГЁГҐ OpenGl Г®ГЄГ­Г 
 static GLvoid KillGLWindow(GLvoid)
 {
     
@@ -319,7 +274,6 @@ static GLvoid KillGLWindow(GLvoid)
     }
 }
 
-//Создание окна     с заголовком  ,  шириной    высотой   ????        полным экраном
 BOOL CreateGLWindow(char* title, int width, int height, int bits, BOOL fullscreenflag)
 {
     static PIXELFORMATDESCRIPTOR pfd = {0};
@@ -328,47 +282,33 @@ BOOL CreateGLWindow(char* title, int width, int height, int bits, BOOL fullscree
     DWORD dwExStyle;        // Window Extended Style
     DWORD dwStyle;          // Window Style
     RECT rcWindow;
-	//Задать рамку rcWindow	
     SetRect(&rcWindow, 0, 0, width, height);
 
-    //Необходимо для диалога с Windows
     hInstance = GetModuleHandle(NULL);
-	//Стиль окна
     wc.style = CS_HREDRAW|CS_VREDRAW|CS_OWNDC;
-	//Подключение функции обраборки команд Windows
     wc.lpfnWndProc  = (WNDPROC)WndProc;
     wc.cbClsExtra = 0;
     wc.cbWndExtra = 0;
     wc.hInstance = hInstance;
-	//Иконка в трее
     wc.hIcon = LoadIcon(NULL, MAKEINTRESOURCE(MAINICON));   
-	//Курсор в окне IDC_ARROW -- стрелка
 	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
     wc.hbrBackground = NULL;
     wc.lpszMenuName = NULL;
-	//Имя класса
     wc.lpszClassName = "OpenGL";
-
-    // Регистрируем то, что установили ранее
     if (!RegisterClass(&wc))
     {
         MessageBox(NULL, "Failed To Register The Window Class.", "ERROR", MB_OK|MB_ICONEXCLAMATION);
         return FALSE;
-    }
-	
- 	   
+    }   
     dwExStyle = WS_EX_APPWINDOW|WS_EX_WINDOWEDGE;
     dwStyle = WS_OVERLAPPEDWINDOW;
-    
-
-    // Adjust Window To True Requested Size.
     AdjustWindowRectEx(&rcWindow, dwStyle, FALSE, dwExStyle);
 
-    // Теперь здесь создаем окно.
+
     if (!(hwnd = CreateWindowEx(dwExStyle, "OpenGL", title, dwStyle|WS_CLIPSIBLINGS|WS_CLIPCHILDREN,
         0, 0, rcWindow.right - rcWindow.left, rcWindow.bottom - rcWindow.top, NULL, NULL, hInstance, NULL)))
     {
-        KillGLWindow();  // Удаляем окно
+        KillGLWindow(); 
         MessageBox(NULL, "Window Creation Error.", "ERROR", MB_OK|MB_ICONEXCLAMATION);
         return FALSE;
     }
@@ -421,7 +361,7 @@ BOOL CreateGLWindow(char* title, int width, int height, int bits, BOOL fullscree
     SetFocus(hwnd);                 // Sets Keyboard Focus To The Window
     ReSizeGLScene(width, height);   // Set Up Our Perspective GL Screen
 
-    // Инициализация OpenGL
+    // Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї OpenGL
     if (!InitGL())
     {
         KillGLWindow();  // Reset The Display
@@ -436,14 +376,14 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
     switch (uMsg)
     {
-        case WM_ACTIVATE:  /* Активное окно? */
+        case WM_ACTIVATE:  /* ГЂГЄГІГЁГўГ­Г®ГҐ Г®ГЄГ­Г®? */
         {
             g_fActive = !HIWORD(wParam);
 
             if(player==1)
-				SetDlgItemText(hwnd,LABEL,"Первый игрок, введите пароль");
+				SetDlgItemText(hwnd,LABEL,"ГЏГҐГ°ГўГ»Г© ГЁГЈГ°Г®ГЄ, ГўГўГҐГ¤ГЁГІГҐ ГЇГ Г°Г®Г«Гј");
 			else
-				SetDlgItemText(hwnd,LABEL,"Второй игрок, введите пароль");
+				SetDlgItemText(hwnd,LABEL,"Г‚ГІГ®Г°Г®Г© ГЁГЈГ°Г®ГЄ, ГўГўГҐГ¤ГЁГІГҐ ГЇГ Г°Г®Г«Гј");
 	
 			return 0;
         }
@@ -461,10 +401,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		case WM_COMMAND:
             switch (GET_WM_COMMAND_ID(wParam, lParam))
             {
-                case IDOK://Нажали кнопку "ОК"
-					//Узнать введеную строку и записать в password
+                case IDOK:
+			
 					GetDlgItemText(hwnd,EDITBOX,buffer,10);
-					//Закрыть диалоговое окно
+					
             		EndDialog(hwnd, TRUE);
 					return TRUE;
             }
@@ -515,13 +455,13 @@ void ClearBoards()
 }
 void Feur()
 {
-	//Первый игрок стреляет по кораблям второго
+	
 	PlaySound(MAKEINTRESOURCE(IDR_WAV_DING),hInstance,SND_RESOURCE|SND_ASYNC);
 	if(player==1) 
 	{
 		if(Player2[X][Y]<10) Player2[X][Y]+=10;
 		if(Player2[X][Y]==11) 
-		{	//Играть звук
+		{	
 			PlaySound(MAKEINTRESOURCE(IDR_WAV_DING),hInstance, SND_RESOURCE|SND_ASYNC);
 			DeathP2++;
 		}
@@ -610,7 +550,7 @@ int Proverka(int x, int y)
 void CreateBoards()
 {
 	int x,y,i,j,f,status;
-	//Однопалубные
+	//ГЋГ¤Г­Г®ГЇГ Г«ГіГЎГ­Г»ГҐ
 	for(i=0; i<4; i++)
 	{
 		f=1;
@@ -627,31 +567,31 @@ void CreateBoards()
 		}//while f==1
 		
 	}//for
-	//Двупалубные
+	//Г„ГўГіГЇГ Г«ГіГЎГ­Г»ГҐ
 	for(i=0; i<3; i++)
 	{
 		f=1;
 		while(f)
 		{	
-			status=rand()%2;//0-вертикаль 1-горизонталь
-			if(!status) //Вертикаль
+			status=rand()%2;
+			if(!status) 
 			{
-				x=rand()%10; //Координаты
+				x=rand()%10; 
 				y=rand()%9;
 			}
-			else //Горизонталь
+			else 
 			{
 				x=rand()%9;
 				y=rand()%10;
 			}
-			if(!status) //Вертикаль
+			if(!status) 
 				if(Proverka(x,y)==0&&Proverka(x,y+1)==0)
 				{
 					if(player==1) Player1[x][y]=Player1[x][y+1]=1;
 					if(player==2) Player2[x][y]=Player2[x][y+1]=1;
 					f=0;
 				}		
-			if(status) //Горизонталь
+			if(status) //ГѓГ®Г°ГЁГ§Г®Г­ГІГ Г«Гј
 				if(Proverka(x,y)==0&&Proverka(x+1,y)==0)
 				{
 					if(player==1) Player1[x][y]=Player1[x+1][y]=1;
@@ -661,24 +601,24 @@ void CreateBoards()
 		}//while f==1
 		
 	}//for
-	//Трехпалубные
+
 	for(i=0; i<2; i++)
 	{
 		f=1;
 		while(f)
 		{	
-			status=rand()%2;//0-вертикаль 1-горизонталь
-			if(!status) //Вертикаль
+			status=rand()%2;
+			if(!status) 
 			{
-				x=rand()%10; //Координаты
+				x=rand()%10;
 				y=rand()%8;
 			}
-			else //Горизонталь
+			else 
 			{
 				x=rand()%8;
 				y=rand()%10;
 			}
-			if(!status) //Вертикаль
+			if(!status) 
 				if(Proverka(x,y)==0&&Proverka(x,y+1)==0&&
 					Proverka(x,y+2)==0)
 				{
@@ -686,7 +626,7 @@ void CreateBoards()
 					if(player==2) Player2[x][y]=Player2[x][y+1]=Player2[x][y+2]=1;
 					f=0;
 				}		
-			if(status) //Горизонталь
+			if(status)
 				if(Proverka(x,y)==0&&Proverka(x+1,y)==0&&
 					Proverka(x+2,y)==0)
 				{
@@ -700,18 +640,18 @@ void CreateBoards()
 	f=1;
 	while(f)
 	{	
-		status=rand()%2;//0-вертикаль 1-горизонталь
-		if(!status) //Вертикаль
+		status=rand()%2;
+		if(!status) 
 		{
-			x=rand()%10; //Координаты
+			x=rand()%10; 
 			y=rand()%7;
 		}
-		else //Горизонталь
+		else
 		{
 			x=rand()%7;
 			y=rand()%10;
 		}
-		if(!status) //Вертикаль
+		if(!status) 
 			if(Proverka(x,y)==0&&Proverka(x,y+1)==0&&
 				Proverka(x,y+2)==0&&Proverka(x,y+3)==0)
 			{
@@ -719,7 +659,7 @@ void CreateBoards()
 				if(player==2) Player2[x][y]=Player2[x][y+1]=Player2[x][y+2]=Player2[x][y+3]=1;
 				f=0;
 			}		
-		if(status) //Горизонталь
+		if(status) 
 			if(Proverka(x,y)==0&&Proverka(x+1,y)==0&&
 				Proverka(x+2,y)==0&&Proverka(x+3,y)==0)
 			{
@@ -735,7 +675,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     MSG msg;
 
     // Create Our OpenGL Window.
-    if (!CreateGLWindow("Морской бой", 640, 480, 16, FALSE))
+    if (!CreateGLWindow("ГЊГ®Г°Г±ГЄГ®Г© ГЎГ®Г©", 640, 480, 16, FALSE))
         return 0;
 	ClearBoards();
 	player=1;
@@ -784,7 +724,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 						do{
 							DialogBox(hInstance, MAKEINTRESOURCE(INPUTBOX), NULL, (DLGPROC)WndProc);
 							if(strcmp(buffer,password2)!=0)
-								MessageBox(0,"Пароль не верен","Ошибка",MB_OK);
+								MessageBox(0,"ГЏГ Г°Г®Г«Гј Г­ГҐ ГўГҐГ°ГҐГ­","ГЋГёГЁГЎГЄГ ",MB_OK);
 						}while(strcmp(buffer,password2)!=0);
 						HodP1++;
 					}
@@ -794,7 +734,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 						 do{
 							DialogBox(hInstance, MAKEINTRESOURCE(INPUTBOX), NULL, (DLGPROC)WndProc);
 							if(strcmp(buffer,password1)!=0)
-								MessageBox(0,"Пароль не верен","Ошибка",MB_OK);
+								MessageBox(0,"ГЏГ Г°Г®Г«Гј Г­ГҐ ГўГҐГ°ГҐГ­","ГЋГёГЁГЎГЄГ ",MB_OK);
 						}while(strcmp(buffer,password1)!=0);
 				         HodP2++;
 					}
@@ -802,7 +742,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 					{
 						if(DeathP1==4*1+3*2+2*3+4*1&&DeathP2!=18)
 						{
-							MessageBox(0,"Второй игрок победил","Морской бой",MB_ICONINFORMATION );
+							MessageBox(0,"Г‚ГІГ®Г°Г®Г© ГЁГЈГ°Г®ГЄ ГЇГ®ГЎГҐГ¤ГЁГ«","ГЊГ®Г°Г±ГЄГ®Г© ГЎГ®Г©",MB_ICONINFORMATION );
 							ClearBoards();
 							player=1;
 							CreateBoards();
@@ -812,7 +752,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 						}
 						if(DeathP2==4*1+3*2+2*3+4*1&&DeathP1!=18)
 						{
-							MessageBox(0,"Первый игрок победил","Морской бой",MB_ICONINFORMATION );
+							MessageBox(0,"ГЏГҐГ°ГўГ»Г© ГЁГЈГ°Г®ГЄ ГЇГ®ГЎГҐГ¤ГЁГ«","ГЊГ®Г°Г±ГЄГ®Г© ГЎГ®Г©",MB_ICONINFORMATION );
 							ClearBoards();
 							player=1;
 							CreateBoards();
@@ -822,7 +762,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 						}
 						if(DeathP2==4*1+3*2+2*3+4*1&&DeathP1==18)
 						{
-							MessageBox(0,"Ничья","Морской бой",MB_ICONINFORMATION );
+							MessageBox(0,"ГЌГЁГ·ГјГї","ГЊГ®Г°Г±ГЄГ®Г© ГЎГ®Г©",MB_ICONINFORMATION );
 							ClearBoards();
 							player=1;
 							CreateBoards();
