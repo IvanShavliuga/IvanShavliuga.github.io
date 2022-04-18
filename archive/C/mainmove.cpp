@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
-#include <conio.h>     //цветной ввод вывод
-#include <string.h>    //Работа со строками
-#include <dos.h>       //Здесь обявлена функмия delay
+#include <conio.h>     
+#include <string.h>    
+#include <dos.h>     
 #pragma hdrstop
 
 //---------------------------------------------------------------------------
@@ -10,16 +10,16 @@
 int main(int argc, char* argv[])
 {
    char string[]="PROGRMMIRUNG";
-   int len=strlen(string); //Длина строки
-   textcolor(15);          //Белый цвет
+   int len=strlen(string); 
+   textcolor(15);          
    do {
-     gotoxy(1,2);          //В точку 1,2
-     cprintf(string);      //Вывод
+     gotoxy(1,2);          
+     cprintf(string);      
      char b=string[0];
      for(int i=1; i<len; i++) string[i-1]=string[i];
      string[len-1]=b;
-     sleep(1);             //Заморозка 1 с
-   } while(!kbhit());      //Пока не нажали клавишу
+     sleep(1);             
+   } while(!kbhit());      
    getch();
    return 0;
 }
