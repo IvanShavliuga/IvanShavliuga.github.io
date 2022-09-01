@@ -1,5 +1,12 @@
 
   [{
+    "sitelink":"https://github.com/IvanShavliuga/vue-electron-app",
+    "sitetitle":"github.com/IvanShavliuga",
+    "title":"IvTimer 0.3.0",
+    "desc":"A simple to-do list with a timer. Desktop application",
+    "tech":["html5","css3","vue.js (2.x)","npm","electron","electron-vue",
+      "git"]
+  },{
     "sitelink":"https://codesandbox.io/s/laughing-sound-sbupl",
     "sitetitle":"codesandbox.io",
     "title":"Table of Mendeleev",
