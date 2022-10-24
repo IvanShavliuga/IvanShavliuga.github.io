@@ -2,7 +2,7 @@
   [{
     "sitelink":"https://github.com/IvanShavliuga/vue-electron-app",
     "sitetitle":"github.com/IvanShavliuga",
-    "title":"IvTimer 0.3.0",
+    "title":"IvTimer 0.5.0",
     "desc":"Простой список дел с таймером. Десктопное приложение",
     "tech":["html5","css3","vue.js (2.x)","npm","electron","electron-vue",
       "git"]
