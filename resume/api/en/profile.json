@@ -6,7 +6,7 @@
   "github":"https://github.com/IvanShavliuga/",
   "phone":"https://t.me/ivanshavliuga",
   "skills": [
-    "html5","css3","scss","less","pug","tailwind","vue.js (2.x)","Vue-Router","Vuex","vuetify","npm","Webpack",
-    "Bootstrap (4.x)","EcmaScript (2015)","git","adaptive design", "Nuxt", "vue-cli", "gulp"
+    "html5","css3","scss","less","pug","tailwind","vue.js (2.x, 3.x)", "composition API","Vue-Router","Vuex", "Pinia","vuetify","npm","Webpack",
+    "Bootstrap (4.x)","EcmaScript (2015, 2016, next)","git","adaptive design", "Nuxt 3", "vue-cli", "gulp", "Keycloakify", "REST API", "Axios"
   ]
 }
