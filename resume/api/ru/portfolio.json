@@ -27,11 +27,11 @@
     "desc":"Верстка аниминованной формы регистрации",
     "tech":["html5","css3","animation"]
   },{
-    "sitelink":"https://codepen.io/ivanshavliuga/pen/pobKbpm",
-    "sitetitle":"codepen.io/ivanshavliuga",
+    "sitelink":"https://github.com/IvanShavliuga/shulte",
+    "sitetitle":"github.com/ivanshavliuga",
     "title":"Таблица Шульте (усложненный вариант)",
     "desc":"Собрать числовую последовательность от 1 до 64",
-    "tech":["html5","css3","vue.js (2.x)"]
+    "tech":["html5","css3","vue.js (3.x)", "typescript"]
   },{
     "sitelink":"https://codepen.io/ivanshavliuga/pen/rNLdBeR",
     "sitetitle":"codepen.io/ivanshavliuga",
