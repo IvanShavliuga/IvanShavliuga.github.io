@@ -61,10 +61,10 @@
     "tech":["html5","css3","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
       "git","svg"]
   },{
-    "sitelink":"https://github.com/IvanShavliuga/Crios",
-    "sitetitle":"github.com/IvanShavliuga",
+    "sitelink":"https://ivanshavliuga.github.io/crios/index.html",
+    "sitetitle":"ivanshavliuga.github.io/crios",
     "title":"Landing page",
-    "desc":" Template travel agency",
+    "desc":" Template travel agency. Source code there: https://github.com/IvanShavliuga/Crios",
     "tech":["html5","css3","less","vue.js (2.x)","npm","Webpack","EcmaScript (2015)",
       "git","adaptive design","own design"]
   },{
