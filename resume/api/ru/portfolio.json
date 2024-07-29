@@ -27,10 +27,10 @@
     "desc":"Верстка аниминованной формы регистрации",
     "tech":["html5","css3","animation"]
   },{
-    "sitelink":"https://github.com/IvanShavliuga/shulte",
-    "sitetitle":"github.com/ivanshavliuga",
+    "sitelink":"https://ivanshavliuga.github.io/shulte2/index.html",
+    "sitetitle":"ivanshavliuga.github.io/shulte2",
     "title":"Таблица Шульте (усложненный вариант)",
-    "desc":"Собрать числовую последовательность от 1 до 64",
+    "desc":"Собрать числовую последовательность от 1 до 64. Исходный код тут: https://github.com/IvanShavliuga/shulte",
     "tech":["html5","css3","vue.js (3.x)", "typescript"]
   },{
     "sitelink":"https://codepen.io/ivanshavliuga/pen/rNLdBeR",
